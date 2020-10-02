@@ -1,4 +1,4 @@
-# Carnap's Pandoc
+# Carnap's Pandoc MarkDown
 
 Within Carnap, shared documents and problem sets are created using *pandoc*
 markdown, a simple formatting language (akin to LaTeX) developed by John
