@@ -1,4 +1,4 @@
-#Set Theory Demo
+# Set Theory Demo
 
 Here's a demo of Carnap's (alpha-stage) support for natural deduction in set
 theory.

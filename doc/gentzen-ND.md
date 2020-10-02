@@ -1,4 +1,4 @@
-#Gentzen-Prawitz Natural Deduction
+# Gentzen-Prawitz Natural Deduction
 
 The `TreeDeduction` class indicates that a code block will contain
 Gentzen-Prawitz natural deduction exercises, which require the production of a
@@ -15,7 +15,7 @@ with `Ctrl-Z` and `Shift-Ctrl-Z` respectively. The subtree above a selected
 node can be deleted with `Ctrl-Backspace`, and subtrees can be cut-copy-pasted
 with `Shift-Ctrl-X`, `Shift-Ctrl-C` and `Shift-Ctrl-V` respectively.
 
-###Available Systems
+### Available Systems
 
 At the moment, four systems are available:
 
@@ -130,7 +130,7 @@ A completed proof will look like this:
 With rule names to the right of inference lines, and assumptions labeled to the
 right of the rule citation.
 
-###Rules for NK and NJ
+### Rules for NK and NJ
 
 Here's a brief summary of NJ's propositional rules. The notation [ψ]/φ
 indicates that an assumption ψ can be discharged from the subproof establishing
@@ -164,7 +164,7 @@ Rule    Premises             Conclusion
 
 </div>
 
-###Syntax for NK and NJ
+### Syntax for NK and NJ
 
 As usual, in writing formulas and inference rules, any of `&`,`∧` or `/\ ` can
 be used for conjunction, and any of `∨`, `v`, and `\/` can be used for
@@ -172,9 +172,9 @@ disjunction. Any of `->` or `→` can be used for the conditional, and any of
 `¬`, `-`, or `~` for negation. Sentence letters are `P` through `W` or `P` with
 subscripts like so: `P_1`. 
 
-##Advanced Usage
+## Advanced Usage
 
-###Options
+### Options
 
 In addition to the standard `points=VALUE` and `submission="none"` options,
 Gentzen-Prawitz natural deduction exercises allow for you to set `init="now"`
@@ -191,7 +191,7 @@ Name               Effect
 
 </div>
 
-###JSON Serialization
+### JSON Serialization
 
 Here's an incomplete proof, showing how to use the `displayJSON` option:
 
@@ -236,7 +236,7 @@ exercises in which the problems are partially completed, since, as in the
 example above, one can prefill an exercise by supplying a JSON representation
 below the statement of the problem.
 
-###Playgrounds
+### Playgrounds
 
 One can generate a Gentzen-Prawitz playground (where there is no goal, but
 where what you've proved is displayed) using something like the following:

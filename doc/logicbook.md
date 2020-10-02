@@ -1,12 +1,12 @@
-#Natural Deduction in Logic Book Systems
+# Natural Deduction in Logic Book Systems
 
 This document gives a short description of how Carnap presents the systems of
 natural deduction from Bergmann Moore and Nelson's *Logic Book*. At least some
 prior familiarity with Fitch-style proof systems is assumed.
 
-##Propositional Systems
+## Propositional Systems
 
-###Notation
+### Notation
 
 The different admissible keyboard abbreviations for the different connectives
 are as follows:
@@ -71,9 +71,9 @@ Ga            :3,4 >E
 (Ax)Gx        :5 AI 
 ```
 
-###Basic Rules
+### Basic Rules
 
-####Logic Book System SD
+#### Logic Book System SD
 
 The minimal system SD from the *Logic Book* (the system used in a proofchecker
 constructed with `.LogicBookSD` in Carnap's [Pandoc
@@ -117,7 +117,7 @@ a line making an assumption. `A/SOMEADDITIONALTEXT` (where
 the assumption in the rendered proof) can also be used to justify an
 assumption. Assumptions are only allowed on the first line of a subproof.
 
-####Logic Book System SD Plus
+#### Logic Book System SD Plus
 
 The extended system SD Plus (the system used in a proofchecker constructed with
 `.LogicBookSDPlus` in Carnap's [Pandoc
@@ -171,9 +171,9 @@ Equivalence            `Equiv`      $Φ(φ↔ψ)$                      $Φ(φ⊃
 
 </div>
 
-##First-Order Systems
+## First-Order Systems
 
-###Notation
+### Notation
 
 The different admissible keyboard abbreviations for quantifiers are as follows:
 
@@ -207,7 +207,7 @@ subscripted letters $x_1, x_2,\ldots$ written `x_1, x_2,…`.
 Quantificational phrases are formed by appending a variable to a quantifier,
 and wrapping the result in parentheses.
 
-###Basic Rules
+### Basic Rules
 
 The first-order *Logic Book* systems PD and PD+ (the systems used in
 proofcheckers constructed with `.LogicBookPD`, and `LogicBookPDPlus`

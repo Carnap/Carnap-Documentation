@@ -1,4 +1,4 @@
-#Syntax Check Exercises
+# Syntax Check Exercises
 
 Chapter 1 of the Carnap book includes exercises that require identifying the
 main connective of a formula and of its sub-formulas in order to break that
@@ -39,7 +39,7 @@ The result will be
 1.2 P /\ Q /\ R 
 ~~~
 
-##Syntax Check Options
+## Syntax Check Options
 
 You can require explicit "parsing of atoms" (pressing return with when an atom
 is highlighted to acknowledge that it contains no connectives) by including

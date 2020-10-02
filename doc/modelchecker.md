@@ -1,9 +1,9 @@
-#Countermodels
+# Countermodels
 
 The `CounterModeler` class indicates that a code block will contain
 countermodel construction exercises.
 
-##Simple Countermodels
+## Simple Countermodels
 
 You can create simple countermodel problems, checking to see if one or more
 formulas are true in a constructed model like this:
@@ -43,7 +43,7 @@ with the arguments separated from the value by a semicolon, thus: `[0,0;1]`.
 Formulas containing free variables are treated as equivalent to their universal
 closures.
 
-##Validity Countermodels
+## Validity Countermodels
 
 You can create a countermodel problem for showing invalidity like this:
 
@@ -62,7 +62,7 @@ both the left and *right* of the turnstile. A countermodel is successful if it
 makes all the formulas to the left of the turnstile true and all the formulas
 to the right of the turnstile false.
 
-##Constraint Countermodels
+## Constraint Countermodels
 
 You can create a countermodel with some implicit constraints on the allowable models like this:
 
@@ -79,9 +79,9 @@ Resulting in:
 A countermodel with implicit constraints is successful if it makes all the
 formulas to the right and the left of the `:` true.
 
-##Advanced Usage
+## Advanced Usage
 
-####Options
+#### Options
 
 In addition to setting a custom point value or turning off submission by adding
 `points=VALUE` and `submission="none"`, several other options are available for
@@ -96,7 +96,7 @@ Name                     Effect
 ------------------------ ------------------------------------------------------------------
 
 
-####Counterexamples
+#### Counterexamples
 
 There are also a number of options that affect what counts as a successful
 countermodel. these are set using the `counterexample-to` attribute. The
@@ -121,7 +121,7 @@ right of the turnstile have the counterexample property. Similarly in the case
 of a constraint countermodel problem---all the constraints must be true, and
 the other formulas must have the counterexample property.
 
-####Systems
+#### Systems
 
 The way that formulas are parsed and displayed can also be customized. This is
 done by setting the `system` attribute to indicate which formal system you are

@@ -1,9 +1,9 @@
-#Truth Tables
+# Truth Tables
 
 The `TruthTable` class indicates that a code block will contain truth table
 exercises.
 
-##Simple Truth Tables
+## Simple Truth Tables
 
 You can create simple truth table problems, checking to see if a formula is a
 tautology, by also adding the class `Simple`, like so:
@@ -36,7 +36,7 @@ considered correct when every row is filled in correctly. A problem can also be
 solved by indicating a counterexample to tautology. A row is considered a
 counterexample if *all* the formulas in the problem are false on that row.
 
-##Validity Truth Tables
+## Validity Truth Tables
 
 If, instead of `Simple`, you add the class `Validity`, like so:
 
@@ -78,7 +78,7 @@ right of the sequent are false.[^1]
 of multi-conclusion arguments. This approach is the most natural from the point
 of view of the sequent calculus.
 
-##Partial Truth Tables
+## Partial Truth Tables
 
 You can also create truth table problems that involve filling in a single row.
 To do this, add the class `Partial`, like so:
@@ -98,9 +98,9 @@ any assignment of truth values to the atoms. However by using givens (see
 below), partial truth tables can be used to ask students to test for variety of
 different properties.
 
-##Advanced Usage
+## Advanced Usage
 
-####Options
+#### Options
 
 In addition to setting a custom point value or turning off submission by adding
 `points=VALUE` and `submission="none"`, several
@@ -135,7 +135,7 @@ Generates:
 2.6 P :|-: Q
 ~~~
 
-####Counterexamples
+#### Counterexamples
 
 There are also a number of options that affect what counts as a counterexample.
 these are set using the `counterexample-to` attribute. The options are:
@@ -160,7 +160,7 @@ the counterexample is `equivalence` is basically using a truth table to test
 whether the formulas to the right of the turnstile are equivalent "under the
 assumption" that the formulas to the left of the turnstile are true.
 
-####Systems
+#### Systems
 
 The way that formulas are parsed and displayed can also be customized. This is
 done by setting the `system` attribute to indicate which formal system you are
@@ -181,7 +181,7 @@ The available systems are: `prop` `montagueSC` `LogicBookSD` `LogicBookSDPlus`
 `magnusSLPlus` `thomasBolducAndZachTFL` `thomasBolducAndZachTFL2019`
 `tomassiPL` and `hardegreeSL`.
 
-####Givens
+#### Givens
 
 It is also possible to give a "partial solution" to a truth table problem, in
 which the truth table is partly filled in, and the student needs either to
@@ -269,7 +269,7 @@ these two sentences. The result will be:
 |    -F -  -T - 
 ~~~
 
-####Custom Marks
+#### Custom Marks
 
 The marks for truth and falsity can be configured to something other than the
 usual `T` and `F` by setting the `falseMark` and `trueMark` attributes. So for

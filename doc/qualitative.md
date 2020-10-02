@@ -1,9 +1,9 @@
-#Qualitative Problems
+# Qualitative Problems
 
 the `QualitativeProblem` class indicates that a code block will contain
 qualitative problems, either short-answer or multiple choice questions.
 
-##Short Answer
+## Short Answer
 
 To create a short-answer problem, use the class `ShortAnswer`, and simply
 provide a short answer question, like so:
@@ -25,7 +25,7 @@ section for the assignment, so it will be possible to assign them partial
 credit, as if they were an exam problem. The behavior for awarding credit can
 also be configured with the `give-credit` option, see Advanced Usage below.
 
-##Multiple Choice
+## Multiple Choice
 
 To create a multiple-choice problem, use the class `MultipleChoice`, and
 provide a question along with a set of answers (one per line), like so:
@@ -49,7 +49,7 @@ with a `-` or a `+` will be pre-selected. So the result of the above is:
 
 Which has "OK!" preselected and just one correct answer, namely "OK!".
 
-##Multiple Selection
+## Multiple Selection
 
 To create a multiple-selection problem, use the class `MultipleSelection`, 
 
@@ -75,7 +75,7 @@ pre-selected. So the result of the above is:
 ```
 
 
-##Numerical
+## Numerical
 
 To create a numerical problem, use the class `.Numerical` and provide a
 question, optionally pre-filling with an answer or hint, written below the
@@ -97,9 +97,9 @@ Answers must be given as decimal expressions or fractions (so, the above $2^3$
 won't be accepted without being evaluated). They'll be saved as decimal
 expressions.
 
-##Advanced Usage
+## Advanced Usage
 
-####Options and Attributes
+#### Options and Attributes
 
 In addition to allowing for turning off submission with `submission="none"`,
 qualitative problems also have the following options. 

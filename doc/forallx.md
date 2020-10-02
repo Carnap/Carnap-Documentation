@@ -1,13 +1,13 @@
-#Natural Deduction in *forall x* systems
+# Natural Deduction in *forall x* systems
 
 This document gives a short description of how Carnap presents the systems of
 natural deduction from P.D. Magnus' [*forall x*](https://www.fecundity.com/logic/) 
 and from the [Calgary remix](http://forallx.openlogicproject.org/) of *forall
 x*. At least some prior familiarity with Fitch-style proof systems is assumed.
 
-##Propositional Systems
+## Propositional Systems
 
-###Notation
+### Notation
 
 The different admissible keyboard abbreviations for the different connectives
 are as follows:
@@ -58,9 +58,9 @@ Here's an example derivation, using system SL of P.D. Magnus *forall x*:
 P->(P->P):->I 1-4
 ```
 
-###Basic Rules
+### Basic Rules
 
-####*forall x* System SL
+#### *forall x* System SL
 
 The minimal system SL for P.D. Magnus' *forall x* (the system used in a
 proofchecker constructed with `.ForallxSL` in Carnap's [Pandoc
@@ -101,7 +101,7 @@ assumption can be included in the rendered proof by writing `A/NOTETEXTHERE`
 rather than `AS` for an assumption. Assumptions are only allowed on the first
 line of a subproof.
 
-####*forall x* System SL Plus
+#### *forall x* System SL Plus
 
 The extended system SL Plus for P.D. Magnus' *forall x* (the system used in a
 proofchecker constructed with `.ForallxSLPlus` in Carnap's [Pandoc
@@ -140,7 +140,7 @@ DeMorgan's Laws        `DeM`        $Φ(¬(φ∧ψ))$   $Φ(¬φ∨¬ψ)$
 
 </div>
 
-####Calgary TFL
+#### Calgary TFL
 
 The system TFL from the Calgary Remix of *forall x* (the system used in
 a proofchecker constructed with `.ZachTFL` in Carnap's [Pandoc
@@ -200,11 +200,11 @@ and E rules for the connectives.
 Because the Calgary FOL systems treat $v$ as a variable, `v` is not
 allowed as a keyboard shortcut for $\lor$.
 
-##First-Order System QL
+## First-Order System QL
 
 The proof system for Magnus's *forall x*, QL, is activated using `.ForallxQL`.
 
-###Notation
+### Notation
 
 The different admissible keyboard abbreviations for quantifiers and equality is
 as follows:
@@ -235,7 +235,7 @@ letters $c_1, c_2, \ldots$ written `c_1, c_2,…`.
 The available variables are $x$ through $z$, with the infinitely many
 subscripted letters $x_1, x_2,\dots$ written `x_1, x_2,…`.
 
-###Basic Rules
+### Basic Rules
 
 The first-order *forall x* systems QL and FOL (the systems used in proofcheckers
 constructed with `.ForallxQL`, and `ZachFOL` respectively) extend the rules of

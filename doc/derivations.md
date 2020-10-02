@@ -1,4 +1,4 @@
-#Derivations
+# Derivations
 
 The `ProofChecker` class indicates that a code block will contain derivation
 exercises. The `Playground` class indicates that a code block will generate a
@@ -8,7 +8,7 @@ display it at the top of the proof-box. The formal systems used can be
 controlled using predefined classes, or by setting attributes on the code-block
 (see below).
 
-##Predefined classes
+## Predefined classes
 
 To get started, it's possible to create simple exercises in the propositional
 system of the Carnap book like this:
@@ -74,9 +74,9 @@ Class Strings                                                 Description
 
 </div>
 
-##Advanced Usage
+## Advanced Usage
 
-####Options
+#### Options
 
 Like the other exercises, derivations allow for `points=VALUE` and
 `submission="none"`.
@@ -135,7 +135,7 @@ We get a proofbox that resizes manually:
 1.9 P :|-: Q->P 
 ~~~
 
-####Partial Solutions
+#### Partial Solutions
 
 A partial solution to a problem can be included by following a problem with a
 derivation that is line-by-line prefixed with the `|` character, optionally
@@ -185,7 +185,7 @@ sequent, thus:
 |4.:CD 3
 ~~~
 
-####Feedback
+#### Feedback
 
 The defaults for feedback (check the proof with every keypress) can also be
 overridden by setting the feedback attribute. The override options for feedback
@@ -214,7 +214,7 @@ produces
 1.10 P :|-: Q->P
 ~~~
 
-####Systems
+#### Systems
 
 If you don't want to use a predefined class, you can set the system option
 manually. This will give you complete control over which options are set—only
@@ -247,12 +247,12 @@ modal logic systems are: `hardegreeL` `hardegreeK` `hardegreeT` `hardegreeB`
 system is `hardegreeMPL`, and the available "world theory" system is
 `hardegreeWTL`.
 
-####Initialization
+#### Initialization
 
 The `init` attribute may be set to "now" in order to check the proof as soon as
 it is loaded, instead of waiting for a user interaction.
 
-####Indentation Guides
+#### Indentation Guides
 
 Besides just the indentation guide created by setting `guides` in the options
 string, there are several more refined overlays available for increasing the

@@ -1,4 +1,4 @@
-#Carnap's Course Management Dashboard
+# Carnap's Course Management Dashboard
 
 This document gives a short description of the Carnap server's
 course-management dashboard.
@@ -32,7 +32,7 @@ class card is probably empty. So we'll describe the assignment card first.
 [^1]: I concede that tabbed cards are not the best UI metaphor. I'm open to
 suggestions on this one.
 
-##The Assignment Card
+## The Assignment Card
 
 The top of the assignment card looks like this:
 
@@ -41,7 +41,7 @@ The top of the assignment card looks like this:
 There are four main tabs. The first one you want to look at is probably "Manage
 Courses".
 
-###Manage Courses
+### Manage Courses
 
 Within this tab, you can create a new course, by giving it a title, an optional
 description, a start-date, a total number of available points for the course,
@@ -64,7 +64,7 @@ archived, You'll still be able to edit the class' properties, download grades
 as a `.csv` file, and delete the class. If you need to reactive an archived
 class, just set its end-date for some point in the future.
 
-###Assign Textbook Problems
+### Assign Textbook Problems
 
 Within this tab, you can assign textbook problem sets from the Carnap book to
 your courses, setting particular due-dates and due-times.  There are currently
@@ -86,7 +86,7 @@ students who have fallen behind remain motivated, and gives them some incentive
 to do extra work that will make the later material easier for them to
 understand.
 
-###Assign Uploaded Documents
+### Assign Uploaded Documents
 
 Within this tab, you can assign documents created using Carnap's [pandoc
 markup](pandoc.md). In order to assign a
@@ -114,7 +114,7 @@ time or two points if late. Problems assigned a custom point value count for
 that value if received on time, and otherwise for half that value rounding
 down. This will likely become more customizable in the future.
 
-###Manage Uploaded Documents
+### Manage Uploaded Documents
 
 Within this tab, you can upload documents from which to create assignments in
 your classes, and optionally share them, either with other instructors,
@@ -146,7 +146,7 @@ Again, to edit the attributes of an uploaded document, click the gear icon.  You
 also delete documents with the trashcan icon, or download them with the cloud
 icon.
 
-##The Class Card
+## The Class Card
 
 Once you've created a class, the class card will look a bit like this:
 

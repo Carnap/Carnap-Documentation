@@ -1,4 +1,4 @@
-#Carnap's Pandoc
+# Carnap's Pandoc
 
 Within Carnap, shared documents and problem sets are created using *pandoc*
 markdown, a simple formatting language (akin to LaTeX) developed by John
@@ -29,7 +29,7 @@ like live previews of the formatted text. A list of these can be found
 pandoc editor, with live previews of what the rendered document will look like,
 can be found at <http://markup.rocks>.
 
-##Pandoc Extensions
+## Pandoc Extensions
 
 Carnap's pandoc parser incorporates the following pandoc extensions:
 
@@ -55,9 +55,9 @@ Carnap's pandoc parser incorporates the following pandoc extensions:
 For more details, about each of these extensions, please see the [Pandoc Users
 Guide](https://pandoc.org/MANUAL.html#extensions).
 
-##Exercises
+## Exercises
 
-###General Pattern
+### General Pattern
 
 Carnap's exercises are created by including special *code blocks* within a
 pandoc document. A code block looks something like this:
@@ -81,7 +81,7 @@ an anchor tag to your exercise, so that you can link directly to the exercise
 at the URL `ASSIGNMENTURL#exercise-label` where `ASSIGNMENTURL` is the URL for
 the assignment, and `label` is the label you gave to that particular exercise.
 
-###Some common attributes
+### Some common attributes
 
 Here are some common attributes that can be applied to to any exercise
 
@@ -102,7 +102,7 @@ set to a string of space separated words, indicating what special options are
 set for the exercise-block it is attached to. Different types of exercises
 allow for different options.
 
-###Random problems
+### Random problems
 
 When you create a problem set, the different problems within a code block will
 generally be assigned numbers or some other identifier. So you might write
@@ -129,7 +129,7 @@ The selection of a random problem only takes place when the document is viewed
 as an assignment, so when the document is viewed through the instructor's
 "manage documents" tab, all the variant problems will be displayed.
 
-###Choose-One problems
+### Choose-One problems
 
 If more than one problem is given the same label but the problems are *not*
 part of the same code block or are not next to one another, then both problems
@@ -138,7 +138,7 @@ most one problem with a given label. So if you want to give your students the
 option to choose just one of several problems to complete, you can set those
 problems to all share a single label.
 
-###Exercise Types
+### Exercise Types
 
 There are currently eight types of exercises:
 
@@ -153,9 +153,9 @@ There are currently eight types of exercises:
 
 To learn more about each one, follow the links above.
 
-##Other Features
+## Other Features
 
-###Formula Parsing
+### Formula Parsing
 
 Carnap's formula parser can be used to render and display formulas and sequents
 inline within a pandoc document. So for example, writing something like
@@ -182,7 +182,7 @@ modal logic systems are: `hardegreeL` `hardegreeK` `hardegreeT` `hardegreeB`
 system is `hardegreeMPL`, and the available "world theory" system is
 `hardegreeWTL`.
 
-###Custom CSS
+### Custom CSS
 
 The standard [bootstrap](https://getboostrap.com) CSS that is used for styling
 the appearance of an assignment can be overriden by including a CSS entry as
@@ -217,7 +217,7 @@ the form:
 For more details about hosting your own stylesheets, please take a look at the
 documentation for the [instructor dashboard](dashboard.md).
 
-###Custom JavaScript
+### Custom JavaScript
 
 Documents can also include links to custom JavaScript. This can be done using
 the `raw_html` pandoc extension, or by including the JS in a metadata block.

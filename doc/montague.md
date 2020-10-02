@@ -1,13 +1,13 @@
-#Natural Deduction in the Carnap Book
+# Natural Deduction in the Carnap Book
 
 This document gives a short description of the systems of natural deduction
 used in the Carnap book, and the two available second-order extensions of these
 systems. At least some prior familiarity with Montague-style proof systems is
 assumed.
 
-##The Propositional System
+## The Propositional System
 
-###Notation
+### Notation
 
 The different admissible keyboard abbreviations for the different connectives
 is as follows:
@@ -50,7 +50,7 @@ Show P -> (P -> P)
 :CD 3
 ```
 
-###Basic Rules
+### Basic Rules
 
 The propositional part of the system (the system used in a proofchecker
 constructed with `.Prop` in Carnap's [Pandoc
@@ -87,15 +87,15 @@ used to support these lines.
 Finally, `PR` can be used to justify a line asserting a premise, and `AS` can
 be used to justify a line making an assumption.
 
-###Derived Rules
+### Derived Rules
 
 Additional rules previously derived by users are allowed. These are regular
 rules of direct inference, and use abbreviations of the form `D-NAME`, where
 `NAME` is chosen by the user.
 
-##The First Order System
+## The First Order System
 
-###Notation
+### Notation
 
 The different admissible keyboard abbreviations for quantifiers and equality is
 as follows:
@@ -131,7 +131,7 @@ function symbol is determined from context.
 The available variables are $v$ through $z$, with the infinitely many
 subscripted letters $x_1, x_2,\ldots$ written `x_1, x_2,…`.
 
-###Basic Rules
+### Basic Rules
 
 The first-order part of the system (the system used in a proofchecker
 constructed with `.FirstOrder`) extends the propositional part of the system
@@ -181,7 +181,7 @@ fresh if it does not appear outside of the given subproof.
 will be changed relatively soon, pending some improvements to the proof
 checking algorithm.
 
-###Traditional Kalish and Montague Rules
+### Traditional Kalish and Montague Rules
 
 The basic rules for first-order logic listed above are not precisely the same
 as the rules given by Kalish and Montague in *Formal Logic*. In particular,
@@ -201,9 +201,9 @@ occurring *free or bound* on any earlier line in the proof.
 These rules can be activated by using `.MontagueQC` (for "Quantifier Calculus")
 instead of `.FirstOrder` in the construction of the proof-checker.
 
-##The Monadic Second-Order System 
+## The Monadic Second-Order System 
 
-###Notation
+### Notation
 
 The different admissible keyboard abbreviations for monadic second-order
 lambdas is as follows:
@@ -226,7 +226,7 @@ A lambda abstract has the form $λx[φ(x)]$, and can be applied like a predicate
 Lambdas can only be applied to formulas, so the only abstracts that can be
 produced are for monadic relations.
 
-###Basic Rules
+### Basic Rules
 
 The monadic second-order system (the system used in a proofchecker constructed
 with `.SecondOrder`) extends the first-order part of the system with the
@@ -254,9 +254,9 @@ And with rules for indirect derivation UD and EG exactly analogous to the
 first-order case, except that a fresh second-order variable  is used rather
 than a fresh constant.
 
-##The Polyadic Second-Order System 
+## The Polyadic Second-Order System 
 
-###Notation
+### Notation
 
 First order syntax is as in the first-order system.
 
@@ -267,7 +267,7 @@ variables $XN_1, XN_2,\ldots$ written `XN_1, XN_2,…`.
 A lambda abstract has the form $λx_1…λx_n[φ(x_1,…,x_n)]$, and can be applied
 like an $n$-ary relation symbol.
 
-###Basic Rules
+### Basic Rules
 
 The polyadic second-order system (the system used in a proofchecker constructed
 with `.PolySecondOrder`) extends the first-order part of the system with the

@@ -1,9 +1,9 @@
-#Translations 
+# Translations 
 
 the `Translate` class indicates that a code block will contain translation
 exercises that require symbolizing natural language sentences.
 
-##Propositional Logic
+## Propositional Logic
 
 You can create propositional logic translation problems by also adding the
 class `Prop`, like so:
@@ -26,7 +26,7 @@ Propositional translations are considered correct if they are logically
 equivalent to the original answer. So for example, `Q/\P` will be accepted
 above.
 
-##First-Order Translation
+## First-Order Translation
 
 It is also possible to create first-order translation problems using the class `FOL`, thus:
 
@@ -58,9 +58,9 @@ be accepted above.
        rename the variables. Check the matricies of the resulting formulas for
        propositional equivalence.
 
-##Advanced usage
+## Advanced usage
 
-####Multiple Solutions
+#### Multiple Solutions
 
 If you wish to allow students to find one translation of a sentence that admits
 several formalizations, you can use a comma-separated list of admissible
@@ -76,7 +76,7 @@ generates
 3.5 (P /\ Q) \/ R, P/\(Q\/R) : Jack jumped the fence and was caught by the watchman or got away.
 ~~~
 
-####Options and Attributes
+#### Options and Attributes
 
 In addition to allowing for custom point values with `points=VALUE`, and
 turning off submission with `submission="none"`, translations also have the
@@ -167,7 +167,7 @@ will generate:
 3.6 ~Ex~F(x) : Nothing is not bananas.
 ~~~
 
-####Partial Solutions
+#### Partial Solutions
 
 It's possible to include a partial solution to a translation problem, by
 including the partial solution after a `|` following the problem. So for

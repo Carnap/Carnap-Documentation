@@ -1,4 +1,4 @@
-#Sequent Calculus Deductions
+# Sequent Calculus Deductions
 
 The `Sequent` class indicates that a code block will contain sequent-calculus
 deduction exercises, which require the production of a sequent calculus
@@ -15,7 +15,7 @@ subtree above a selected node can be deleted with `Ctrl-Backspace`, and
 subtrees can be cut-copy-pasted with `Shift-Ctrl-X`, `Shift-Ctrl-C` and
 `Shift-Ctrl-V` respectively.
 
-##Available Systems
+## Available Systems
 
 At the moment, four systems are available:
 
@@ -56,7 +56,7 @@ A completed proof will look like this:
 
 With `:|-:` indicating a turnstile, and rule names to the right of inference lines.
 
-##Rules for LK and LJ
+## Rules for LK and LJ
 
 Here's a brief summary of LK's propositional "operational" rules:
 
@@ -130,7 +130,7 @@ The propositional and first-order systems for LJ are just like those for LK
 with the additional restriction that at most one formula can occur on the right
 hand side of a sequent.
 
-##Syntax for LK and LJ
+## Syntax for LK and LJ
 
 As usual, in writing formulas and inference rules, any of `&`,`∧` or `/\ ` can
 be used for conjunction, and any of `∨`, `v`, and `\/` can be used for
@@ -140,9 +140,9 @@ subscripts like so: `P_1`. Predicates are `F` through `L`, or `F` with a
 subscript. Variables are `v` through `z` or `x` with a subscript and constants
 are `a` through `e` or `c` with a subscript.
 
-##Advanced Usage
+## Advanced Usage
 
-###Options
+### Options
 
 In addition to the standard `points=VALUE` and `submission="none"` options,
 sequent calculus exercises allow for you to set `init="now"` to have
@@ -158,7 +158,7 @@ Name               Effect
 
 </div>
 
-###JSON Serialization
+### JSON Serialization
 
 Proof 1.2 above was generated using the displayJSON option, with the following
 invocation:
@@ -176,7 +176,7 @@ example above, one can prefill an exercise by supplying a JSON representation
 below the statement of the problem (beginning each line of the JSON with a bar
 character `|`).
 
-###Playgrounds
+### Playgrounds
 
 You can generate a sequent calculus playground (where there is no goal, but
 where what you've proved is displayed) using something like the following:
