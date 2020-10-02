@@ -43,7 +43,8 @@ Platforms (Learning Management Systems) on the admin page at
 `https://carnap.example.com/master_admin`.
 
 For example, for a cloud Canvas (production environment):
-- JWK URL: `https://canvas.instructure.com/api/lti/security/jwks`
-- Authorization redirect URL: `https://canvas.instructure.com/api/lti/authorize_redirect`
-- Client ID: from your LTI developer key
-- Deployment ID: not required for Carnap
+
+* JWK URL: `https://canvas.instructure.com/api/lti/security/jwks`
+* Authorization redirect URL: `https://canvas.instructure.com/api/lti/authorize_redirect`
+* Client ID: from your LTI developer key
+* Deployment ID: not required for Carnap
