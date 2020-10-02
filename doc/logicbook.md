@@ -77,7 +77,7 @@ Ga            :3,4 >E
 
 The minimal system SD from the *Logic Book* (the system used in a proofchecker
 constructed with `.LogicBookSD` in Carnap's [Pandoc
-Markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc)) has the following set
+Markup](pandoc.md)) has the following set
 of rules for direct inferences:
 
 <div class="table">
@@ -121,7 +121,7 @@ assumption. Assumptions are only allowed on the first line of a subproof.
 
 The extended system SD Plus (the system used in a proofchecker constructed with
 `.LogicBookSDPlus` in Carnap's [Pandoc
-Markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc)) also adds the
+Markup](pandoc.md)) also adds the
 following rules:
 
 <div class="table">

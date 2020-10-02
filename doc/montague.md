@@ -54,7 +54,7 @@ Show P -> (P -> P)
 
 The propositional part of the system (the system used in a proofchecker
 constructed with `.Prop` in Carnap's [Pandoc
-Markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc)) has the following set
+Markup](pandoc.md)) has the following set
 of rules for direct inferences:
 
 <div class="table">

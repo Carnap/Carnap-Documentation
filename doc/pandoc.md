@@ -17,7 +17,7 @@ If you learn best from example, it's also possible to download the source code
 for documents shared on Carnap.io from the shared document list, available at
 <https://carnap.io/shared>. The pandoc source for this document, should you
 wish to inspect it, is available
-[here](https://carnap.io/shared/gleachkr@gmail.com/carnap-pandoc.pandoc/download).
+[here](https://carnap.io/doc/pandoc.md/download).
 
 You can create pandoc documents in any text editing program. Pandoc is nothing
 but plain text that is written with some special notation to indicate how text
@@ -142,14 +142,14 @@ problems to all share a single label.
 
 There are currently eight types of exercises:
 
-1. [Syntax Checking](./carnap-syntax-check.pandoc)
-2. [Translation](./carnap-translation.pandoc)
-3. [Truth Tables](./carnap-truth-tables.pandoc)
-4. [Derivations](./carnap-derivations.pandoc)
-5. [Model Checking](./carnap-modelchecker.pandoc)
-6. [Qualitative Problems](./carnap-qualitative.pandoc)
-7. [Sequent Calculus Problems](./carnap-sequent-calculus.pandoc)
-8. [Gentzen-Prawitz Natural Deduction Problems](./carnap-gentzen-ND.pandoc)
+1. [Syntax Checking](./syntax-check.md)
+2. [Translation](./translation.md)
+3. [Truth Tables](./truth-tables.md)
+4. [Derivations](./derivations.md)
+5. [Model Checking](./modelchecker.md)
+6. [Qualitative Problems](./qualitative.md)
+7. [Sequent Calculus Problems](./sequent-calculus.md)
+8. [Gentzen-Prawitz Natural Deduction Problems](./gentzen-ND.md)
 
 To learn more about each one, follow the links above.
 
@@ -164,7 +164,7 @@ inline within a pandoc document. So for example, writing something like
 
 Will produce the output `AxF(x)\/Ex-F(x)`{system="firstOrder"}.
 
-Any system that's available for [derivations](./carnap-derivations.pandoc) can
+Any system that's available for [derivations](./derivations.md) can
 be used in the formula parser. The available propositional systems are: `prop`
 `montagueSC` `LogicBookSD` `LogicBookSDPlus` `hausmanSL` `howardSnyderSL`
 `ichikawaJenkinsSL` `hausmanSL` `magnusSL` `magnusSLPlus`
@@ -215,7 +215,7 @@ the form:
     --- 
 
 For more details about hosting your own stylesheets, please take a look at the
-documentation for the [instructor dashboard](/shared/gleachkr@gmail.com/carnap-dashboard.pandoc).
+documentation for the [instructor dashboard](dashboard.md).
 
 ###Custom JavaScript
 

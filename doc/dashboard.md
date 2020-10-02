@@ -36,7 +36,7 @@ suggestions on this one.
 
 The top of the assignment card looks like this:
 
-![](/static/assignment-card.png)
+![](images/assignment-card.png)
 
 There are four main tabs. The first one you want to look at is probably "Manage
 Courses".
@@ -80,7 +80,7 @@ assignment.
 By default, submitted problems received on time receive 5 points each, and late
 submissions receive 2 points each. Both the point amount awarded for a given
 problem and the treatment of late problems can be customized—details in the
-documentation for [pandoc markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc).  
+documentation for [pandoc markup](pandoc.md).  
 I find that leaving open the option to submit even *very* late work helps
 students who have fallen behind remain motivated, and gives them some incentive
 to do extra work that will make the later material easier for them to
@@ -89,7 +89,7 @@ understand.
 ###Assign Uploaded Documents
 
 Within this tab, you can assign documents created using Carnap's [pandoc
-markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc). In order to assign a
+markup](pandoc.md). In order to assign a
 document, you need to first upload it in the [Manage Uploaded
 Documents](#manage-uploaded-documents) tab. Once an assignment is assigned to
 given class, it will appear on the user page of everyone enrolled in the class
@@ -128,7 +128,7 @@ the associated shared documents.
 
 documents can be of three kinds:
 
-- Problem sets and other materials created using [pandoc markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc) 
+- Problem sets and other materials created using [pandoc markup](pandoc.md) 
 - CSS stylesheets for custom styling of your course materials
 - JS scripts for more sophisticated customization of your course materials
 
@@ -137,7 +137,7 @@ filename extension "css" or "js", so unless they are called something like
 "custom-stylesheet.css". or "my-script.js". For more information on how to
 apply custom styling and behavior, see the "other features" section in the
 documentation of [Carnap's pandoc
-markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc).
+markup](pandoc.md).
 
 Once documents are uploaded, they can also be assigned to students as problem
 sets, using the [Assign Uploaded Documents](#assign-uploaded-documents)
@@ -150,7 +150,7 @@ icon.
 
 Once you've created a class, the class card will look a bit like this:
 
-![](/static/class-card.png)
+![](images/class-card.png)
 
 Different classes are available under different tabs.
 

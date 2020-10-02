@@ -5,7 +5,7 @@ theory.
 
 The rules are those of the Carnap book's first-order system (The one used in a
 proof checker constructed with `.FirstOrder`—See the documentation for
-[Montague Systems](/shared/gleachkr@gmail.com/carnap-montague.pandoc)), plus
+[Montague Systems](montague.md)), plus
 the following bi-directional replacement rules:
 
 <div class="table">

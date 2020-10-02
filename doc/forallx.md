@@ -64,7 +64,7 @@ P->(P->P):->I 1-4
 
 The minimal system SL for P.D. Magnus' *forall x* (the system used in a
 proofchecker constructed with `.ForallxSL` in Carnap's [Pandoc
-Markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc)) has the following set
+Markup](pandoc.md)) has the following set
 of rules for direct inferences:
 
 <div class="table">
@@ -105,7 +105,7 @@ line of a subproof.
 
 The extended system SL Plus for P.D. Magnus' *forall x* (the system used in a
 proofchecker constructed with `.ForallxSLPlus` in Carnap's [Pandoc
-Markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc)) also adds the
+Markup](pandoc.md)) also adds the
 following rules:
 
 <div class="table">
@@ -144,7 +144,7 @@ DeMorgan's Laws        `DeM`        $Φ(¬(φ∧ψ))$   $Φ(¬φ∨¬ψ)$
 
 The system TFL from the Calgary Remix of *forall x* (the system used in
 a proofchecker constructed with `.ZachTFL` in Carnap's [Pandoc
-Markup](/shared/gleachkr@gmail.com/carnap-pandoc.pandoc)) allows the
+Markup](pandoc.md)) allows the
 propositional constant $\bot$ (`!?`, `_|_`). It has the following set
 of rules for direct inferences:
 
