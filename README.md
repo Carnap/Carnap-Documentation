@@ -1,7 +1,5 @@
 # Carnap-Documentation
 Documentation for Carnap
 
-## Administration
-
-* [Administration/deployment information](administrator.md)
-* [LTI 1.3](lti.md)
+You can view a live site of this documentation, updated daily, at
+https://carnap.io/srv/doc/.
