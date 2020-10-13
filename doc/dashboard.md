@@ -155,14 +155,24 @@ Once you've created a class, the class card will look a bit like this:
 Different classes are available under different tabs.
 
 The available functions are hopefully clear enough. In the upper half,
-statistics for different assignments are available, and in the lower half, a
-table of students and total scores earned by those students is visible.
-Students can be dropped from a class by clicking the "delete" icon visible to
-the right of their name, in the "Action" column of the table of students. A
-dropped student is removed from the class, but their data is otherwise intact.
-So if they are dropped by mistake, then can simply re-enroll. Students can also
-be emailed individually by clicking the "mail" icon visible in the action
-column to the right of their name.
+statistics for different assignments are available, and in the lower half,
+a table of students and total scores earned by those students is visible. A
+number of actions can be performed on individual students by clicking the icons
+in the "Actions" column:
+
+1. Students can be dropped from a class by clicking the "delete" icon.
+   A dropped student is removed from the class, but their data is otherwise
+   intact. So if they are dropped by mistake, then can simply re-enroll.
+2. Students can be emailed individually by clicking the "mail" icon visible in the
+   action column to the right of their name.
+3. Accessibility accommodations can be added for to individual students by
+   clicking the "clock" icon to the right of the student's name. A fixed number of
+   minutes can be added to all of the students timed exams, their exam times
+   can be extended by a given factor (for example, 1.5 for time-and-a-half) and
+   a fixed number of hours can be added to all of their due-dates. Adjustments
+   to due-dates do not affect visibility dates for assignments, only the
+   treatment of late work. Changes to due-dates will be reflected on the posted
+   due-date seen on the student's user page.
 
 Below the table of students, you'll see some course information, including the
 course title, points available, the start and end date for your course, the
