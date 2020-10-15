@@ -88,7 +88,6 @@ of exercises. There are, correspondingly, more options available:
 
 Name         Effect
 ------------ ------------------------------------------------------------------
-`guides`     Includes vertical indentation-level indicators
 `fonts`      Uses [Fira Logic](http://github.com/gleachkr/FiraLogic) font, including ligatures for logical symbols
 `popout`     Makes it possible to open the problem in a new window
 `render`     Renders a picture of the proof as you type
@@ -103,7 +102,7 @@ Name         Effect
 These can all be included in the "options" string supplied to the options
 attribute of the code block, like this:
 
-    ~~~{.ProofChecker .Prop options="indent fonts popout render indent"} 
+    ~~~{.ProofChecker .Prop options="indent fonts popout resize render indent"} 
     1.8 P :|-: Q->P
     |1.Show Q->P
     |2.   Q:AS
@@ -113,7 +112,7 @@ attribute of the code block, like this:
 
 The result of the above is:
 
-~~~{.ProofChecker .Prop options="guides fonts popout resize render indent"} 
+~~~{.ProofChecker .Prop options="indent fonts popout resize render indent"} 
 1.8 P :|-: Q->P
 |1.Show Q->P
 |2.   Q:AS
@@ -263,10 +262,11 @@ attribute. The available options for guides are:
 
 Name               Effect 
 ------------------ ------------------------------------
-`montague`         Simple indentation gudie
+`montague`         Montague style guides below show lines
 `fitch`            A fitch style proof overlay
 `hausman`          A Hausman style proof overlay
 `howard-snyder`    A Howard-Snyder style proof overlay
+`indent`           Simple indentation indicator guides
 ------------------ ------------------------------------
 
 </div>
