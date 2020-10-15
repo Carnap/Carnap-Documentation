@@ -176,11 +176,14 @@ in the "Actions" column:
 
 Below the table of students, you'll see some course information, including the
 course title, points available, the start and end date for your course, the
-time zone, and an enrollment link you can give to students which will
-automatically enroll them in your course after they register.
+time zone, whether the class is open for enrollment, and an enrollment link you
+can give to students. Students who follow the enrollment link will be prompted
+to register (if they're not already registered) and automatically enrolled in
+your course.
 
 At the very bottom, you have the options of adding a co-instructor, editing a
-class's information, exporting grades, and also of deleting the class. 
+class's information (including total points, description, and whether the class
+is open for enrollment), exporting grades, and also of deleting the class. 
 
 Co-instructors are other instructors who have the same type of access to the
 class as the class creator. They may be useful if you have a TA or if you're
