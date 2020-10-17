@@ -1,8 +1,8 @@
 # Natural Deduction in Logic Book Systems
 
-This document gives a short description of how Carnap presents the systems of
-natural deduction from Bergmann Moore and Nelson's *Logic Book*. At least some
-prior familiarity with Fitch-style proof systems is assumed.
+This document gives a short description of how Carnap presents the
+systems of natural deduction from Bergmann Moore and Nelson's *Logic
+Book*.
 
 ## Propositional Systems
 

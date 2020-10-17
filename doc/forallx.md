@@ -1,13 +1,19 @@
-# Natural Deduction in *forall x* systems
+# Natural Deduction in the *forall x* systems
 
-This document gives a short description of how Carnap presents the systems of
-natural deduction from P.D. Magnus' [*forall x*](https://www.fecundity.com/logic/) 
-and from the [Calgary remix](http://forallx.openlogicproject.org/) of *forall
-x*. At least some prior familiarity with Fitch-style proof systems is assumed.
+This document gives a short description of how Carnap presents the
+systems of natural deduction from P.D. Magnus' [*forall
+x*](https://www.fecundity.com/logic/). At least some prior familiarity
+with Fitch-style proof systems is assumed.
 
-## Propositional Systems
+There are several alternate versions (remixes) of *forall x*, which
+use slightly different syntax and/or rules. The versions supported by
+Carnap are:
 
-### Notation
+- [*forall x: Calgary*](forallx-yyc.md)
+- *forall x: Pittsbugh*
+- *forall x: UBC*
+
+## Notation
 
 The different admissible keyboard abbreviations for the different connectives
 are as follows:
@@ -16,12 +22,11 @@ are as follows:
 
 Connective Keyboard 
 ---------- ----------
-→          `->`, `=>`, `>`
-∧          `/\`, `&`, `and`
+→          `->`, `=>`,`>`
+&          `/\`, `&`, `and`
 ∨          `\/`, `|`, `or`
 ↔          `<->`, `<=>`
 ¬          `-`, `~`, `not`
-⊥          `!?`, `_|_`
 ---------- ----------
 
 </div>
@@ -50,22 +55,41 @@ entire derivation.
 
 Here's an example derivation, using system SL of P.D. Magnus *forall x*:
 
-```{.Playground .ForallxSL options="render resize fonts"}
-   P:AS
-      P:AS
-      P:R 2
-   P->P:->I 2-3
-P->(P->P):->I 1-4
+Here's an example derivation, using the TFL system `.ForallxSL`:
+
+```{.ProofChecker .ForallxSL options="render resize fonts" init="now"}
+Ex :|-: (A \/ B) -> (B \/ A)
+|   A \/ B:AS
+|      A:AS
+|      B \/ A:\/I 2
+|   --
+|      B:AS
+|      B \/ A:\/I 5
+|   B \/ A:\/E 1,2-3,5-6
+|(A \/ B) -> (B \/ A):->I 1-7
 ```
 
-### Basic Rules
+Or, with a Fitch-style guides overlay (activated with `guides="fitch"`):
 
-#### *forall x* System SL
+```{.Playground .ForallxSL options="render resize fonts render" guides="fitch" init="now"}
+|   A \/ B:AS
+|      A:AS
+|      B \/ A:\/I 2
+|   --
+|      B:AS
+|      B \/ A:\/I 5
+|   B \/ A:\/E 1,2-3,5-6
+|(A \/ B) -> (B \/ A):->I 1-7
+```
 
-The minimal system SL for P.D. Magnus' *forall x* (the system used in a
-proofchecker constructed with `.ForallxSL` in Carnap's [Pandoc
-Markup](pandoc.md)) has the following set
-of rules for direct inferences:
+## Sentential logic
+
+### *forall x* System SL
+
+The minimal system SL for P.D. Magnus' *forall x* (the system used in
+a proofchecker constructed with `.ForallxSL` in Carnap's [Pandoc
+Markup](pandoc.md)) has the following set of rules for direct
+inferences:
 
 <div class="table">
 
@@ -101,7 +125,7 @@ assumption can be included in the rendered proof by writing `A/NOTETEXTHERE`
 rather than `AS` for an assumption. Assumptions are only allowed on the first
 line of a subproof.
 
-#### *forall x* System SL Plus
+### *forall x* System SL Plus
 
 The extended system SL Plus for P.D. Magnus' *forall x* (the system used in a
 proofchecker constructed with `.ForallxSLPlus` in Carnap's [Pandoc
@@ -140,67 +164,7 @@ DeMorgan's Laws        `DeM`        $Φ(¬(φ∧ψ))$   $Φ(¬φ∨¬ψ)$
 
 </div>
 
-#### Calgary TFL
-
-The system TFL from the Calgary Remix of *forall x* (the system used in
-a proofchecker constructed with `.ZachTFL` in Carnap's [Pandoc
-Markup](pandoc.md)) allows the
-propositional constant $\bot$ (`!?`, `_|_`). It has the following set
-of rules for direct inferences:
-
-<div class="table">
-
-Rule                   Abbreviation Premises     Conclusion
----------------------- ------------ ------------ -----------
-And-Elim.              `∧E`         $φ∧ψ$        $φ/ψ$        
-And-Intro.             `∧I`         $φ,ψ$        $φ∧ψ$
-Or-Intro               `∨I`         $φ/ψ$        $φ∨ψ$
-Negation-Elim          `¬E`         $φ,¬φ$       $⊥$
-Explosion              `X`          $⊥$          $ψ$
-Biconditional-Elim     `↔E`         $φ/ψ,φ↔ψ$    $ψ/φ$
-Reiteration            `R`          $φ$          $φ$
-Disjunctive Syllogism  `DS`         $¬ψ/¬φ,φ∨ψ$  $φ/ψ$
-Modus Tollens          `MT`         $φ→ψ,¬ψ$     $¬φ$
-Double Negation Elim.  `DNE`        $¬¬φ$        $φ$                
-DeMorgan's Laws        `DeM`        $¬(φ∧ψ)$     $¬φ∨¬ψ$ 
-                                    $¬(φ∨ψ)$     $¬φ∧¬ψ$ 
-                                    $¬φ∨¬ψ$      $¬(φ∧ψ)$
-                                    $¬φ∧¬ψ$      $¬(φ∨ψ)$
----------------------- ------------ ------------ -----------
-
-</div>
-
-We also have five rules for indirect inferences:
-
-1. `→I`, which justifies an assertion of the form $φ→ψ$ by citing a subproof
-   beginning with the assumption $φ$ and ending with the conclusion $ψ$; 
-2. `↔I`, which justifies an assertion of the form $φ↔ψ$ by citing two subproofs,
-   beginning with assumptions $φ$, $ψ$, respectively, and ending with
-   conclusions  $ψ$, $φ$, respectively;
-3. `¬I`, which justifies an assertion of the form $¬φ$ by citing a subproof
-   beginning with the assumption $φ$ and ending with a conclusion $⊥$.
-5. `∨E`, which justifies an assertion of the form φ by citing a disjunction
-   $ψ∨χ$ and two subproofs beginning with assumptions $ψ,χ$ respectively and
-   each ending with the conclusion $φ$.
-4. `IP` (indirect proof), which justifies an assertion of the form $φ$ by citing
-   a subproof beginning with the assumption $¬φ$ and ending with a conclusion
-   $⊥$.
-6. `LEM` (Law of the Excluded Middle), which justifies an assertion of the form
-   $ψ$ by citing two subproofs beginning with assumptions $φ,¬φ$ respectively and
-   each ending with the conclusion $ψ$.
-
-As above, `PR` can be used to justify a line asserting a premise, and `AS` can
-be used to justify a line making an assumption. Assumptions are only allowed on
-the first line of a subproof.
-
-The system `.ZachTFL2019` is like `.ZachTFL` except it disallows all
-derived rules, i.e., the only allowed rules are `R`, `X`, `IP`, and the I
-and E rules for the connectives. 
-
-Because the Calgary FOL systems treat $v$ as a variable, `v` is not
-allowed as a keyboard shortcut for $\lor$.
-
-## First-Order System QL
+## Quantificational logic
 
 The proof system for Magnus's *forall x*, QL, is activated using `.ForallxQL`.
 
@@ -237,9 +201,9 @@ subscripted letters $x_1, x_2,\dots$ written `x_1, x_2,…`.
 
 ### Basic Rules
 
-The first-order *forall x* systems QL and FOL (the systems used in proofcheckers
-constructed with `.ForallxQL`, and `ZachFOL` respectively) extend the rules of
-the system SL and TFL respectively with the following set of new basic rules:
+The first-order *forall x* systems QL (the systems used in proofcheckers
+constructed with `.ForallxQL`) extend the rules of
+the system SL with the following set of new basic rules:
 
 <div class="table">
 
@@ -273,76 +237,3 @@ assertion $ψ$ by citing an assertion of the form $∃xφ(x)$ and a subproof
 beginning with the assumption $φ(σ)$ and ending with the conclusion $ψ$, where
 $σ$ does not appear in $ψ, ∃xφ(x)$, or in any of the undischarged assumptions
 or premises of the proof.
-
-### Calgary FOL Systems
-
-There are three systems corresponding to the Calgary remix of _forall
-x_. All of them allow sentence letters in first-order formulas.
-The available relation symbols are the same as for QL: $A$ through
-$Z$, together with the infinitely many subscripted letters $F_1,
-F_2,\ldots$ written `F_1, F_2` etc. However, the available constants
-are only $a$ through $r$, together with the infinitely many subscripted letters
-$c_1, c_2,\ldots$ written `c_1, c_2,…`. The available variables are
-$s$ through $z$, with the infinitely many subscripted letters $x_1,
-x_2,\ldots$ written `x_1, x_2,…`.
-
-Again, because the Calgary systems treat $v$ as a variable, `v` is not
-allowed as a keyboard shortcut for $\lor$. However, the Calgary
-systems also allow `@` for $\forall$ and `3` for $\exists$.
-
-<div class="table">
-
-Connective Keyboard 
----------- ----------
-∀          `A`, `@`
-∃          `E`, `3`
-=          `=`
----------- ----------
-
-</div>
-
-As of the Fall 2019 edition of *forall x: Calgary*, the syntax for
-first-order formulas has arguments to predicates in parentheses and
-with commas (e.g., $F(a, b)$); prior to that edition, the convention
-was the same as in the original and Cambridge editions of *forall x*
-(e.g., $Fab$).
-
-The original proof system for the Calgary version of *forall x*,
-`.ZachFOL` adds, in addition to the basic rules of `ForallxQL`, the rules
-
-<div class="table">
-
---------------------------------------------------------------------------
-Rule                        Abbreviation Premises           Conclusion
---------------------------- ------------ ------------------ --------------
-Conversion of Quantifiers   `CQ`         $¬∀xφ(x)$          $∃x¬φ(x)$
-
-                                         $∃x¬φ(x)$          $¬∀xφ(x)$
-
-                                         $¬∃xφ(x)$          $∀x¬φ(x)$
-
-                                         $∀x¬φ(x)$          $¬∃xφ(x)$
-
---------------------------------------------------------------------------
-</div>
-
-The 2019 versions of the FOL systems use the new syntax, i.e., $F(a,
-b)$ instead of $Fab$. The system `.ZachFOL2019` allows only the basic
-rules of the TFL system and the basic rules of QL. The system
-`.ZachFOLPlus2019` allows the basic and derived rules of `.ZachTFL`
-and the CQ rules listed above.
-
-In summary:
-
-<div class="table">
-
-System              TFL Rules        FOL Syntax  FOL Rules  
-------------------- ---------------- ----------- -----------
-`.ZachTFL`          Basic + Derived                         
-`.ZachFOL`          Basic + Derived  Fab         Basic + CQ 
-`.ZachTFL2019`      Basic                                   
-`.ZachFOL2019`      Basic            F(a,b)      Basic      
-`.ZachFOLPlus2019`  Basic + Derived  F(a,b)      Basic + CQ 
-------------------- ---------------- ----------- -----------
-
-</div>

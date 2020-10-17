@@ -8,6 +8,8 @@ renderer, i.e., it implies which formulas are accepted as correct and
 how to parse them, and how to render symbols in formulas. 
 
 ### Leach-Krouse, *The Carnap Book*
+### Kalish/Montague, *Logic*
+
 
 #### Propositional logic
 
@@ -34,19 +36,64 @@ Example:
 produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="prop"}.
 
 #### First-order Logic
-`firstOrder` 
 
-### Kalish/Montague, *Logic*
+  + Selected with `system="..."`: `firstOrder`, `montagueQC`
+  + Sentence letters: `P` ... `W`
+  + Predicate symbols: `F` ...`O`
+  + Constant symbols: `a` ... `e`
+  + Function symbols: `f` ... `h`
+  + Variables: `v`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: with commas and parentheses
 
-`montagueSC`
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
 
 Example:
 
-    `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="montagueSC"}
+    `AxEy(G(a, f(b), x) /\ H(y) /\ P)`{system="firstOrder"}
 
-produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="montagueSC"}.
+produces `AxEy(G(a, f(b), x) /\ H(y) /\ P)`{system="firstOrder"}
 
- `montagueQC` 
+#### Monadic Second-order Logic
+
+  + Selected with `system="..."`: `secondOrder`
+  + Second-order variables: `X` ... `Z`
+
+Symbols:
+
+Connective Keyboard 
+---------- ----------
+λ          \\
+---------- ----------
+
+Example: 
+
+Example:
+
+    `AX(\\x[Ey(F(y) /\ X(x)](f(a))`{system="secondOrder"}
+
+produces `AX(\\x[Ey(F(y) /\ X(x))](f(a))`{system="secondOrder"}
+
+#### Polyadic Second-order Logic
+
+  + Selected with `system="..."`: `.PolySecondOrder`
+  + Second-order variables: `Xn` ... `Zn`
+  + Arity: given by $n$
+
+Example:
+
+    `AX2(\\x[Ay(F(y) -> X2(x,y)](f(a))`{system="secondOrder"}
+
+produces `AX(\\x[Ey(F(y) /\ X(x))](f(a))`{system="secondOrder"}
+
 
 ### Bergman, Moore, Nelson, *The Logic Book* 
 

@@ -32,9 +32,9 @@
       - [Logic Book](logicbook.md): The Fitch system used in Bergmann,
         Moore, and Nelson's *Logic Book*.
       - [forall x](forallx.md): Fitch system used in Magnus's original
-        *forall x* and its remixes, Button's *Cambridge* version,
-        Jenkins-Ichikawa's *UBC* version, Thomas-Bolduc and Zach's
-        *Calgary* version.
+        *forall x*.
+      - [forall x: Calgary](forallx-yyc.md): Fitch system used in the
+        *Calgary* version of *forall x* by Thomas-Bolduc and Zach.
       - Fitch-style systems of Gamut's *Introduction to Logic*.
       - Systems based on Howard-Snyder's *The Power of Logic*.
       - Systems based on Hausman's *Logic and Philosophy*.
