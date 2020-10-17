@@ -58,6 +58,26 @@ be accepted above.
        rename the variables. Check the matricies of the resulting formulas for
        propositional equivalence.
 
+## Exact Translations
+
+Using the class `Exact`, you can also create "translations" that don't accept
+logically equivalent answers. These may be useful if you wish to, for example,
+ask a student what the missing premise in some inference is. So, for example
+you might write
+
+    ~~~{.Translate .Exact}
+    3.3 P : To make a modus ponens inference with P→Q, you need:
+    ~~~
+
+to generate:
+
+~~~{.Translate .Exact}
+3.3 P : To make a modus ponens inference with P→Q, you need:
+~~~
+
+Exact translations use the same syntax as `Prop` by default, but can be
+configured to use a large number of alternative syntaxes (see below)
+
 ## Advanced usage
 
 #### Multiple Solutions
@@ -67,13 +87,13 @@ several formalizations, you can use a comma-separated list of admissible
 solutions. So, 
 
     ~~~{.Translate .FOL}
-    3.5 (P /\ Q) \/ R, P/\(Q\/R) : Jack jumped the fence and was caught by the watchman or got away.
+    3.4 (P /\ Q) \/ R, P/\(Q\/R) : Jack jumped the fence and was caught by the watchman or got away.
     ~~~
 
 generates 
 
 ~~~{.Translate .FOL}
-3.5 (P /\ Q) \/ R, P/\(Q\/R) : Jack jumped the fence and was caught by the watchman or got away.
+3.4 (P /\ Q) \/ R, P/\(Q\/R) : Jack jumped the fence and was caught by the watchman or got away.
 ~~~
 
 #### Options and Attributes
@@ -114,11 +134,19 @@ For first-order translations, the available systems are: `firstOrder`
 `montagueQC` `magnusQL` `thomasBolducAndZachFOL` `thomasBolducAndZachFOL2019`
 `LogicBookPD` `LogicBookPDPlus` `hausmanPL` `howardSnyderPL`
 `ichikawaJenkinsQL` `hardegreePL` `goldfarbAltND` `goldfarbNDPlus` and
-`goldfarbAltNDPlus`. For propositional translations, the available systems are:
-`prop` `montagueSC` `LogicBookSD` `LogicBookSDPlus` `hausmanSL`
-`howardSnyderSL` `ichikawaJenkinsSL` `hausmanSL` `magnusSL` `magnusSLPlus`
+`goldfarbAltNDPlus`. 
+
+For propositional translations, the available systems are: `prop` `montagueSC`
+`LogicBookSD` `LogicBookSDPlus` `hausmanSL` `howardSnyderSL`
+`ichikawaJenkinsSL` `hausmanSL` `magnusSL` `magnusSLPlus`
 `thomasBolducAndZachTFL` `thomasBolducAndZachTFL2019` `tomassiPL` and
 `hardegreeSL`.
+
+For exact translations, the available systems are all of the above, together
+with modal logic systems `.HardegreeSL` `.HardegreePL` `.HardegreeWTL`,
+`.HardegreeL` `.HardegreeK` `.HardegreeT` `.HardegreeB` `.HardegreeD`
+`.Hardegree4` `.Hardegree5`, second order systems `.SecondOrder`
+`.PolySecondOrder`,  and set theory systems `ElementaryST` and `SeparativeST` 
 
 Finally, you can impose one or more extra tests on a translation. This is done
 by setting the `tests` attribute to indicate which tests you wish to require
