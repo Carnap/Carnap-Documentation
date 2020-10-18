@@ -7,11 +7,11 @@ counter-modeler exercises, the system implies a parser and a formula
 renderer, i.e., it implies which formulas are accepted as correct and
 how to parse them, and how to render symbols in formulas. 
 
-### Leach-Krouse, *The Carnap Book*
-### Kalish/Montague, *Logic*
+## Leach-Krouse, *The Carnap Book*
+## Kalish/Montague, *Logic*
 
 
-#### Propositional logic
+### Propositional logic
 
   + Selected with `system="..."`: `prop`, `montagueSC`
   + Sentence letters: `P` ... `W`
@@ -35,7 +35,7 @@ Example:
 
 produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="prop"}.
 
-#### First-order Logic
+### First-order Logic
 
   + Selected with `system="..."`: `firstOrder`, `montagueQC`
   + Sentence letters: `P` ... `W`
@@ -45,7 +45,8 @@ produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="prop"}.
   + Variables: `v`...`z`
   + With subscripts: yes
   + Arity determined: by context
-  + Atomic formulas: with commas and parentheses
+  + Atomic formulas: $F(a,x)$
+  + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
 
@@ -58,11 +59,11 @@ Connective Keyboard
 
 Example:
 
-    `AxEy(G(a, f(b), x) /\ H(y) /\ P)`{system="firstOrder"}
+    `Ax(G(a,f(b),x) -> Ev(H(x,v) /\ P /\ ~(x=v)))`{system="firstOrder"}
 
-produces `AxEy(G(a, f(b), x) /\ H(y) /\ P)`{system="firstOrder"}
+produces `Ax(G(a,f(b),x) -> Ev(H(x,v) /\ P /\ ~(x=v)))`{system="firstOrder"}
 
-#### Monadic Second-order Logic
+### Monadic Second-order Logic
 
   + Selected with `system="..."`: `secondOrder`
   + Second-order variables: `X` ... `Z`
@@ -82,7 +83,7 @@ Example:
 
 produces `AX(\\x[Ey(F(y) /\ X(x))](f(a))`{system="secondOrder"}
 
-#### Polyadic Second-order Logic
+### Polyadic Second-order Logic
 
   + Selected with `system="..."`: `.PolySecondOrder`
   + Second-order variables: `Xn` ... `Zn`
@@ -95,7 +96,9 @@ Example:
 produces `AX(\\x[Ey(F(y) /\ X(x))](f(a))`{system="secondOrder"}
 
 
-### Bergman, Moore, Nelson, *The Logic Book* 
+## Bergman, Moore, Nelson, *The Logic Book* 
+
+### Sentential logic
 
   + Selected with `system="..."`: `LogicBookSD` `LogicBookSDPlus`
   + Sentence letters:`A`...`Z`
@@ -119,15 +122,59 @@ Example:
 
 produces `A /\ B /\ (C_1 -> (~R_2 \/ (S <-> T)))`{system="LogicBookSD"}.
 
-`LogicBookPD` `LogicBookPDPlus`
+### Predicate logic
+
+  + Selected with `system="..."`: `LogicBookPD`
+  + Sentence letters: `A` ... `Z`
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `v`
+  + Function symbols: no
+  + Variables: `w`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $(\forall x)$, $(\exists x)$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+---------- ----------
+
+Example:
+
+    `(Ax)(Gabx -> (Ew)(Hxw /\ P))`{system="LogicBookPD"}
+
+produces `(Ax)(Gabx -> (Ew)(Hx /\ P))`{system="LogicBookPD"}
+
+### Predicate logic with equality
+
+  + Selected with `system="..."`: `LogicBookPDE`
+  + Function symbols: `a`...`t`
+  + Variables: `w`...`z`
+
+Connective Keyboard 
+---------- ----------
+=          `=`
+---------- ----------
+
+Example:
+
+    `(Ax)(Gabx -> (Ew)(Hxw /\ P /\ ~f(x)=w))`{system="LogicBookPDE"}
+
+produces `(Ax)(Gabx -> (Ew)(Hxw /\ P /\ ~f(x)=w))`{system="LogicBookPDE"}
 
 
-### Hausman, *Logic and Philosophy*
+## Hausman, Kahane, Tidman, *Logic and Philosophy*
+
+### Sentential logic
 
   + Selected with `system="..."`: `hausmanSL`
   + Sentence letters: `A`...`Z`
   + With subscripts: yes
-  + Brackets allowed `(`, `)`, `{`, `}`, `[`, `]` (only in that order)
+  + Brackets allowed `[`, `]`, `(`, `)`, `{`, `}`,  (only in that order)
   + Associative $\land$, $\lor$: no
   + Connectives: 
 
@@ -146,9 +193,37 @@ Example:
 
 produces `(A . B) . (C_1 > {~R_2 \/ [S <> T]})`{system="hausmanSL"}.
 
-`hausmanPL` 
+### Predicate logic
 
-### Hurley, *Concise Introduction to Logic*
+  + Selected with `system="..."`: `hausmanPL` 
+  + Sentence letters: `A` ... `Z`
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `t`
+  + Function symbols: no
+  + Variables: `u`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $(x)$, $(\exists x)$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `(x)[Gabx > (Eu)(Hxu . {P \/ ~x=u})]`{system="hausmanPL"}
+
+produces `(x)[Gabx > (Eu)(Hxu . {P \/ ~x=u})]`{system="hausmanPL"}
+
+
+## Hurley, *Concise Introduction to Logic*
+
+### Sentential logic
 
   + Selected with `system="..."`: `hurleySL`
   + Sentence letters: `A`...`Z`
@@ -172,10 +247,37 @@ Example:
 
 produces `(A . B) . [C_1 > (~R_2 \/ {S <-> T})]`{system="hurleySL"}.
 
-`hurleyPL`? 
+### Predicate logic
+
+  + Selected with `system="..."`: `hurleyPL` 
+  + Sentence letters: `A` ... `Z`
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `w`
+  + Function symbols: no
+  + Variables: `x`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $(x)$, $(\exists x)$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `(x)[Gabx > (Ey)(Hxy . {P \/ ~x=y})]`{system="hurleyPL"}
+
+produces `(x)[Gabx > (Ey)(Hxy . {P \/ ~x=y})]`{system="hurleyPL"}
 
 
-### Howard-Snyder, *Logic and Philosophy*
+## Howard-Snyder, *Logic and Philosophy*
+
+### Sentential logic
 
   + Selected with `system="..."`: `howardSnyderSL`
   + Sentence letters: `A`...`Z`
@@ -199,10 +301,34 @@ Example:
 
 produces `(A . B) . [C_1 -> (~R_2 \/ {S <-> T})]`{system="howardSnyderSL"}.
 
-`howardSnyderPL`
+### Predicate logic
 
+  + Selected with `system="..."`: `howardSnyderPL` 
+  + Sentence letters: `A` ... `Z`
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `u`
+  + Function symbols: no
+  + Variables: `v`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $(x)$, $(\exists x)$
 
-### Allen
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `(x)[Gabx -> (Ev)(Hxv . (P \/ ~x=v))]`{system="howardSnyderPL"}
+
+produces `(x)[Gabx -> (Ev)(Hxv . (P \/ ~x=v))]`{system="howardSnyderPL"}
+
+## Allen
 
   + Selected with `system="..."`: `allenSL`
   + Sentence letters: `A`...`Z`
@@ -226,9 +352,10 @@ Example:
 
 produces `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="allenSL"}.
 
-`magnusQL`
 
-### Magnus, *forall x*
+## Magnus, *forall x*
+
+### Sentential logic
 
   + Selected with `system="..."`: `magnusSL` `magnusSLPlus`
   + Sentence letters: `A`...`Z`
@@ -252,11 +379,83 @@ Example:
 
 produces `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="magnusSL"}.
 
-`magnusQL`
+### Quantificational logic
 
-### Thomas-Bolduc/Zach, *forall x: Calgary*, and variants
+  + Selected with `system="..."`: `magnusQL`
+  + Sentence letters: none
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `w`
+  + Function symbols: none
+  + Variables: `x`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $\forall x$, $\exists x$
 
-#### pre-Fall 2019, and Ebels-Duggan
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `Ax(Gabx -> Ey(Hxy /\ Pa /\ ~x=v))`{system="magnusQL"}
+
+produces `Ax(Gabx -> Ey(Hxy /\ Pa /\ ~x=v))`{system="magnusQL"}
+
+## Thomas-Bolduc/Zach, *forall x: Calgary*
+
+### Fall 2019 and after
+
+#### Truth-functional logic
+
+  + Selected with `system="..."`: `thomasBolducAndZachTFL2019`
+  + Sentence letters: `A`...`Z`
+  + With subscripts: yes
+  + Brackets allowed `(`, `)`, `[`, `]`
+  + Associative $\land$, $\lor$: left
+
+Example:
+
+    `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="thomasBolducAndZachTFL2019"}
+
+produces `A /\ B /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="thomasBolducAndZachTFL2019"}.
+
+#### First-order Logic
+
+  + Selected with `system="..."`: `thomasBolducAndZachFOL2019`, `thomasBolducAndZachFOLPlus2019`
+  + Sentence letters: `A` .... `Z`
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `r`
+  + Function symbols: `a`...`t`
+  + Variables: `s`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $F(a,x)$
+  + Quantifiers: $\forall x$, $\exists x$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `Ax(G(a,f(b),x) -> Es(H(x,s) /\ P /\ ~x=s))`{system="thomasBolducAndZachFOL2019"}
+
+produces `Ax(G(a,f(b),x) -> Es(H(x,s) /\ P /\ ~x=s))`{system="thomasBolducAndZachFOL2019"}
+
+### pre-Fall 2019, and Ebels-Duggan
+
+#### Truth-functional logic
 
   + Selected with `system="..."`: `thomasBolducAndZachTFL`, `ebelsDugganTFL`
   + Sentence letters: `A`...`Z`
@@ -288,30 +487,38 @@ Example:
 
 produces `(A /\ B) /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="ebelsDugganTFL"}.
 
+#### First-order logic
 
-#### Fall 2019 and after, and Gallow, *forall x: Pittsburgh*
-
-  + Selected with `system="..."`: `thomasBolducAndZachTFL2019`, `GallowSL`
-  + Sentence letters: `A`...`Z`
+  + Selected with `system="..."`: `thomasBolducAndZachFOL`
+  + Sentence letters: `A` .... `Z`
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `r`
+  + Function symbols: none
+  + Variables: `s`...`z`
   + With subscripts: yes
-  + Brackets allowed `(`, `)`, `[`, `]`
-  + Associative $\land$, $\lor$: left
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $\forall x$, $\exists x$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
 
 Example:
 
-    `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="thomasBolducAndZachTFL2019"}
+    `Ax(Gabx -> Es(Hxs /\ P /\ ~x=s))`{system="thomasBolducAndZachFOL"}
 
-produces `A /\ B /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="thomasBolducAndZachTFL2019"}.
-
-    `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="gallowSL"}
-
-produces `A /\ B /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="gallowSL"}.
+produces `Ax(Gabx -> Es(Hxs /\ (P \/ ~x=s)))`{system="thomasBolducAndZachFOL"}
 
 
-`thomasBolducAndZachFOL` `thomasBolducAndZachFOL2019`
-`thomasBolducAndZachFOLPlus2019` 
+## Ichikawa-Jenkins, *forall x: UBC*
 
-### Ichikawa-Jenkins, *forall x: UBC*
+### Sentential logic
 
   + Selected with `system="..."`: `ichikawaJenkinsSL`
   + Sentence letters: `A`...`Z`
@@ -335,10 +542,40 @@ Example:
 
 produces `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="ichikawaJenkinsSL"}.
 
- 
- `ichikawaJenkinsQL` 
 
-### Gamut
+### Quantificational logic
+
+  + Selected with `system="..."`: `ichikawaJenkinsQL`
+  + Sentence letters: none
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `w`
+  + Function symbols: none
+  + Variables: `x`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $\forall x$, $\exists x$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `Ax(Gabx -> Ey(Hxy /\ Pa /\ ~x=y))`{system="ichikawaJenkinsQL"}
+
+produces `Ax(Gabx -> Ey(Hxy /\ (Pa /\ ~x=y)))`{system="ichikawaJenkinsQL"}
+ 
+  
+
+## Gamut, *Logic, language, and meaning*
+
+### Propositional logic
 
   + Selected with `system="..."`: `gamutIPND` `gamutPND` `gamutPNDPlus`
   + Sentence letters: `a`...`z`
@@ -363,9 +600,38 @@ Example:
 
 produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (_|_ <-> t)))`{system="gamutIPND"}.
 
-`gamutND`
+### Predicate logic
 
-### Tomassi
+  + Selected with `system="..."`: `gamutND`
+  + Sentence letters: none
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `r`
+  + Function symbols: none
+  + Variables: `s`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $\forall x$, $\exists x$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `Ax(Gabx -> Ew(Hxw /\ (P \/ ~x=w)))`{system="gamutND"}
+
+produces `Ax(Gabx -> Ew(Hxw /\ (P \/ ~x=w)))`{system="gamutND"}
+
+
+## Tomassi, *Logic*
+
+### Propositional logic
 
   + Selected with `system="..."`: `tomassiPL`
   + Sentence letters: `P` ... `W`
@@ -390,7 +656,37 @@ Example:
 
 produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="tomassiPL"}.
 
-### Hardegree
+### Predicate logic
+
+  + Selected with `system="..."`: `tomassiQL`
+  + Sentence letters: none
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `t`
+  + Function symbols: none
+  + Variables: `u`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $\forall x$, $\exists x$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `Ax[Gabx -> Ev(Hxv /\ Pr /\ ~(x=v))]`{system="tomassiQL"}
+
+produces `Ax[Gabx -> Ev(Hxv /\ Pr /\ ~(x=v))]`{system="tomassiQL"}
+
+## Hardegree, *Symbolic logic*
+
+### Sentential logic
 
   + Selected with `system="..."`: `hardegreeSL`
   + Sentence letters: `P` ... `W`
@@ -414,9 +710,35 @@ Example:
 
 produces `P /\ Q /\ (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
 
-`hardegreePL`
+### Predicate logic
 
-### Bonevac
+  + Selected with `system="..."`: `hardegreePL`
+  + Sentence letters: none
+  + Predicate symbols: `A` ...`O`
+  + Constant symbols: `a` ... `e`
+  + Function symbols: none
+  + Variables: `v`...`z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fax$
+  + Quantifiers: $\forall x$, $\exists x$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    ``Ax(G(a,b,x) -> Ev(H(x,e) /\ O(v)))`{system="hardegreePL"}
+
+produces `Ax(G(a,b,x) -> Ev(H(x,e) /\ O(v)))`{system="hardegreePL"}
+
+## Bonevac
 
   + Selected with `system="..."`: `bonevacSL`
   + Sentence letters: `a`...`z`
@@ -440,9 +762,7 @@ Example:
 
 produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (s <-> t)))`{system="bonevacSL"}.
 
-`gamutND`
-
-### Goldfarb
+### Goldfarb, *Deductive Logic*
 
   + Selected with `system="..."`: `goldfarbPropND`
   + Sentence letters: `a`...`z`
@@ -466,6 +786,33 @@ Example:
     `(a /\ b) /\ (c_1 -> (~r_2 \/ (_|_ <-> t)))`{system="goldfarbPropND"}
 
 produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (_|_ <-> t)))`{system="goldfarbPropND"}.
+
+#### Predicate logic
+
+  + Selected with `system="..."`: `goldfarbND`
+  + Sentence letters: none
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: none
+  + Function symbols: none
+  + Variables: `a` ... `z`
+  + With subscripts: yes
+  + Arity determined: by context
+  + Atomic formulas: $Fxy$
+  + Quantifiers: $(\forall x)$, $(\exists x)$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+---------- ----------
+
+Example:
+
+    `(Ax)(Gabx -> (Ew)(Hxw /\ P))`{system="goldfarbND"}
+
+produces `Ax(Gax -> Ew(Hxw /\ Pw))`{system="goldfarbND"}
 
 ## Open Logic Project
 
