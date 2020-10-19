@@ -72,28 +72,29 @@ Symbols:
 
 Connective Keyboard 
 ---------- ----------
-λ          \\
+λ          `\`
 ---------- ----------
 
 Example: 
 
 Example:
 
-    `AX(\\x[Ey(F(y) /\ X(x)](f(a))`{system="secondOrder"}
+    `AX(\x[Ey(F(y) /\ X(x))](a))`{system="secondOrder"}
 
-produces `AX(\\x[Ey(F(y) /\ X(x))](f(a))`{system="secondOrder"}
+produces `AX(\x[Ey(F(y) /\ X(x))](a))`{system="secondOrder"}
+
 
 ### Polyadic Second-order Logic
 
-  + Selected with `system="..."`: `.PolySecondOrder`
+  + Selected with `system="..."`: `polyadicSecondOrder`
   + Second-order variables: `Xn` ... `Zn`
   + Arity: given by $n$
 
 Example:
 
-    `AX2(\\x[Ay(F(y) -> X2(x,y)](f(a))`{system="secondOrder"}
+    `AX2(\x[Ay(F(y) -> X2(x,y))](a))`{system="polyadicSecondOrder"}
 
-produces `AX(\\x[Ey(F(y) /\ X(x))](f(a))`{system="secondOrder"}
+produces `AX2(\x[Ay(F(y) -> X2(x,y))](a))`{system="polyadicSecondOrder"}
 
 
 ## Bergman, Moore, Nelson, *The Logic Book* 
@@ -273,7 +274,6 @@ Example:
     `(x)[Gabx > (Ey)(Hxy . {P \/ ~x=y})]`{system="hurleyPL"}
 
 produces `(x)[Gabx > (Ey)(Hxy . {P \/ ~x=y})]`{system="hurleyPL"}
-
 
 ## Howard-Snyder, *Logic and Philosophy*
 
@@ -688,7 +688,7 @@ produces `Ax[Gabx -> Ev(Hxv /\ Pr /\ ~(x=v))]`{system="tomassiQL"}
 ### Sentential logic
 
   + Selected with `system="..."`: `hardegreeSL`
-  + Sentence letters: `P` ... `W`
+  + Sentence letters: `P` ... `Z`
   + With subscripts: yes
   + Brackets allowed `(`, `)`
   + Associative $\land$, $\lor$: left
@@ -713,10 +713,10 @@ produces `P /\ Q /\ (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
 
   + Selected with `system="..."`: `hardegreePL`
   + Sentence letters: none
-  + Predicate symbols: `A` ...`O`
-  + Constant symbols: `a` ... `e`
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `S`
   + Function symbols: none
-  + Variables: `v`...`z`
+  + Variables: `t`...`z`
   + With subscripts: yes
   + Arity determined: by context
   + Atomic formulas: $Fax$
@@ -821,8 +821,8 @@ Uses *forall x: Calgary*, 2019+ version.
 
 The available set theory systems are:
 `elementarySetTheory` and `separativeSetTheory`. The available second-order
-systems are: `secondOrder` and `PolySecondOrder`. The available propositional
-modal logic systems are: `hardegreeL` `hardegreeK` `hardegreeT` `hardegreeB`
-`hardegreeD` `hardegree4` and `hardegree5`. The available predicate modal logic
-system is `hardegreeMPL`, and the available "world theory" system is
-`hardegreeWTL`.
+systems are: `secondOrder` and `polyadicSecondOrder`. The available
+propositional modal logic systems are: `hardegreeL` `hardegreeK` `hardegreeT`
+`hardegreeB` `hardegreeD` `hardegree4` and `hardegree5`. The available
+predicate modal logic system is `hardegreeMPL`, and the available "world
+theory" system is `hardegreeWTL`.
