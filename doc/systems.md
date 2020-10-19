@@ -18,7 +18,7 @@ The systems supported are:
 - [Magnus, *forall x*](#magnus-forall-x)
 - [Gamut, *Logic, Language, and Meaning*](#gamut-logic-language-and-meaning)
 - [Goldfarb, *Deductive Logic*](#goldfarb-deductive-logic)
-- [Hardegree, *Symbolic logic*](#hardegree-symbolic-logic)
+- [Hardegree, *Symbolic Logic* and *Modal Logic*](#hardegree-symbolic-logic)
 - [Hausman, Kahane & Tidman, *Logic and
   Philosophy*](#hausman-kahane-tidman-logic-and-philosophy)
 - [Howard-Snyder, Howard-Snyder & Wasserman, *The Power of Logic*](#howard-snyder-howard-snyder-wasserman-the-power-of-logic)
@@ -351,7 +351,7 @@ Example:
 produces `Ax(Gax -> Ew(Hxw /\ Pw))`{system="goldfarbND"}
 
 
-## Hardegree, *Symbolic logic*
+## Hardegree, *Symbolic Logic*
 
 ### Sentential logic
 
@@ -373,16 +373,16 @@ Connective Keyboard
 ---------- ----------
 Example:
 
-    `P /\ Q /\ (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}
+    `P & Q & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}
 
-produces `P /\ Q /\ (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
+produces `P & Q & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
 
 ### Predicate logic
 
   + Selected with `system="..."`: `hardegreePL`
   + Sentence letters: none
   + Predicate symbols: `A` ...`Z`
-  + Constant symbols: `a` ... `S`
+  + Constant symbols: `a` ... `s`
   + Function symbols: none
   + Variables: `t`...`z`
   + With subscripts: yes
@@ -401,9 +401,9 @@ Connective Keyboard
 
 Example:
 
-    ``Ax(G(a,b,x) -> Ev(H(x,e) /\ O(v)))`{system="hardegreePL"}
+    `Ax(Gabx -> Ev(Hxe & Ov & _|_))`{system="hardegreePL"}
 
-produces `Ax(G(a,b,x) -> Ev(H(x,e) /\ O(v)))`{system="hardegreePL"}
+produces `Ax(Gabx -> Ev(Hxe & Ov & _|_))`{system="hardegreePL"}
 
 
 ## Hausman, Kahane & Tidman, *Logic and Philosophy*
