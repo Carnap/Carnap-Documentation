@@ -6,6 +6,14 @@ Calgary*](http://forallx.openlogicproject.org/), the remix by Aaron
 Thomas-Bolduc and Richard Zach of Tim Button's Cambridge version of
 P.D. Magnus's *forall x*.
 
+The systems supported come in two versions, with slightly different
+rules and different syntax in the first-order part: those for versions
+of the book before Fall 2019, and those for the Fall 2019 edition and
+after.  The versions for the pre-2019 editions are practically the
+same as the systems in Tim Button's [*forall x:
+Cambridge*](http://www.homepages.ucl.ac.uk/~uctytbu/OERs.html), except
+that the LEM rule is called TND in Button's text.
+
 ## Truth-functional logic
 
 ### Notation

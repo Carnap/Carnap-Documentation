@@ -189,9 +189,9 @@ Connective Keyboard
 
 Example:
 
-    `(A . B) . (C_1 > {~R_2 \/ [S <> T]})`{system="hausmanSL"}
+    `[A . B] . [C_1 > (~R_2 \/ {S <> T})]`{system="hausmanSL"}
 
-produces `(A . B) . (C_1 > {~R_2 \/ [S <> T]})`{system="hausmanSL"}.
+produces `[A . B] . [C_1 > (~R_2 \/ {S <> T})]`{system="hausmanSL"}.
 
 ### Predicate logic
 
@@ -351,7 +351,6 @@ Example:
     `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="allenSL"}
 
 produces `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="allenSL"}.
-
 
 ## Magnus, *forall x*
 
@@ -624,9 +623,9 @@ Connective Keyboard
 
 Example:
 
-    `Ax(Gabx -> Ew(Hxw /\ (P \/ ~x=w)))`{system="gamutND"}
+    `Ax(Gabx -> Ew(Hxw /\ (_|_ \/ ~x=w)))`{system="gamutND"}
 
-produces `Ax(Gabx -> Ew(Hxw /\ (P \/ ~x=w)))`{system="gamutND"}
+produces `Ax(Gabx -> Ew(Hxw /\ (_|_ \/ ~x=w)))`{system="gamutND"}
 
 
 ## Tomassi, *Logic*

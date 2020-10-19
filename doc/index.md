@@ -19,14 +19,15 @@
    Carnap supports various kinds of problems, which are
    described on the following pages:
 
-   a. [Syntax Checking](syntax-check.md) asks students to parse a formula.
-   b. [Translation](translation.md) asks students for formulas
-   which Carnap compares to model translations of English sentences.
-   Can also be used for normal forms and equivalences.
-   c. [Truth Tables](truth-tables.md) asks students to fill in
-        truth tables and answer questions on the basis of truth tables.
-   d. [Derivations](derivations.md) asks students to construct
-      proofs in formal systems. Carnap can handle the following systems:
+   a. [Syntax Checking](syntax-check.md) exercises ask students to parse a formula.
+   b. [Translation](translation.md) exercises ask students for formulas
+      which Carnap compares to model translations of English sentences.
+      These can also be used for normal forms and equivalences.
+   c. [Truth Tables](truth-tables.md) exercises ask students to fill in
+      truth tables and answer questions on the basis of truth tables.
+   d. [Derivations](derivations.md) exercises asks students to construct
+      proofs in formal systems, which Carnap checks for correctness 
+      on-the-fly. Carnap can handle the following systems:
       - [Montague](montague.md): Montague-style systems, two of which
         are used in the Carnap book. 
       - [Logic Book](logicbook.md): The Fitch system used in Bergmann,
@@ -34,7 +35,8 @@
       - [forall x](forallx.md): Fitch system used in Magnus's original
         *forall x*.
       - [forall x: Calgary](forallx-yyc.md): Fitch system used in the
-        *Calgary* version of *forall x* by Thomas-Bolduc and Zach.
+        *Calgary* version of *forall x* by Thomas-Bolduc and Zach (and
+        also in Tim Button's *forall x: Cambridge*.
       - Fitch-style systems of Gamut's *Introduction to Logic*.
       - Systems based on Howard-Snyder's *The Power of Logic*.
       - Systems based on Hausman's *Logic and Philosophy*.
