@@ -73,7 +73,20 @@ Ex :|-: (A \/ B) -> (B \/ A)
 
 Or, with a Fitch-style guides overlay (activated with `guides="fitch"`):
 
-```{.Playground .ZachTFL options="render resize fonts render" guides="fitch" init="now"}
+```{.Playground .ZachTFL options="resize fonts" guides="fitch" init="now"}
+|   A \/ B:AS
+|      A:AS
+|      B \/ A:\/I 2
+|   --
+|      B:AS
+|      B \/ A:\/I 5
+|   B \/ A:\/E 1,2-3,5-6
+|(A \/ B) -> (B \/ A):->I 1-7
+```
+
+Simple indent guides overlay (activated with `guides="indent"`):
+
+```{.Playground .ZachTFL options="resize fonts" guides="indent" init="now"}
 |   A \/ B:AS
 |      A:AS
 |      B \/ A:\/I 2

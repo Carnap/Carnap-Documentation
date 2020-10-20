@@ -9,6 +9,12 @@ renderer, i.e., it implies which formulas are accepted as correct, how
 to parse them, and how to render formulas when they are displayed by
 Carnap.
 
+All sentence letters, predicate symbols, constants, and function
+symbols (if allowed) take subscripts (e.g., $P_1$). Predicate and
+function symbols also take superscripts (e.g., $P^2$) to indicate
+arity. The parser does not enforce the arity, i.e., the arity is
+always determined by the number of arguments actually given.
+
 The systems supported are:
 
 - [Allen & Hand, *Logic Primer*](#allen-hand-logic-primer)
@@ -37,7 +43,6 @@ The systems supported are:
 
   + Selected with `system="..."`: `allenSL`
   + Sentence letters: `A`...`Z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`, `[`, `]`
   + Associative $\land$, $\lor$: yes
   + Connectives: 
@@ -67,7 +72,6 @@ Not yet supported.
 
   + Selected with `system="..."`: `LogicBookSD` `LogicBookSDPlus`
   + Sentence letters:`A`...`Z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`
   + Associative $\land$, $\lor$: left
   + Connectives: 
@@ -95,8 +99,6 @@ produces `A /\ B /\ (C_1 -> (~R_2 \/ (S <-> T)))`{system="LogicBookSD"}.
   + Constant symbols: `a` ... `v`
   + Function symbols: no
   + Variables: `w`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $(\forall x)$, $(\exists x)$
 
@@ -138,7 +140,6 @@ produces `(Ax)(Gabx -> (Ew)(Hxw /\ P /\ ~f(x)=w))`{system="LogicBookPDE"}
 
   + Selected with `system="..."`: `bonevacSL`
   + Sentence letters: `a`...`z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`
   + Associative $\land$, $\lor$: no
   + Connectives: 
@@ -166,8 +167,6 @@ produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (s <-> t)))`{system="bonevacSL"}.
   + Constant symbols: `a` ... `w`
   + Function symbols: none
   + Variables: `x`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -192,7 +191,6 @@ produces `Ax(Gabx -> Ey(Hxy & Pa & ~x=v))`{system="bonevacQL"}
 
   + Selected with `system="..."`: `magnusSL` `magnusSLPlus`
   + Sentence letters: `A`...`Z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`, `[`, `]`
   + Associative $\land$, $\lor$: yes
   + Connectives: 
@@ -220,8 +218,6 @@ produces `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="magnusSL"}.
   + Constant symbols: `a` ... `w`
   + Function symbols: none
   + Variables: `x`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -247,7 +243,6 @@ produces `Ax(Gabx -> Ey(Hxy & Pa & ~x=v))`{system="magnusQL"}
 
   + Selected with `system="..."`: `gamutIPND` `gamutPND` `gamutPNDPlus`
   + Sentence letters: `a`...`z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`
   + Associative $\land$, $\lor$: no
   + Connectives: 
@@ -276,8 +271,6 @@ produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (_|_ <-> t)))`{system="gamutIPND"}.
   + Constant symbols: `a` ... `r`
   + Function symbols: none
   + Variables: `s`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -302,7 +295,6 @@ produces `Ax(Gabx -> Ew(Hxw /\ (_|_ \/ ~x=w)))`{system="gamutND"}
 
   + Selected with `system="..."`: `goldfarbPropND`
   + Sentence letters: `a`...`z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`
   + Associative $\land$, $\lor$: no
   + Connectives: 
@@ -331,8 +323,6 @@ produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (_|_ <-> t)))`{system="goldfarbPropND"}.
   + Constant symbols: none
   + Function symbols: none
   + Variables: `a` ... `z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fxy$
   + Quantifiers: $(\forall x)$, $(\exists x)$
 
@@ -356,8 +346,7 @@ produces `Ax(Gax -> Ew(Hxw /\ Pw))`{system="goldfarbND"}
 ### Sentential logic
 
   + Selected with `system="..."`: `hardegreeSL`
-  + Sentence letters: `P` ... `Z`
-  + With subscripts: yes
+  + Sentence letters: `A` ... `Z`
   + Brackets allowed `(`, `)`
   + Associative $\land$, $\lor$: left
   + Connectives: 
@@ -373,9 +362,9 @@ Connective Keyboard
 ---------- ----------
 Example:
 
-    `P & Q & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}
+    `A & G & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}
 
-produces `P & Q & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
+produces `A & G & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
 
 ### Predicate logic
 
@@ -385,8 +374,6 @@ produces `P & Q & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
   + Constant symbols: `a` ... `s`
   + Function symbols: none
   + Variables: `t`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -412,7 +399,6 @@ produces `Ax(Gabx -> Ev(Hxe & Ov & _|_))`{system="hardegreePL"}
 
   + Selected with `system="..."`: `hausmanSL`
   + Sentence letters: `A`...`Z`
-  + With subscripts: yes
   + Brackets allowed `[`, `]`, `(`, `)`, `{`, `}`,  (only in that order)
   + Associative $\land$, $\lor$: no
   + Connectives: 
@@ -440,8 +426,6 @@ produces `[A . B] . [C_1 > (~R_2 \/ {S <> T})]`{system="hausmanSL"}.
   + Constant symbols: `a` ... `t`
   + Function symbols: no
   + Variables: `u`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $(x)$, $(\exists x)$
 
@@ -494,8 +478,6 @@ produces `(A . B) . [C_1 -> (~R_2 \/ {S <-> T})]`{system="howardSnyderSL"}.
   + Constant symbols: `a` ... `u`
   + Function symbols: no
   + Variables: `v`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $(x)$, $(\exists x)$
 
@@ -548,8 +530,6 @@ produces `(A . B) . [C_1 > (~R_2 \/ {S <-> T})]`{system="hurleySL"}.
   + Constant symbols: `a` ... `w`
   + Function symbols: no
   + Variables: `x`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $(x)$, $(\exists x)$
 
@@ -573,7 +553,6 @@ produces `(x)[Gabx > (Ey)(Hxy . {P \/ ~x=y})]`{system="hurleyPL"}
 
   + Selected with `system="..."`: `ichikawaJenkinsSL`
   + Sentence letters: `A`...`Z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`, `[`, `]`
   + Associative $\land$, $\lor$: yes
   + Connectives: 
@@ -601,8 +580,6 @@ produces `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="ichikawaJenkinsSL"}.
   + Constant symbols: `a` ... `w`
   + Function symbols: none
   + Variables: `x`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -629,7 +606,6 @@ produces `Ax(Gabx -> Ey(Hxy /\ (Pa /\ ~x=y)))`{system="ichikawaJenkinsQL"}
 
   + Selected with `system="..."`: `prop`, `montagueSC`
   + Sentence letters: `P` ... `W`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`
   + Associative $\land$, $\lor$: left
   + Connectives: 
@@ -657,8 +633,6 @@ produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="prop"}.
   + Constant symbols: `a` ... `e`
   + Function symbols: `f` ... `h`
   + Variables: `v`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $F(a,x)$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -734,7 +708,6 @@ convention in the Open Logic Project.
 
   + Selected with `system="..."`: `thomasBolducAndZachTFL2019`
   + Sentence letters: `A`...`Z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`, `[`, `]`
   + Associative $\land$, $\lor$: left
 
@@ -762,8 +735,6 @@ produces `A /\ B /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="thomasBolducAndZachT
   + Constant symbols: `a` ... `r`
   + Function symbols: `a`...`t`
   + Variables: `s`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $F(a,x)$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -797,7 +768,6 @@ bracketing conventions.
 
   + Selected with `system="..."`: `thomasBolducAndZachTFL`, `ebelsDugganTFL`
   + Sentence letters: `A`...`Z`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`, `[`, `]`
   + Associative $\land$, $\lor$: no
   + Connectives: 
@@ -833,8 +803,6 @@ produces `(A /\ B) /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="ebelsDugganTFL"}.
   + Constant symbols: `a` ... `r`
   + Function symbols: none
   + Variables: `s`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -859,7 +827,6 @@ produces `Ax(Gabx -> Es(Hxs /\ (P \/ ~x=s)))`{system="thomasBolducAndZachFOL"}
 
   + Selected with `system="..."`: `tomassiPL`
   + Sentence letters: `P` ... `W`
-  + With subscripts: yes
   + Brackets allowed `(`, `)`
   + Associative $\land$, $\lor$: left
   + Connectives: 
@@ -888,8 +855,6 @@ produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="tomassiPL"}.
   + Constant symbols: `a` ... `t`
   + Function symbols: none
   + Variables: `u`...`z`
-  + With subscripts: yes
-  + Arity determined: by context
   + Atomic formulas: $Fax$
   + Quantifiers: $\forall x$, $\exists x$
 
