@@ -126,11 +126,11 @@ example, the tag "Documentation" can be found at a link like
 the name of a tag in most places where it the tag is displayed to see a list of
 the associated shared documents.
 
-documents can be of three kinds:
+Documents can be of three kinds:
 
-- Problem sets and other materials created using [pandoc markup](pandoc.md) 
-- CSS stylesheets for custom styling of your course materials
-- JS scripts for more sophisticated customization of your course materials
+- Problem sets and other materials created using [pandoc markup](pandoc.md).
+- CSS stylesheets for custom styling of your course materials.
+- JS scripts for more sophisticated customization of your course materials.
 
 Uploaded files will be interpreted as problem sets unless they have the
 filename extension "css" or "js", so unless they are called something like
@@ -167,7 +167,7 @@ in the "Actions" column:
    action column to the right of their name.
 3. Accessibility accommodations can be added for to individual students by
    clicking the "clock" icon to the right of the student's name. A fixed number of
-   minutes can be added to all of the students timed exams, their exam times
+   minutes can be added to all of the students' timed exams, their exam times
    can be extended by a given factor (for example, 1.5 for time-and-a-half) and
    a fixed number of hours can be added to all of their due-dates. Adjustments
    to due-dates do not affect visibility dates for assignments, only the
