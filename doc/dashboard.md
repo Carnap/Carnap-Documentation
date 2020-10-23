@@ -90,15 +90,37 @@ understand.
 ### Assign Uploaded Documents
 
 Within this tab, you can assign documents created using Carnap's [pandoc
-markup](pandoc.md). In order to assign a
-document, you need to first upload it in the [Manage Uploaded
-Documents](#manage-uploaded-documents) tab. Once an assignment is assigned to
-given class, it will appear on the user page of everyone enrolled in the class
-for the duration of the date and time range of you specify. It will not be
-possible for students to make new submissions after the assignment ceases to be
-visible.
+markup](pandoc.md). In order to assign a document, you need to first upload it
+in the [Manage Uploaded Documents](#manage-uploaded-documents) tab. 
 
-You can also: 
+Creating an assignment allows you to optionally associate a due-date,
+visibility range, grade release date, and description with the assignment. 
+
+Once an assignment is assigned to given class, it will appear on the user page
+of everyone enrolled in the class for the duration of the date and time range
+of you specify (or indefinitely, if no visibility range is given). It will not
+be possible for students to make new submissions after the assignment ceases to
+be visible.
+
+The due-date affects when student work is counted as late, just like with a
+problem set. If the due date is omitted, then work can be turned in at any time
+for full credit. The grade release date determines when grades for the problems
+in this assignment will be released to students (before the release date,
+students will see that work has been submitted, but the point value will be
+listed as "-"). If it is omitted, scores will be released immediately.
+
+Assignments can also be equipped with access controls. Access controls require
+setting a password, which students will need to enter before first accessing
+the assignment. Access-controlled assignments can be hidden from the class. If
+hidden, they will not appear on the user page, but will still be accessible via
+their URL. It's also possible to enter a time-limit for access controlled
+assignments. The time limit is measured from when the student enters first
+enters their password. After the limit expires the student will no longer be
+able to view the exam or submit problems. The time limit is based on a
+time-stamp of when the student began the exam, so it will expire after the
+designated period even if the student closes their browser.
+
+In addition to creating assignments, you can also: 
 
 1. edit the descriptions and due dates associated with assignments from this
    tab, by clicking the gear icon;
@@ -113,7 +135,8 @@ Submitted work for assignments is graded in much the same way as work submitted
 for textbook problem set. Each problem counts, by default, for five points on
 time or two points if late. Problems assigned a custom point value count for
 that value if received on time, and otherwise for half that value rounding
-down. This will likely become more customizable in the future.
+down. Late point values can be customized by setting the `late-credit`
+attribute - for details, see the documentation for [pandoc markup](pandoc.md)
 
 ### Manage Uploaded Documents
 
@@ -137,8 +160,7 @@ Uploaded files will be interpreted as problem sets unless they have the
 filename extension "css" or "js", so unless they are called something like
 "custom-stylesheet.css". or "my-script.js". For more information on how to
 apply custom styling and behavior, see the "other features" section in the
-documentation of [Carnap's pandoc
-markup](pandoc.md).
+documentation of [Carnap's pandoc markup](pandoc.md).
 
 Once documents are uploaded, they can also be assigned to students as problem
 sets, using the [Assign Uploaded Documents](#assign-uploaded-documents)
