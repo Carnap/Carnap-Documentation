@@ -80,7 +80,8 @@ assignment.
 By default, submitted problems received on time receive 5 points each, and late
 submissions receive 2 points each. Both the point amount awarded for a given
 problem and the treatment of late problems can be customized—details in the
-documentation for [pandoc markup](pandoc.md).  
+documentation for [pandoc markup](pandoc.md).
+
 I find that leaving open the option to submit even *very* late work helps
 students who have fallen behind remain motivated, and gives them some incentive
 to do extra work that will make the later material easier for them to
