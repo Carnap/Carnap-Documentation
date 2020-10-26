@@ -51,11 +51,8 @@ files](https://github.com/ubc-carnap-team/carnap-nixops) are public.
 
 ### Docker
 
-There is experimental Docker support for Carnap. Currently, diagrams-builder
-support ([to be deprecated](https://github.com/Carnap/Carnap/issues/147)) may
-be broken, which affects some chapters of the Carnap book.
-
-Images are available via the GitHub container registry at
+There is experimental Docker support for Carnap. Images are available via the
+GitHub container registry at
 `docker.pkg.github.com/carnap/carnap/carnap:latest`.
 
 Note that Carnap docker images are about 3GB uncompressed and about 500MB to
