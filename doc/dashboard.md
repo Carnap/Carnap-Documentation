@@ -188,7 +188,7 @@ in the "Actions" column:
    intact. So if they are dropped by mistake, then can simply re-enroll.
 2. Students can be emailed individually by clicking the "mail" icon visible in the
    action column to the right of their name.
-3. Accessibility accommodations can be added for to individual students by
+3. Accessibility accommodations can be added for individual students by
    clicking the "clock" icon to the right of the student's name. A fixed number of
    minutes can be added to all of the students' timed exams, their exam times
    can be extended by a given factor (for example, 1.5 for time-and-a-half) and
@@ -196,6 +196,15 @@ in the "Actions" column:
    to due-dates do not affect visibility dates for assignments, only the
    treatment of late work. Changes to due-dates will be reflected on the posted
    due-date seen on the student's user page.
+4. Alternate due dates can be issued to individual students, for specific
+   assignments, by clicking the "calendar plus" icon to the right of the
+   student's name. Alternate due dates will be reflected on the posted
+   due-date seen on the student's user page. Alternate due dates will affect
+   whether an assignment is graded as late, and will override the visibility
+   settings for that assignment, so that a student can continue to access the
+   assignment and submit problems until their alternate due date expires.
+   Assignments set as "hidden" however, will not be visible on the user page
+   even if an alternate due date is set.
 
 Below the table of students, you'll see some course information, including the
 course title, points available, the start and end date for your course, the
