@@ -179,9 +179,12 @@ Different classes are available under different tabs.
 
 The available functions are hopefully clear enough. In the upper half,
 statistics for different assignments are available, and in the lower half,
-a table of students and total scores earned by those students is visible. A
-number of actions can be performed on individual students by clicking the icons
-in the "Actions" column:
+a table of students and total scores earned by those students is visible. 
+
+###Actions on Students
+
+A number of actions can be performed on individual students by clicking the
+icons in the "Actions" column:
 
 1. Students can be dropped from a class by clicking the "delete" icon.
    A dropped student is removed from the class, but their data is otherwise
@@ -206,6 +209,8 @@ in the "Actions" column:
    Assignments set as "hidden" however, will not be visible on the user page
    even if an alternate due date is set.
 
+###Course Information
+
 Below the table of students, you'll see some course information, including the
 course title, points available, the start and end date for your course, the
 time zone, whether the class is open for enrollment, and an enrollment link you
@@ -213,9 +218,29 @@ can give to students. Students who follow the enrollment link will be prompted
 to register (if they're not already registered) and automatically enrolled in
 your course.
 
-At the very bottom, you have the options of adding a co-instructor, editing a
-class's information (including total points, description, and whether the class
-is open for enrollment), exporting grades, and also of deleting the class. 
+###Updating Course information and Choosing a Custom Textbook
+
+You can update the course description, points available, start and end date,
+and whether the class is open for enrollment. You can also select a custom
+textbook for your course.
+
+A custom textbook is an assignment that students will be directed to when they
+click the "book" link at the top of most pages (this overrides the ordinary
+behavior of directing students to the built-in Carnap textbook). The linked
+assignment would ordinarily function as a table of contents, directing students
+to various "chapters" (other assignments), containing problems that they can
+complete throughout the semester.
+
+When selecting a custom textbook, you'll need to choose an assignment that has
+already been created for the class - so, you'll want to assign the textbook
+*first* and then set it as the textbook for the class.
+
+###Adding A Co-Instructor
+
+At the very bottom of the class card, you have the options of adding a
+co-instructor, editing a class's information (including total points,
+description, and whether the class is open for enrollment), exporting grades,
+and also of deleting the class. 
 
 Co-instructors are other instructors who have the same type of access to the
 class as the class creator. They may be useful if you have a TA or if you're
@@ -225,7 +250,15 @@ co-instructor will also remove all assignments created by that co-instructor
 and all student work submitted in response to those assignments, so *always
 exercise caution when removing a co-instructor*!
 
+##Exporting Grades
+
 Grades are exported in `.csv` format, which most spreadsheet programs should be
-able to import. Deleting the class will delete all assignments associated with
-the class and all student work submitted in response to these assignments, so
-*always exercise caution when deleting a class*!
+able to import. Grades can either be tabulated per-assignment (for import into
+a CMS, for example), or per-problem (for detailed analysis of class
+performance, or for more complex grading schemes).
+
+###Deleting a Class
+
+Deleting the class will delete all assignments associated with the class and
+all student work submitted in response to these assignments, so *always
+exercise caution when deleting a class*!
