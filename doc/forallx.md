@@ -224,6 +224,7 @@ Equality Elimination        `=E`         $σ=τ,φ(σ)/φ(τ)$    $φ(τ)/φ(σ)
 
 </div>
 
+
 Where Universal Introduction is subject to the restriction that $σ$ must not
 appear in $φ(x)$, or any undischarged assumption or in any premise of the
 proof.[^1]
@@ -237,3 +238,17 @@ assertion $ψ$ by citing an assertion of the form $∃xφ(x)$ and a subproof
 beginning with the assumption $φ(σ)$ and ending with the conclusion $ψ$, where
 $σ$ does not appear in $ψ, ∃xφ(x)$, or in any of the undischarged assumptions
 or premises of the proof.
+
+### forall x QL Plus
+
+The system QL Plus, activated with `.ForallxQLPlus`, includes all the
+rules of SL Plus, as well as the following exchange rules, which can
+be used within a context Φ:
+
+Rule                   Abbreviation Premises       Conclusion
+---------------------- ------------ -------------- --------------
+Quantifier Negation    `QN`         $Φ(∀x¬φ(x)))$  $Φ(¬∃xφ(x)))$
+                                    $Φ(¬∀xφ(x)))$  $Φ(∃x¬φ(x)))$
+                                    $Φ(∃x¬φ(x)))$  $Φ(¬∀xφ(x)))$
+                                    $Φ(¬∃xφ(x)))$  $Φ(∀x¬φ(x)))$
+---------------------- ------------ -------------- --------------
