@@ -208,6 +208,12 @@ icons in the "Actions" column:
    assignment and submit problems until their alternate due date expires.
    Assignments set as "hidden" however, will not be visible on the user page
    even if an alternate due date is set.
+5. Access can be re-granted to timed assignments after the timer has expired,
+   by clicking the "full hourclass" icon to the right of the student's name.
+   Once access is re-granted, it will be as if the student never started the
+   timed exam (although any work that they submitted on the first try will
+   persist), so their next attempt at the exam will be timed in the same way as
+   their first attempt.
 
 ###Course Information
 
