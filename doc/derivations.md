@@ -70,6 +70,7 @@ Class Strings                                                 Description
 `.HardegreeSL`, `.HardegreePL`, `.HardegreeWTL`,              Hardegree-style systems based on Hardegree's *Modal Logic* 
 `.HardegreeL`, `.HardegreeK`, `.HardegreeT`, `.HardegreeB`,  
 `.HardegreeD`, `.Hardegree4`, `.Hardegree5`, `.HardegreeMPL`
+`.ZachPropEq`                                                 Chain of equivalence prover.
 -------------------------------------------------------------------------------------------------------------------------------------
 
 </div>

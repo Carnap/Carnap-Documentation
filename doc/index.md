@@ -42,6 +42,9 @@ described on the following pages:
   - [forall x: Calgary](forallx-yyc.md): Fitch system used in the
         *Calgary* version of *forall x* by Thomas-Bolduc and Zach (and
         also in Tim Button's *forall x: Cambridge*.
+  - [Chains of equivalences](equivalences.md): a simple proof system
+    where every line results from the previous one by substituting 
+    equivalents.
   - Fitch-style systems of Gamut's *Introduction to Logic*.
   - Systems based on Howard-Snyder's *The Power of Logic*.
   - Systems based on Hausman's *Logic and Philosophy*.
