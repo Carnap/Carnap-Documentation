@@ -185,22 +185,22 @@ system is `hardegreeMPL`, and the available "world theory" system is
 ### Custom CSS
 
 The standard [bootstrap](https://getboostrap.com) CSS that is used for styling
-the appearance of an assignment can be overriden by including a CSS entry as
+the appearance of an assignment can be overriden by including a `css` entry as
 part of a [yaml metadata block](https://pandoc.org/MANUAL.html#metadata-blocks)
 within a carnap pandoc document.
 
 The CSS entry can include either a url for a single CSS stylesheet, like so:
 
     ---
-    css: https://carnap.io/static/css/tufte.css 
+    css: https://ghcdn.rawgit.org/Carnap/Carnap-Contrib/main/css/hide-points.css 
     --- 
 
 or for several stylesheets, like so:
 
     ---
     css:
-    - https://carnap.io/static/css/tufte.css
-    - https://carnap.io/static/css/tuftextra.css
+    - https://ghcdn.rawgit.org/Carnap/Carnap-Contrib/main/css/hide-points.css
+    - https://ghcdn.rawgit.org/Carnap/Carnap-Contrib/main/css/another-stylesheet.css
     --- 
 
 The stylesheets can be hosted anywhere, including on the Carnap server. In
@@ -213,6 +213,21 @@ the form:
     css:
     - https://carnap.io/shared/youremail@gmail.com/custom.css
     --- 
+
+If you wish to not just partly override the bootstrap css, but to completely
+disable it, adding your new css to a blank slate (other than the css used to
+style Carnap's exercises), then you can instead use a `base-css` entry to set
+the new base css style. For example,
+
+    --- 
+    base-css: 
+    - https://static.carnap.io/css/tufte.css
+    - https://static.carnap.io/css/tuftextra.css
+    --- 
+
+will configure your document to have a
+[tufte-like](https://edwardtufte.github.io/tufte-css/) style, with no traces of
+bootstrap.
 
 For more details about hosting your own stylesheets, please take a look at the
 documentation for the [instructor dashboard](dashboard.md).
