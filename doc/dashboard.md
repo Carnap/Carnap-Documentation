@@ -261,7 +261,11 @@ exercise caution when removing a co-instructor*!
 Grades are exported in `.csv` format, which most spreadsheet programs should be
 able to import. Grades can either be tabulated per-assignment (for import into
 a CMS, for example), or per-problem (for detailed analysis of class
-performance, or for more complex grading schemes).
+performance, or for more complex grading schemes). Students are identified by
+first name, last name, University ID (an arbitrary string, like their student
+ID number or other useful identifying information, that you can ask them to
+enter when registering), and their email address. If a student has not entered
+some piece of information, its absence is indicated with a question mark.
 
 ###Deleting a Class
 
