@@ -235,9 +235,9 @@ documentation for the [instructor dashboard](dashboard.md).
 ### Custom JavaScript
 
 Documents can also include links to custom JavaScript. This can be done using
-the `raw_html` pandoc extension, or by including the JS in a metadata block.
-Like a CSS entry, a JS entry entry can include either a url for a single CSS
-stylesheet, like so:
+the `raw_html` pandoc extension to include a `<script>` tag, or by including
+the JS in a metadata block. Like a CSS entry, a JS entry entry can include
+either a url for a single CSS stylesheet, like so:
 
     ---
     js: https://carnap.io/shared/myemail@university.edu/myjs.js

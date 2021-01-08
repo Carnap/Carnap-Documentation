@@ -18,6 +18,11 @@ MarkDown syntax, how to include problems in a problem set, how to
 display formulas, and how to include custom CSS or JavaScript on
 your problem sets.
 
+[Carnap's JavaScript Extension API](javascript.md)
+
+Describes how to incorporate external JavaScript into assignments, for custom
+interactive behavior.
+
 ## Exercise types
 
 Carnap supports various kinds of problems, which are
