@@ -17,7 +17,7 @@ If you learn best from example, it's also possible to download the source code
 for documents shared on Carnap.io from the shared document list, available at
 <https://carnap.io/shared>. The pandoc source for this document, should you
 wish to inspect it, is available
-[here](https://carnap.io/doc/pandoc.md/download).
+[here](https://github.com/Carnap/Carnap-Documentation/blob/master/doc/pandoc.md).
 
 You can create pandoc documents in any text editing program. Pandoc is nothing
 but plain text that is written with some special notation to indicate how text

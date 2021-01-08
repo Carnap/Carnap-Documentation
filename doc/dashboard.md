@@ -18,8 +18,9 @@ The course management dashboard will be available once you have
 Once you are logged in, you'll then be able to access the course management
 dashboard by first,
 
-1. navigating to your user page, following the link that replaces "login" in
-   the upper right hand corner of most pages; then
+1. navigating to your user page, following the link to *Instructor
+   Home* in the menu linked to your email address in the top right
+   corner of most pages; then
 2. from your user page, clicking the link at the very top that reads "your
    instructor page is here"
 
@@ -50,6 +51,8 @@ assignments have been received by a given due date and time. The start-date and
 end-date are used to determine when your course will be listed as an option for
 enrollment.
 
+[![Creating a new course](images/course-create-thumb.png)](images/course-create.png)
+
 Once you've created a course, during the period between the start date and end
 date, it will:
 
@@ -60,7 +63,7 @@ date, it will:
 
 After the end-date of the course, the class will be archived at the bottom of
 the manage-courses tab, under the heading "Old Courses". Once the class is
-archived, You'll still be able to edit the class' properties, download grades
+archived, you'll still be able to edit the class' properties, download grades
 as a `.csv` file, and delete the class. If you need to reactive an archived
 class, just set its end-date for some point in the future.
 
@@ -92,6 +95,8 @@ understand.
 Within this tab, you can assign documents created using Carnap's [pandoc
 markup](pandoc.md). In order to assign a document, you need to first upload it
 in the [Manage Uploaded Documents](#manage-uploaded-documents) tab. 
+
+[![Assigning an uploaded document](images/assign-doc-thumb.png)](images/assign-doc.png)
 
 Creating an assignment allows you to optionally associate a due-date,
 visibility range, grade release date, and description with the assignment. 
@@ -143,7 +148,12 @@ attribute - for details, see the documentation for [pandoc markup](pandoc.md)
 Within this tab, you can upload documents from which to create assignments in
 your classes, and optionally share them, either with other instructors,
 publicly, or privately using a link. Documents can be assigned tags, which make
-them discoverable once they are shared. A list of shared documents can be found
+them discoverable once they are shared. 
+
+[![Uploading a
+document](images/upload-doc-thumb.png)](images/upload-doc.png)
+
+A list of shared documents can be found
 at [carnap.io/shared](/shared), and the shared documents with a given tag (for
 example, the tag "Documentation" can be found at a link like
 [carnap.io/shared/Documentation](/shared/Documentation). You can also click on
@@ -165,15 +175,15 @@ documentation of [Carnap's pandoc markup](pandoc.md).
 Once documents are uploaded, they can also be assigned to students as problem
 sets, using the [Assign Uploaded Documents](#assign-uploaded-documents)
 
-Again, to edit the attributes of an uploaded document, click the gear icon.  You can
-also delete documents with the trashcan icon, or download them with the cloud
-icon.
+Again, to edit the attributes of an uploaded document, click the gear
+icon.  You can also delete documents with the trashcan icon, or
+download them with the cloud icon.
 
 ## The Class Card
 
 Once you've created a class, the class card will look a bit like this:
 
-![](images/class-card.png)
+![The class card](images/course-tab.png)
 
 Different classes are available under different tabs.
 
@@ -181,7 +191,7 @@ The available functions are hopefully clear enough. In the upper half,
 statistics for different assignments are available, and in the lower half,
 a table of students and total scores earned by those students is visible. 
 
-###Actions on Students
+### Actions on Students
 
 A number of actions can be performed on individual students by clicking the
 icons in the "Actions" column:
@@ -215,7 +225,7 @@ icons in the "Actions" column:
    persist), so their next attempt at the exam will be timed in the same way as
    their first attempt.
 
-###Course Information
+### Course Information
 
 Below the table of students, you'll see some course information, including the
 course title, points available, the start and end date for your course, the
@@ -224,7 +234,7 @@ can give to students. Students who follow the enrollment link will be prompted
 to register (if they're not already registered) and automatically enrolled in
 your course.
 
-###Updating Course information and Choosing a Custom Textbook
+### Updating Course information and Choosing a Custom Textbook
 
 You can update the course description, points available, start and end date,
 and whether the class is open for enrollment. You can also select a custom
@@ -241,7 +251,7 @@ When selecting a custom textbook, you'll need to choose an assignment that has
 already been created for the class - so, you'll want to assign the textbook
 *first* and then set it as the textbook for the class.
 
-###Adding A Co-Instructor
+### Adding A Co-Instructor
 
 At the very bottom of the class card, you have the options of adding a
 co-instructor, editing a class's information (including total points,
@@ -256,7 +266,7 @@ co-instructor will also remove all assignments created by that co-instructor
 and all student work submitted in response to those assignments, so *always
 exercise caution when removing a co-instructor*!
 
-##Exporting Grades
+## Exporting Grades
 
 Grades are exported in `.csv` format, which most spreadsheet programs should be
 able to import. Grades can either be tabulated per-assignment (for import into
@@ -267,7 +277,7 @@ ID number or other useful identifying information, that you can ask them to
 enter when registering), and their email address. If a student has not entered
 some piece of information, its absence is indicated with a question mark.
 
-###Deleting a Class
+### Deleting a Class
 
 Deleting the class will delete all assignments associated with the class and
 all student work submitted in response to these assignments, so *always

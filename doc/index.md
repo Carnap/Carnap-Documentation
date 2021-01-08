@@ -23,6 +23,14 @@ your problem sets.
 Describes how to incorporate external JavaScript into assignments, for custom
 interactive behavior.
 
+## Systems supported by Carnap
+
+[Systems supported by Carnap](systems.md)
+
+Describes the syntax, ASCII-only variants of symbols used, and
+idosyncrcies of the various systems supported by Carnap. Note: not all
+of these systems have supported corresponding proof systems.
+
 ## Exercise types
 
 Carnap supports various kinds of problems, which are

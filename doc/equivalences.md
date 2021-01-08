@@ -23,6 +23,8 @@ Connective Keyboard
 ↔          `<->`, `<=>`
 ¬          `-`, `~`, `not`
 ⊥          `!?`, `_|_`
+∀          `A`, `@`
+∃          `E`, `3`
 ---------- ----------
 
 </div>
@@ -32,7 +34,11 @@ followed by a `:` and then a rule abbreviation. The first line is
 justified by `:PR`.  The available rules are all equivalences, and can
 be applied to subformulas of a given formula.  It is assumed that
 every line follows from the immediately preceding line by one of the
-equivalence rules below. The equivalence proof checker is selected
+equivalence rules below. 
+
+## Equivalences for TFL (propositional logic)
+
+The equivalence proof checker is selected
 using `.ZachPropEq`.
 
 ```{.ProofChecker .ZachPropEq}
@@ -135,3 +141,71 @@ Name                     Effect
 ------------------------ ------------------------------------------------------------------
 
 </div>
+
+## The FOL Systems
+
+The system `.ZachFOLEq` extends the rules of `.ZachPropEq` by
+equivalence rules for quantifiers. Those are:
+
+<div class="table">
+
+Rule                        Abbreviation Premises            Conclusion
+--------------------------- ------------ ------------------- --------------
+Variable Renaming           `VR`         $∀ x\,φ(x)$         $∀ y\,φ(y)$
+                                         $∃ x\,φ(x)$         $∃ y\,φ(y)$
+Quantifier Negation         `QN`         $¬∀xφ(x)$           $∃x¬φ(x)$
+                                         $∃x¬φ(x)$           $¬∀xφ(x)$
+                                         $¬∃xφ(x)$           $∀x¬φ(x)$
+                                         $∀x¬φ(x)$           $¬∃xφ(x)$
+Quantifier Distribution     `QD`         $∀ x(φ(x) ∧ ψ(x))$  $∀ x\,φ(x) ∧ ∀ x\,ψ(x)$
+                                         $∃ x(φ(x) ∨ ψ(x))$  $∃ x\,φ(x) ∨ ∀ x\,ψ(x)$
+Quantifier Shift for $∀$    `QSA`        $∀ x(φ(x) ∧ ψ)$     $∀ x\,φ(x) ∧ ψ$
+                                         $∀ x\,φ(x) ∧ ψ$     $∀ x(φ(x) ∧ ψ)$
+                                         $∀ x(φ(x) ∨ ψ)$     $∀ x\,φ(x) ∨ ψ$
+                                         $∀ x\,φ(x) ∨ ψ$     $∀ x(φ(x) ∨ ψ)$
+                                         $∀ x(φ(x) → ψ)$     $∃ x\,φ(x) → ψ$
+                                         $∃ x\,φ(x) → ψ$     $∀ x(φ(x) → ψ)$
+                                         $∀ x(ψ → φ(x))$     $ψ → ∀ x\,φ(x)$
+                                         $ψ → ∀ x\,φ(x)$     $∀ x(ψ → φ(x))$
+Quantifier Shifts for $∃$    `QSE`       $∃ x(φ(x) ∧ ψ)$     $∃ x\,φ(x) ∧ ψ$
+                                         $∃ x\,φ(x) ∧ ψ$     $∃ x(φ(x) ∧ ψ)$
+                                         $∃ x(φ(x) ∨ ψ)$     $∃ x\,φ(x) ∨ ψ$
+                                         $∃ x\,φ(x) ∨ ψ$     $∃ x(φ(x) ∨ ψ)$
+                                         $∃ x(φ(x) → ψ)$     $∀ x\,φ(x) → ψ$
+                                         $∀ x\,φ(x) → ψ$     $∃ x(φ(x) → ψ)$
+                                         $∃ x(ψ → φ(x))$     $ψ → ∃ x\,φ(x)$
+                                         $ψ → ∃ x\,φ(x)$     $∃ x(ψ → φ(x))$
+--------------------------- ------------ ------------------- --------------
+
+</div>
+
+Note that Carnap actually considers all formulas equal up to renaming
+of bound variables. Thus, the `VR` rules are provided just for
+completeness (and will allow any numer of renamings of bound
+variables).  Any variable renaming necessary to apply a quantifier
+shift can be done implicitly without first invoking the `VR` rule.
+
+The FOL system has an additional test, `PNF`, that requires the final
+line to be in prenex normal form.
+
+    ```{.ProofChecker .ZachFOLEq options="resize" feedback="manual" tests="PNF"}
+    Ex2 ~(Ax P(x) <-> Ey Q(y)) :|-: 
+    |~(Ax P(x) <-> Ey Q(y)) :PR
+    ```
+
+```{.ProofChecker .ZachFOLEq options="resize" feedback="manual" tests="PNF"}
+Ex2 ~(Ax P(x) <-> Ey Q(y)) :|-: 
+|~(Ax P(x) <-> Ey Q(y)) :PR
+|~((Ax P(x) -> Ey Q(y)) /\ (Ey Q(y) -> Ax P(x))) :Bicond
+|~(Ax P(x) -> Ey Q(y)) \/ ~(Ey Q(y) -> Ax P(x)) :DeM
+|~(Ax P(x) -> Ey Q(y)) \/ ~Ay( Q(y) -> Ax P(x)) :QSA
+|~(Ax P(x) -> Ey Q(y)) \/ ~AyAx( Q(y) ->  P(x)) :QSA
+|~(Ax P(x) -> Ey Q(y)) \/ Ey~Ax( Q(y) ->  P(x)) :QN
+|~(Ax P(x) -> Ey Q(y)) \/ EyEx~( Q(y) ->  P(x)) :QN
+|(Ax P(x) /\ ~Ey Q(y)) \/ EyEx~( Q(y) ->  P(x)) :Cond
+|(Ax P(x) /\ Ay~ Q(y)) \/ EyEx~( Q(y) ->  P(x)) :QN
+|(Ax P(x) /\ Ax~ Q(x)) \/ EyEx~( Q(y) ->  P(x)) :VR
+|Ax(P(x) /\ ~Q(x)) \/ EyEx~( Q(y) ->  P(x)) :QD
+|Ey[Ax(P(x) /\ ~Q(x)) \/ Ex~( Q(y) ->  P(x))] :QSE
+|EyEx[Ax(P(x) /\ ~Q(x)) \/ ~( Q(y) ->  P(x))] :QSE
+```
