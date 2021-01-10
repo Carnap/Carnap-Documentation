@@ -70,3 +70,20 @@ will be registered automatically.
   so if they want to change their name or other details, that should be
   accomplished in the LMS or other upstream systems.
 
+
+-----------------------
+
+## Developer use
+
+Setting up a Canvas instance or other LMS is quite burdensome for doing LTI
+testing. Therefore, I have set up a LTI Reference Implementation platform here:
+
+https://lti-ri.imsglobal.org/platforms/1255/
+
+Configure it in Carnap at `/master_admin` with the following:
+
+|iss	|client_id	|OIDC Auth Endpoint	|JWK URL
+|---	|---------	|---- ---- --------	|--- ---
+|aaaaa	|abcde	    |https://lti-ri.imsglobal.org/platforms/1255/authorizations/new	|https://lti-ri.imsglobal.org/platforms/1255/platform_keys/1248.json
+
+To perform launches, use the "Resource Links" page.
