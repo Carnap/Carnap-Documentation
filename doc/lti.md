@@ -82,8 +82,8 @@ https://lti-ri.imsglobal.org/platforms/1255/
 
 Configure it in Carnap at `/master_admin` with the following:
 
-|iss	|client_id	|OIDC Auth Endpoint	|JWK URL
-|---	|---------	|---- ---- --------	|--- ---
-|aaaaa	|abcde	    |https://lti-ri.imsglobal.org/platforms/1255/authorizations/new	|https://lti-ri.imsglobal.org/platforms/1255/platform_keys/1248.json
+| iss	| client_id	| OIDC Auth Endpoint	| JWK URL |
+| ---	| ---------	| ------------------	| ------- |
+| aaaaa	| abcde	    | https://lti-ri.imsglobal.org/platforms/1255/authorizations/new	| https://lti-ri.imsglobal.org/platforms/1255/platform_keys/1248.json |
 
 To perform launches, use the "Resource Links" page.
