@@ -48,3 +48,25 @@ For example, for a cloud Canvas (production environment):
 * Authorization redirect URL: `https://canvas.instructure.com/api/lti/authorize_redirect`
 * Client ID: from your LTI developer key
 * Deployment ID: not required for Carnap
+
+-----------------------
+
+## Automatic registration
+
+### Setup
+
+Set up LTI in your learning management system. Then, initiate a launch. A
+message will appear on the registration page giving you the autoregistration ID
+to enter on your course settings panel.
+
+Once that ID has been configured, all future launches destined for that course
+will be registered automatically.
+
+### Notes
+
+* You can disable new registrations in your course with the checkbox, as
+  automatic registrations will skip that check.
+* Students will have their information automatically updated on every launch,
+  so if they want to change their name or other details, that should be
+  accomplished in the LMS or other upstream systems.
+
