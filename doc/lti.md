@@ -25,14 +25,59 @@ Instructions for configuring an LTI key for canvas can be found here:
 [Configuring an LTI key](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-LTI-key-for-an-account/ta-p/140).
 Canvas also allows configurations to be imported rather than set manually, via
 the "Paste JSON" option described in the documentation linked above. A JSON
-file for easy configuration of a canvas instance, using this method is provided
-at [./carnap-lti-canvas.json](./carnap-lti-canvas.json).
+file for easy configuration of a canvas instance, using this method is
+reproduced below.
 
 For more details on Canvas setup with LTI 1.3, see:
 
 * [Technical documentation](https://canvas.instructure.com/doc/api/file.lti_dev_key_config.html).
   This is also a nice general overview of the protocol.
 * [Configuring an LTI key](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-LTI-key-for-an-account/ta-p/140)
+
+It is possible to use Carnap in an `iframe` (so it appears in the Canvas page
+without opening a new tab), but there are caveats, especially around support
+for Safari and other WebKit browsers, since they are very aggressive about
+third-party cookie blocking. If you want to try this, remove the
+`"windowTarget": "_blank"` in the JSON.
+
+```json
+{
+   "title": "Carnap",
+   "description": "Carnap Logic Framework",
+   "privacy_level": "public",
+   "oidc_initiation_url": "https://carnap.io/auth/page/lti13/initiate",
+   "target_link_uri": "https://carnap.io/",
+   "public_jwk_url": "https://carnap.io/auth/page/lti13/jwks",
+   "scopes": [
+      "https://purl.imsglobal.org/spec/lti-ags/scope/lineitem",
+      "https://purl.imsglobal.org/spec/lti-ags/scope/result.readonly",
+      "https://purl.imsglobal.org/spec/lti-ags/scope/score",
+      "https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly"
+   ],
+   "extensions": [
+      {
+         "domain": "carnap.io",
+         "tool_id": "Carnap.io",
+         "platform": "canvas.instructure.com",
+         "settings": {
+            "text": "Carnap",
+            "selection_height": 800,
+            "selection_width": 800,
+            "placements": [
+               {
+                  "text": "Carnap",
+                  "enabled": true,
+                  "placement": "course_navigation",
+                  "message_type": "LtiResourceLinkRequest",
+                  "target_link_uri": "https://carnap.io/",
+                  "windowTarget": "_blank"
+               }
+            ]
+         }
+      }
+   ]
+}
+```
 
 ## LTI Setup (Carnap side)
 
