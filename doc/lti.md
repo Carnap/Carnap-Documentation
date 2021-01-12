@@ -22,23 +22,29 @@ same paths but with your custom domain name replacing "carnap.io".
 ### Common LMS: Canvas
 
 Instructions for configuring an LTI key for canvas can be found here:
-[Configuring an LTI key](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-LTI-key-for-an-account/ta-p/140).
-Canvas also allows configurations to be imported rather than set manually, via
+[Configuring an LTI
+key](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-LTI-key-for-an-account/ta-p/140).
+This will require someone with administrator access to your Canvas instance, so
+you may need to speak to someone in your IT department to get this set up.
+Canvas allows configurations to be imported rather than set manually, via
 the "Paste JSON" option described in the documentation linked above. A JSON
-file for easy configuration of a canvas instance, using this method is
+file for easy configuration of a canvas instance using this method is
 reproduced below.
+
+Once the LTI key is configured in your canvas instance, you'll need to ask IT
+for the client ID number associated with the key, and follow the instructions
+here: [Adding Carnap To Your
+Course](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-external-app-for-an-account-using-a-client/ta-p/202)
 
 For more details on Canvas setup with LTI 1.3, see:
 
 * [Technical documentation](https://canvas.instructure.com/doc/api/file.lti_dev_key_config.html).
   This is also a nice general overview of the protocol.
 * [Configuring an LTI key](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-LTI-key-for-an-account/ta-p/140)
+* [Adding Carnap To Your
+Course](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-external-app-for-an-account-using-a-client/ta-p/202)
 
-It is possible to use Carnap in an `iframe` (so it appears in the Canvas page
-without opening a new tab), but there are caveats, especially around support
-for Safari and other WebKit browsers, since they are very aggressive about
-third-party cookie blocking. If you want to try this, remove the
-`"windowTarget": "_blank"` in the JSON.
+####JSON Configuration with Canvas.
 
 ```json
 {
@@ -78,6 +84,12 @@ third-party cookie blocking. If you want to try this, remove the
    ]
 }
 ```
+
+Note: It is possible to use Carnap in an `iframe` (so it appears in the Canvas
+page without opening a new tab), but there are caveats, especially around
+support for Safari and other WebKit browsers, since they are very aggressive
+about third-party cookie blocking. If you want to try this, remove the
+`"windowTarget": "_blank"` in the JSON.
 
 ## LTI Setup (Carnap side)
 
