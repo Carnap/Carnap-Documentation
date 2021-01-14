@@ -29,12 +29,14 @@ you may need to speak to someone in your IT department to get this set up.
 Canvas allows configurations to be imported rather than set manually, via
 the "Paste JSON" option described in the documentation linked above. A JSON
 file for easy configuration of a canvas instance using this method is
-reproduced below.
+reproduced below. The Canvas administrator will also need to *manually* set the
+privacy level associated with the LTI key to *public*, so that Canvas will
+share students' names with Carnap.
 
-Once the LTI key is configured in your canvas instance, you'll need to ask IT
-for the client ID number associated with the key, and follow the instructions
-here: [Adding Carnap To Your
-Course](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-external-app-for-an-account-using-a-client/ta-p/202)
+Once the LTI key is configured in your canvas instance, you'll need to ask your
+canvas administrator for the client ID number associated with the key, and
+follow the instructions here: [Adding Carnap To Your
+Course](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-external-app-for-an-account-using-a-client/ta-p/202).
 
 For more details on Canvas setup with LTI 1.3, see:
 
