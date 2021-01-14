@@ -26,12 +26,20 @@ Instructions for configuring an LTI key for canvas can be found here:
 key](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-LTI-key-for-an-account/ta-p/140).
 This will require someone with administrator access to your Canvas instance, so
 you may need to speak to someone in your IT department to get this set up.
-Canvas allows configurations to be imported rather than set manually, via
-the "Paste JSON" option described in the documentation linked above. A JSON
-file for easy configuration of a canvas instance using this method is
-reproduced below. The Canvas administrator will also need to *manually* set the
-privacy level associated with the LTI key to *public*, so that Canvas will
-share students' names with Carnap.
+
+Canvas allows configurations to be imported rather than set manually, via the
+"Paste JSON" option described in the documentation linked above. A JSON file
+for easy configuration of a canvas instance using this method is reproduced
+below. The Canvas administrator will also need to *manually* set the privacy
+level associated with the LTI key to *public*, so that Canvas will share
+students' names with Carnap. To do this, first paste in the JSON as normal,
+then select Manual Entry under Method, and under the Additional Settings
+heading, select Privacy Level of Public before saving the key.[^1]
+
+[^1]: This is the result of what seems to be a bug in Canvas's JSON
+autoconfiguration. While a field is provided for configuring the privacy level
+in the JSON, this field is not respected during autoconfiguration. [It has been
+reported to Canvas.](https://github.com/instructure/canvas-lms/issues/1794)
 
 Once the LTI key is configured in your canvas instance, you'll need to ask your
 canvas administrator for the client ID number associated with the key, and
@@ -48,15 +56,7 @@ Course](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-ext
 
 #### JSON Configuration with Canvas.
 
-**NOTE**: There is presently what seems to be a bug in Canvas where the JSON
-configuration is not setting the privacy level properly to `public`. This will
-break autoregistration as it will prevent names and student numbers from being
-forwarded to Carnap.
-[It has been reported to Canvas.](https://github.com/instructure/canvas-lms/issues/1794)
 
-For now, the workaround is to first paste in the JSON as normal, then select
-Manual Entry under Method, and under the Additional Settings heading, select
-Privacy Level of Public before saving the key.
 
 ```json
 {
