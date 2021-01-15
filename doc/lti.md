@@ -151,7 +151,7 @@ be registered in the associated Carnap course automatically.
 you've unchecked the "course open" box on your instructor page). So, you can
 set registration to be LTI only simply by setting your course to be closed.
 
-* Students will have their user information automatically synchronized with the 
+* Students will have their user information automatically synchronized with the
 LMS on every launch, so if they want to change their name or other details,
 that should be accomplished in the LMS or other upstream systems.
 
@@ -165,17 +165,18 @@ https://lti-ri.imsglobal.org/platforms/1255/
 
 Configure it in Carnap at `/master_admin` with the following:
 
+<div class="table">
 <table>
 <thead>
-    <tr>
-        <td>iss</td>
-        <td>client_id</td>
-        <td>OIDC Auth Endpoint</td>
-        <td>JWK URL</td>
+    <tr class="header">
+        <th>iss</th>
+        <th>client_id</th>
+        <th>OIDC Auth Endpoint</th>
+        <th>JWK URL</th>
     </tr>
 </thead>
 <tbody>
-    <tr>
+    <tr class="odd">
         <td>aaaaa</td>
         <td>abcde</td>
         <td>https://lti-ri.imsglobal.org/platforms/1255/authorizations/new</td>
@@ -183,6 +184,7 @@ Configure it in Carnap at `/master_admin` with the following:
     </tr>
 </tbody>
 </table>
+</div>
 
 To perform launches, use the "Resource Links" page.
 
@@ -256,7 +258,8 @@ http://ubuntu-vm:8900/api/lti/authorize_redirect
     &lti_message_hint=some-long-jwt-that-is-opaque-per-the-standard
 ```
 
-Bits here:
+Things of note in this request:
+
 * We generate the `redirect_uri`.
 * The `client_id`, `login_hint`, and `lti_message_hint` are just from Canvas' initiation
 * `state` and `nonce` are just randomly generated strings we check on the way back.
