@@ -37,10 +37,13 @@ Carnap's pandoc parser incorporates the following pandoc extensions:
 * [markdown\_in\_html\_blocks](https://pandoc.org/MANUAL.html#raw-html)
 * [auto\_identifiers](https://pandoc.org/MANUAL.html#headings-and-sections)
 * [tex\_math\_dollars](https://pandoc.org/MANUAL.html#math)
+* [fenced\_divs](https://pandoc.org/MANUAL.html#extension-fenced_divs)
+* [bracketed\_spans](https://pandoc.org/MANUAL.html#extension-bracketed_spans)
 * [fenced\_code\_blocks](https://pandoc.org/MANUAL.html#fenced-code-blocks)
 * [backtick\_code\_blocks](https://pandoc.org/MANUAL.html#fenced-code-blocks)
 * [line\_blocks](https://pandoc.org/MANUAL.html#line-blocks)
 * [fancy\_lists](https://pandoc.org/MANUAL.html#ordered-lists)
+* [startnum](https://pandoc.org/MANUAL.html#extension-startnum)
 * [definition\_lists](https://pandoc.org/MANUAL.html#definition-lists)
 * [example\_lists](https://pandoc.org/MANUAL.html#numbered-example-lists)
 * [simple\_tables](https://pandoc.org/MANUAL.html#tables)
@@ -49,6 +52,7 @@ Carnap's pandoc parser incorporates the following pandoc extensions:
 * [fenced\_code\_attributes](https://pandoc.org/MANUAL.html#fenced_code_blocks)
 * [inline_code\_attributes](https://pandoc.org/MANUAL.html#fenced_code_blocks)
 * [shortcut\_reference\_links](https://pandoc.org/MANUAL.html#reference-links)
+* [link\_attributes](https://pandoc.org/MANUAL.html#extension-link_attributes)
 * [yaml\_metadata\_block](https://pandoc.org/MANUAL.html#metadata-blocks)
 * [task\_lists](https://pandoc.org/MANUAL.html#ordered-lists)
 
@@ -235,9 +239,9 @@ documentation for the [instructor dashboard](dashboard.md).
 ### Custom JavaScript
 
 Documents can also include links to custom JavaScript. This can be done using
-the `raw_html` pandoc extension, or by including the JS in a metadata block.
-Like a CSS entry, a JS entry entry can include either a url for a single CSS
-stylesheet, like so:
+the `raw_html` pandoc extension to include a `<script>` tag, or by including
+the JS in a metadata block. Like a CSS entry, a JS entry entry can include
+either a url for a single CSS stylesheet, like so:
 
     ---
     js: https://carnap.io/shared/myemail@university.edu/myjs.js
