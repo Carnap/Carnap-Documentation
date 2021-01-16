@@ -63,8 +63,8 @@ date, it will:
 
 After the end-date of the course, the class will be archived at the bottom of
 the manage-courses tab, under the heading "Old Courses". Once the class is
-archived, you'll still be able to edit the class' properties, download grades
-as a `.csv` file, and delete the class. If you need to reactive an archived
+archived, you'll still be able to edit the class's properties, download grades
+as a `.csv` file, and delete the class. If you need to reactivate an archived
 class, just set its end-date for some point in the future.
 
 ### Assign Textbook Problems
@@ -191,6 +191,40 @@ The available functions are hopefully clear enough. In the upper half,
 statistics for different assignments are available, and in the lower half,
 a table of students and total scores earned by those students is visible. 
 
+### Course Information
+
+Below the table of students, you'll see some course information,
+including the course title, points available, the start and end date
+for your course, the time zone, whether the class is open for
+enrollment, and an enrollment link you can give to students. You can
+update the course description, points available, start and end date,
+and whether the class is open for enrollment. 
+
+### Opening Enrolment for Your Students
+
+Students who follow the enrollment link will be prompted to register
+(if they're not already registered) and automatically enrolled in your
+course.  A short video explaining the
+process for students is available here:
+[youtu.be/lmkWcxqxEZk](https://youtu.be/lmkWcxqxEZk). Feel free to
+send your students this link along with the enrollment link.
+
+### Choosing a Custom Textbook
+
+You can also select a custom textbook for your course. A custom
+textbook is an assignment that students will be directed to when they
+click the "book" link at the top of most pages (this overrides the
+ordinary behavior of directing students to the built-in Carnap
+textbook). The linked assignment would ordinarily function as a table
+of contents, directing students to various "chapters" (other
+assignments), containing problems that they can complete throughout
+the semester.
+
+When selecting a custom textbook, you'll need to choose an assignment
+that has already been created for the class - so, you'll want to
+assign the textbook *first* and then set it as the textbook for the
+class.
+
 ### Actions on Students
 
 A number of actions can be performed on individual students by clicking the
@@ -224,32 +258,6 @@ icons in the "Actions" column:
    timed exam (although any work that they submitted on the first try will
    persist), so their next attempt at the exam will be timed in the same way as
    their first attempt.
-
-### Course Information
-
-Below the table of students, you'll see some course information, including the
-course title, points available, the start and end date for your course, the
-time zone, whether the class is open for enrollment, and an enrollment link you
-can give to students. Students who follow the enrollment link will be prompted
-to register (if they're not already registered) and automatically enrolled in
-your course.
-
-### Updating Course information and Choosing a Custom Textbook
-
-You can update the course description, points available, start and end date,
-and whether the class is open for enrollment. You can also select a custom
-textbook for your course.
-
-A custom textbook is an assignment that students will be directed to when they
-click the "book" link at the top of most pages (this overrides the ordinary
-behavior of directing students to the built-in Carnap textbook). The linked
-assignment would ordinarily function as a table of contents, directing students
-to various "chapters" (other assignments), containing problems that they can
-complete throughout the semester.
-
-When selecting a custom textbook, you'll need to choose an assignment that has
-already been created for the class - so, you'll want to assign the textbook
-*first* and then set it as the textbook for the class.
 
 ### Adding A Co-Instructor
 
