@@ -18,6 +18,15 @@
 <details>
 <summary>How can I control student credit for late assignments?<summary>
 
+By default, students receive half-credit (rounding down) for problems that are
+submitted after the due date, but while the problem is still visible. However,
+late credit is configurable using the `late-credit` option, which applies to
+all exercises. You can set the `late-credit` option like this:
+
+    ~~~{.SomeProblemType late-credit=4} 
+    1.1 SOME PROBLEM
+    ~~~
+
 </details>
 
 <details>
