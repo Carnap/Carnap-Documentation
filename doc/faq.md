@@ -34,6 +34,11 @@ all exercises. You can set the `late-credit` option like this:
 
 </details>
 
+<details>
+<summary>How can I embed a video in an assignment?</summary>
+
+</details>
+
 ---
 
 Want to offer a documentation suggestion or report a typo? Use the issue
