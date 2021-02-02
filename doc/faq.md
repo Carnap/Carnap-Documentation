@@ -18,22 +18,20 @@ date*. This is displayed on each student's user page, and determines whether
 work counts as late. The other is the *visible* date. After the *visible* date
 passes, the assignment is no longer visible to the student, and can't be
 accessed. You can configure both of these dates by pressing the small "gear"
-icon (like this <i.fa.fa-cog></i>) that appears next to the assignment listing
+icon that appears next to the assignment listing
 on the instructor page.
 
 You can also adjust deadlines per-student in two ways. One is to offer the
 student an extension. You can do this by clicking the "calendar plus" icon
-(looks like this: <i.fa.fa-calendar-plus-o></i>) that appears next to the
-student's name in the class roster on your instructor page. The extension will
-override both the due-date and the visibility date for that student. You can
-also set a deadline adjustment policy for a specific student by clicking the
-"clock" icon (looks like this: <i.fa.fa-clock-o></i>) next to the student's
-name.
+that appears next to the student's name in the class roster on your instructor
+page. The extension will override both the due-date and the visibility date for
+that student. You can also set a deadline adjustment policy for a specific
+student by clicking the "clock" icon next to the student's name.
 
 </details>
 
-<details>
-<summary>How can I control student credit for late assignments?<summary>
+<details> 
+<summary>How can I control student credit for late assignments?</summary>
 
 By default, students receive half-credit (rounding down) for problems that are
 submitted after the due date, but while the problem is still visible. However,
