@@ -18,8 +18,8 @@ date*. This is displayed on each student's user page, and determines whether
 work counts as late. The other is the *visible* date. After the *visible* date
 passes, the assignment is no longer visible to the student, and can't be
 accessed. You can configure both of these dates by pressing the small "gear"
-icon that appears next to the assignment listing
-on the instructor page.
+icon that appears next to the assignment listing in the "manage assignments"
+tab on the instructor page.
 
 You can also adjust deadlines per-student in two ways. One is to offer the
 student an extension. You can do this by clicking the "calendar plus" icon
@@ -46,6 +46,15 @@ all exercises. You can set the `late-credit` option like this:
 
 <details>
 <summary>How can I control when grades are released?</summary>
+
+Ordinarily, a student's score for a problem is visible (on the student's user
+page) immediately after the student submits a problem. In some situations (for
+example, during an exam), this can be undesirable.
+
+If you want to release grades only after a certain time and date, then you can
+set a "Release Grades After" time when you create the assignment. You can also
+update this release time by pressing the "gear" icon next to the assignment on
+your instructor page, in the "manage assignments" tab.
 
 </details>
 
