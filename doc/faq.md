@@ -61,6 +61,56 @@ your instructor page, in the "manage assignments" tab.
 <details>
 <summary>How can I embed a video in an assignment?</summary>
 
+Carnap's markdown dialect supports [raw
+HTML](https://pandoc.org/MANUAL.html#extension-raw_html), so you can embed
+videos by including them in the same way that you might include them in an
+ordinary webpage. There are two main options.
+
+If your video is a file (a `.mp4`, `mov`, `avi` file or something similar) that
+you have uploaded to a file hosting service somewhere, then you can point a
+video tag at it by including something like this in your pandoc document:
+
+    <video controls
+        src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+        poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+        width="620"></video>
+
+Which will produce something like this (in browsers that support embedded
+videos):
+
+<video controls
+    src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+    poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+    width="620"></video>
+
+More details on how to use `<video>` tags can be found
+[here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video). 
+
+Note: please don't upload video files as documents to the Carnap site. We're
+not designed to serve these. Video files will need to be hosted elsewhere.
+
+If your video hosted at a site like youtube or vimeo, rather than at a file
+hosting service, then you can instead use an "embed code". Instructions for
+obtaining an embed code for each of these services can be found here:
+
+https://support.google.com/youtube/answer/171780?hl=en
+
+https://vimeo.zendesk.com/hc/en-us/articles/224969968-Embedding-videos-overview
+
+and the code, when you get it, should look a bit like this:
+
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/nfeWlHVyBZQ" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+        gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+And should result in something like this
+
+<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/nfeWlHVyBZQ" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+    picture-in-picture" allowfullscreen></iframe>
+
 </details>
 
 ---
