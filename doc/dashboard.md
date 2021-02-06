@@ -24,11 +24,12 @@ dashboard by first,
 2. from your user page, clicking the link at the very top that reads "your
    instructor page is here"
 
-You should then see the course management dashboard. The dashboard has two main
-parts: The *class card*, where information for your different classes is
-listed, and the *assignment card*, where you can assign problem sets from the
-[Carnap Book](/book).[^1] If this is your first time on the instructor page, your
-class card is probably empty. So we'll describe the assignment card first.
+You should then see the course management dashboard. The dashboard has
+two main parts: The *course card*, where information for your
+different courses is listed, and the *assignment card*, where you can
+assign problem sets from the [Carnap Book](/book).[^1] If this is your
+first time on the instructor page, your course card is probably empty.
+So we'll describe the assignment card first.
 
 [^1]: I concede that tabbed cards are not the best UI metaphor. I'm open to
 suggestions on this one.
@@ -39,91 +40,98 @@ The top of the assignment card looks like this:
 
 ![](images/assignment-card.png)
 
-There are four main tabs. The first one you want to look at is probably "Manage
-Courses".
+There are four main tabs. The first one you want to look at is
+probably "Manage Courses".
 
 ### Manage Courses
 
-Within this tab, you can create a new course, by giving it a title, an optional
-description, a start-date, a total number of available points for the course,
-an end-date, and a time-zone. The time zone which is used to determine whether
-assignments have been received by a given due date and time. The start-date and
-end-date are used to determine when your course will be listed as an option for
-enrollment.
+Within this tab, you can create a new course, by giving it a title, an
+optional description, a start-date, a total number of available points
+for the course, an end-date, and a time-zone. The time zone which is
+used to determine whether assignments have been received by a given
+due date and time. The start-date and end-date are used to determine
+when your course will be listed as an option for enrollment.
 
 [![Creating a new course](images/course-create-thumb.png)](images/course-create.png)
 
-Once you've created a course, during the period between the start date and end
-date, it will:
+Once you've created a course, during the period between the start date
+and end date, it will:
 
-1. be visible as an enrollment option for people creating new accounts, or for
-   people editing their user information from their user pages;
+1. be visible as an enrollment option for people creating new
+   accounts, or for people editing their user information from their
+   user pages;
 2. become visible to you as a target for assignments in the other tabs; and
-3. appear as a tab in your class-card (see below).
+3. appear as a tab in your course card (see below).
 
-After the end-date of the course, the class will be archived at the bottom of
-the manage-courses tab, under the heading "Old Courses". Once the class is
-archived, you'll still be able to edit the class's properties, download grades
-as a `.csv` file, and delete the class. If you need to reactivate an archived
-class, just set its end-date for some point in the future.
+After the end-date of the course, the course will be archived at the
+bottom of the manage-courses tab, under the heading "Old Courses".
+Once the course is archived, you'll still be able to edit the course's
+properties, download grades as a `.csv` file, and delete the course.
+If you need to reactivate an archived course, just set its end-date
+for some point in the future.
 
 ### Assign Textbook Problems
 
-Within this tab, you can assign textbook problem sets from the Carnap book to
-your courses, setting particular due-dates and due-times.  There are currently
-17 problem sets available, but more are likely to appear in the future. Once a
-problem set is assigned to a given class, it will appear on the user-page of
-everyone enrolled in that class.
+Within this tab, you can assign textbook problem sets from the Carnap
+book to your courses, setting particular due-dates and due-times.
+There are currently 17 problem sets available, but more are likely to
+appear in the future. Once a problem set is assigned to a given
+course, it will appear on the user-page of everyone enrolled in that
+course.
 
 You can also delete assigned problem sets, and replace them with new ones.
 Deleting an assigned problem set does not delete submitted student work, so
 first deleting then replacing is a safe way to change the due-date of an
 assignment.
 
-By default, submitted problems received on time receive 5 points each, and late
-submissions receive 2 points each. Both the point amount awarded for a given
-problem and the treatment of late problems can be customized—details in the
-documentation for [pandoc markup](pandoc.md).
+By default, submitted problems received on time receive 5 points each,
+and late submissions receive 2 points each. Both the point amount
+awarded for a given problem and the treatment of late problems can be
+customized—details in the documentation for [pandoc
+markup](pandoc.md).
 
-I find that leaving open the option to submit even *very* late work helps
-students who have fallen behind remain motivated, and gives them some incentive
-to do extra work that will make the later material easier for them to
-understand.
+I find that leaving open the option to submit even *very* late work
+helps students who have fallen behind remain motivated, and gives them
+some incentive to do extra work that will make the later material
+easier for them to understand.
 
 ### Assign Uploaded Documents
 
-Within this tab, you can assign documents created using Carnap's [pandoc
-markup](pandoc.md). In order to assign a document, you need to first upload it
-in the [Manage Uploaded Documents](#manage-uploaded-documents) tab. 
+Within this tab, you can assign documents created using Carnap's
+[pandoc markup](pandoc.md). In order to assign a document, you need to
+first upload it in the [Manage Uploaded
+Documents](#manage-uploaded-documents) tab. 
 
 [![Assigning an uploaded document](images/assign-doc-thumb.png)](images/assign-doc.png)
 
 Creating an assignment allows you to optionally associate a due-date,
 visibility range, grade release date, and description with the assignment. 
 
-Once an assignment is assigned to given class, it will appear on the user page
-of everyone enrolled in the class for the duration of the date and time range
-of you specify (or indefinitely, if no visibility range is given). It will not
-be possible for students to make new submissions after the assignment ceases to
-be visible.
+Once an assignment is assigned to given course, it will appear on the
+user page of everyone enrolled in the course for the duration of the
+date and time range of you specify (or indefinitely, if no visibility
+range is given). It will not be possible for students to make new
+submissions after the assignment ceases to be visible.
 
-The due-date affects when student work is counted as late, just like with a
-problem set. If the due date is omitted, then work can be turned in at any time
-for full credit. The grade release date determines when grades for the problems
-in this assignment will be released to students (before the release date,
-students will see that work has been submitted, but the point value will be
-listed as "-"). If it is omitted, scores will be released immediately.
+The due-date affects when student work is counted as late, just like
+with a problem set. If the due date is omitted, then work can be
+turned in at any time for full credit. The grade release date
+determines when grades for the problems in this assignment will be
+released to students (before the release date, students will see that
+work has been submitted, but the point value will be listed as "-").
+If it is omitted, scores will be released immediately.
 
-Assignments can also be equipped with access controls. Access controls require
-setting a password, which students will need to enter before first accessing
-the assignment. Access-controlled assignments can be hidden from the class. If
-hidden, they will not appear on the user page, but will still be accessible via
-their URL. It's also possible to enter a time-limit for access controlled
-assignments. The time limit is measured from when the student enters first
-enters their password. After the limit expires the student will no longer be
-able to view the exam or submit problems. The time limit is based on a
-time-stamp of when the student began the exam, so it will expire after the
-designated period even if the student closes their browser.
+Assignments can also be equipped with access controls. Access controls
+require setting a password, which students will need to enter before
+first accessing the assignment. Access-controlled assignments can be
+hidden from the course. If hidden, they will not appear on the user
+page, but will still be accessible via their URL. It's also possible
+to enter a time-limit for access controlled assignments. The time
+limit is measured from when the student enters first enters their
+password. After the limit expires the student will no longer be able
+to view the exam or submit problems. The time limit is based on a
+time-stamp of when the student began the exam, so it will expire after
+the designated period even if the student closes their browser.
 
 In addition to creating assignments, you can also: 
 
@@ -136,29 +144,28 @@ In addition to creating assignments, you can also:
    Deleting an assignment *deletes all student work associated with that
    assignment*, so be careful when doing this.
 
-Submitted work for assignments is graded in much the same way as work submitted
-for textbook problem set. Each problem counts, by default, for five points on
-time or two points if late. Problems assigned a custom point value count for
-that value if received on time, and otherwise for half that value rounding
-down. Late point values can be customized by setting the `late-credit`
-attribute - for details, see the documentation for [pandoc markup](pandoc.md)
+Submitted work for assignments is graded in much the same way as work
+submitted for textbook problem set. Each problem counts, by default,
+for five points on time or two points if late. Problems assigned a
+custom point value count for that value if received on time, and
+otherwise for half that value rounding down. Late point values can be
+customized by setting the `late-credit` attribute—for details, see
+the documentation for [pandoc markup](pandoc.md).
 
 ### Manage Uploaded Documents
 
-Within this tab, you can upload documents from which to create assignments in
-your classes, and optionally share them, either with other instructors,
-publicly, or privately using a link. Documents can be assigned tags, which make
-them discoverable once they are shared. 
+Within this tab, you can upload documents from which to create
+assignments in your courses, and optionally share them, either with
+other instructors, publicly, or privately using a link. Documents can
+be assigned tags, which make them discoverable once they are shared. 
 
 [![Uploading a
 document](images/upload-doc-thumb.png)](images/upload-doc.png)
 
-A list of shared documents can be found
-at [carnap.io/shared](/shared), and the shared documents with a given tag (for
-example, the tag "Documentation" can be found at a link like
-[carnap.io/shared/Documentation](/shared/Documentation). You can also click on
-the name of a tag in most places where it the tag is displayed to see a list of
-the associated shared documents.
+A list of shared documents can be found at
+[carnap.io/shared](/shared). You can also click on the name of a tag
+in most places where the tag is displayed to see a list of the
+associated shared documents.
 
 Documents can be of three kinds:
 
@@ -179,26 +186,27 @@ Again, to edit the attributes of an uploaded document, click the gear
 icon.  You can also delete documents with the trashcan icon, or
 download them with the cloud icon.
 
-## The Class Card
+## The Course Card
 
-Once you've created a class, the class card will look a bit like this:
+Once you've created a course, the course card will look a bit like this:
 
-![The class card](images/course-tab.png)
+![The course card](images/course-tab.png)
 
-Different classes are available under different tabs.
+Different courses are available under different tabs.
 
-The available functions are hopefully clear enough. In the upper half,
-statistics for different assignments are available, and in the lower half,
-a table of students and total scores earned by those students is visible. 
+In the upper half, statistics for different assignments are available.
+In the lower half, a table of students and total scores earned by
+those students is visible. You can click on each students name to see
+details of their submitted problems and points earned.
 
 ### Course Information
 
 Below the table of students, you'll see some course information,
 including the course title, points available, the start and end date
-for your course, the time zone, whether the class is open for
+for your course, the time zone, whether the course is open for
 enrollment, and an enrollment link you can give to students. You can
 update the course description, points available, start and end date,
-and whether the class is open for enrollment. 
+and whether the course is open for enrollment. 
 
 ### Opening Enrolment for Your Students
 
@@ -221,17 +229,17 @@ assignments), containing problems that they can complete throughout
 the semester.
 
 When selecting a custom textbook, you'll need to choose an assignment
-that has already been created for the class - so, you'll want to
+that has already been created for the course—so, you'll want to
 assign the textbook *first* and then set it as the textbook for the
-class.
+course.
 
 ### Actions on Students
 
 A number of actions can be performed on individual students by clicking the
 icons in the "Actions" column:
 
-1. Students can be dropped from a class by clicking the "delete" icon.
-   A dropped student is removed from the class, but their data is otherwise
+1. Students can be dropped from a course by clicking the "delete" icon.
+   A dropped student is removed from the course, but their data is otherwise
    intact. So if they are dropped by mistake, then can simply re-enroll.
 2. Students can be emailed individually by clicking the "mail" icon visible in the
    action column to the right of their name.
@@ -253,7 +261,7 @@ icons in the "Actions" column:
    Assignments set as "hidden" however, will not be visible on the user page
    even if an alternate due date is set.
 5. Access can be re-granted to timed assignments after the timer has expired,
-   by clicking the "full hourclass" icon to the right of the student's name.
+   by clicking the "full hourglass" icon to the right of the student's name.
    Once access is re-granted, it will be as if the student never started the
    timed exam (although any work that they submitted on the first try will
    persist), so their next attempt at the exam will be timed in the same way as
@@ -261,15 +269,15 @@ icons in the "Actions" column:
 
 ### Adding A Co-Instructor
 
-At the very bottom of the class card, you have the options of adding a
-co-instructor, editing a class's information (including total points,
-description, and whether the class is open for enrollment), exporting grades,
-and also of deleting the class. 
+At the very bottom of the course card, you have the options of adding a
+co-instructor, editing a course's information (including total points,
+description, and whether the course is open for enrollment), exporting grades,
+and also of deleting the course. 
 
 Co-instructors are other instructors who have the same type of access to the
-class as the class creator. They may be useful if you have a TA or if you're
-teaching a class with someone else. Co-instructors can be removed from within
-the class card by clicking the trash icon next to their name. Removing a
+course as the course creator. They may be useful if you have a TA or if you're
+teaching a course with someone else. Co-instructors can be removed from within
+the course card by clicking the trash icon next to their name. Removing a
 co-instructor will also remove all assignments created by that co-instructor
 and all student work submitted in response to those assignments, so *always
 exercise caution when removing a co-instructor*!
@@ -278,15 +286,15 @@ exercise caution when removing a co-instructor*!
 
 Grades are exported in `.csv` format, which most spreadsheet programs should be
 able to import. Grades can either be tabulated per-assignment (for import into
-a CMS, for example), or per-problem (for detailed analysis of class
+a CMS, for example), or per-problem (for detailed analysis of course
 performance, or for more complex grading schemes). Students are identified by
 first name, last name, University ID (an arbitrary string, like their student
 ID number or other useful identifying information, that you can ask them to
 enter when registering), and their email address. If a student has not entered
 some piece of information, its absence is indicated with a question mark.
 
-### Deleting a Class
+### Deleting a Course
 
-Deleting the class will delete all assignments associated with the class and
+Deleting the course will delete all assignments associated with the course and
 all student work submitted in response to these assignments, so *always
-exercise caution when deleting a class*!
+exercise caution when deleting a course*!

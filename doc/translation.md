@@ -78,6 +78,41 @@ to generate:
 Exact translations use the same syntax as `Prop` by default, but can be
 configured to use a large number of alternative syntaxes (see below)
 
+## Systems
+
+The way that formulas are parsed can also be customized. This is done by
+setting the `system` attribute to indicate which formal system you are drawing
+your syntax from. So for example, 
+
+    ~~~{.Translate .FOL system="magnusQL"}
+    3.5 AxBx : Everything is bananas
+    ~~~
+
+will generate:
+
+~~~{.Translate .FOL system="magnusQL"}
+3.5 AxBx : Everything is bananas
+~~~
+
+For first-order translations, the available systems are: `firstOrder`
+`montagueQC` `magnusQL` `thomasBolducAndZachFOL` `thomasBolducAndZachFOL2019`
+`LogicBookPD` `LogicBookPDPlus` `hausmanPL` `howardSnyderPL`
+`ichikawaJenkinsQL` `hardegreePL` `goldfarbAltND` `goldfarbNDPlus` and
+`goldfarbAltNDPlus`. 
+
+For propositional translations, the available systems are: `prop` `montagueSC`
+`LogicBookSD` `LogicBookSDPlus` `hausmanSL` `howardSnyderSL`
+`ichikawaJenkinsSL` `hausmanSL` `magnusSL` `magnusSLPlus`
+`thomasBolducAndZachTFL` `thomasBolducAndZachTFL2019` `tomassiPL` and
+`hardegreeSL`.
+
+For exact translations, the available systems are all of the above, together
+with modal logic systems `.HardegreeSL` `.HardegreePL` `.HardegreeWTL`,
+`.HardegreeL` `.HardegreeK` `.HardegreeT` `.HardegreeB` `.HardegreeD`
+`.Hardegree4` `.Hardegree5`, second order systems `.SecondOrder`
+`.PolySecondOrder`,  and set theory systems `ElementaryST` and
+`SeparativeST` 
+
 ## Advanced usage
 
 #### Multiple Solutions
@@ -116,37 +151,7 @@ Name                     Effect
 These can be included in the space separated list supplied to the `options`
 attribute. 
 
-The way that formulas are parsed can also be customized. This is done by
-setting the `system` attribute to indicate which formal system you are drawing
-your syntax from. So for example, 
-
-    ~~~{.Translate .FOL system="magnusQL"}
-    3.5 AxBx : Everything is bananas
-    ~~~
-
-will generate:
-
-~~~{.Translate .FOL system="magnusQL"}
-3.5 AxBx : Everything is bananas
-~~~
-
-For first-order translations, the available systems are: `firstOrder`
-`montagueQC` `magnusQL` `thomasBolducAndZachFOL` `thomasBolducAndZachFOL2019`
-`LogicBookPD` `LogicBookPDPlus` `hausmanPL` `howardSnyderPL`
-`ichikawaJenkinsQL` `hardegreePL` `goldfarbAltND` `goldfarbNDPlus` and
-`goldfarbAltNDPlus`. 
-
-For propositional translations, the available systems are: `prop` `montagueSC`
-`LogicBookSD` `LogicBookSDPlus` `hausmanSL` `howardSnyderSL`
-`ichikawaJenkinsSL` `hausmanSL` `magnusSL` `magnusSLPlus`
-`thomasBolducAndZachTFL` `thomasBolducAndZachTFL2019` `tomassiPL` and
-`hardegreeSL`.
-
-For exact translations, the available systems are all of the above, together
-with modal logic systems `.HardegreeSL` `.HardegreePL` `.HardegreeWTL`,
-`.HardegreeL` `.HardegreeK` `.HardegreeT` `.HardegreeB` `.HardegreeD`
-`.Hardegree4` `.Hardegree5`, second order systems `.SecondOrder`
-`.PolySecondOrder`,  and set theory systems `ElementaryST` and `SeparativeST` 
+#### Translation tests
 
 Finally, you can impose one or more extra tests on a translation. This is done
 by setting the `tests` attribute to indicate which tests you wish to require
