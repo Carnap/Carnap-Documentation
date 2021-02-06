@@ -181,7 +181,7 @@ Quantifier Shifts for $∃$    `QSE`       $∃ x(φ(x) ∧ ψ)$     $∃ x\,φ(
 
 Note that Carnap actually considers all formulas equal up to renaming
 of bound variables. Thus, the `VR` rules are provided just for
-completeness (and will allow any numer of renamings of bound
+completeness (and will allow any number of renamings of bound
 variables).  Any variable renaming necessary to apply a quantifier
 shift can be done implicitly without first invoking the `VR` rule.
 
