@@ -1,5 +1,12 @@
 # Carnap Documentation
 
+## Quick Start Guide
+
+[Quick Start Guide for Instructors](quickstart.md)
+
+Describes how you make assignments for use in Carnap, and how they are
+made available to students.
+
 ## Using the Carnap site
 
 [Carnap's Course Management Dashboard](dashboard.md)
