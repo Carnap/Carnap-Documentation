@@ -35,7 +35,7 @@ interactive behavior.
 [Systems supported by Carnap](systems.md)
 
 Describes the syntax, ASCII-only variants of symbols used, and
-idosyncrcies of the various systems supported by Carnap. Note: not all
+idiosyncrasies of the various systems supported by Carnap. Note: not all
 of these systems have supported corresponding proof systems.
 
 ## Exercise types
@@ -87,3 +87,8 @@ described on the following pages:
 
 1. [Carnap deployment/administration](administration.md)
 2. [Learning Tools Interoperability v1.3 integration](lti.md)
+
+---
+
+Want to offer a documentation suggestion or report a typo? Use the issue
+tracker [here](https://github.com/Carnap/Carnap-Documentation/issues)!
