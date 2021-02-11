@@ -8,6 +8,13 @@
 <details>
 <summary>How can I encourage my students to slow down and think when writing derivations?</summary>
 
+This is a good question. One option to discourage students from typing before
+they think is to slow down the rate at which they get feedback. You can require
+a button-press for feedback on a proof, or turn off feedback about correctness
+entirely by using the settings `feedback="manual"` or `feedback="syntaxonly"`
+respectively. Here's the link for more details on the [feedback settings](
+https://carnap.io/srv/doc/derivations.md#feedback).
+
 </details>
 
 <details>
