@@ -136,13 +136,16 @@ the designated period even if the student closes their browser.
 In addition to creating assignments, you can also: 
 
 1. edit the descriptions and due dates associated with assignments from this
-   tab, by clicking the gear icon;
-2. review the work submitted in connection with this assignment, by clicking
-   the pencil icon, and assign partial credit, if any of the problems from the
-   assignment have been set to allow for incomplete submissions; and
-3. delete assignments, by clicking the trashcan icon next to the assignment.
-   Deleting an assignment *deletes all student work associated with that
-   assignment*, so be careful when doing this.
+   tab, by clicking the gear icon <span style="font-family:FontAwesome">&#xf013;</span>;
+2. review the work submitted in connection with this assignment, by
+   clicking the pencil icon <span
+   style="font-family:FontAwesome">&#xf040;</span>, and assign partial
+   credit, if any of the problems from the assignment have been set to
+   allow for incomplete submissions; and
+3. delete assignments, by clicking the trashcan icon <span
+   style="font-family:FontAwesome">&#xf014;</span> next to the
+   assignment. Deleting an assignment *deletes all student work
+   associated with that assignment*, so be careful when doing this.
 
 Submitted work for assignments is graded in much the same way as work
 submitted for textbook problem set. Each problem counts, by default,
@@ -174,8 +177,8 @@ Documents can be of three kinds:
 - JS scripts for more sophisticated customization of your course materials.
 
 Uploaded files will be interpreted as problem sets unless they have the
-filename extension "css" or "js", so unless they are called something like
-"custom-stylesheet.css". or "my-script.js". For more information on how to
+filename extension `.css` or `.js`, so unless they are called something like
+`custom-stylesheet.css` or `my-script.js`. For more information on how to
 apply custom styling and behavior, see the "other features" section in the
 documentation of [Carnap's pandoc markup](pandoc.md).
 
@@ -183,8 +186,10 @@ Once documents are uploaded, they can also be assigned to students as problem
 sets, using the [Assign Uploaded Documents](#assign-uploaded-documents)
 
 Again, to edit the attributes of an uploaded document, click the gear
-icon.  You can also delete documents with the trashcan icon, or
-download them with the cloud icon.
+icon <span style="font-family:FontAwesome">&#xf013;</span>.  You can
+also delete documents with the trashcan icon <span
+style="font-family:FontAwesome">&#xf014;</span>, or download them with
+the cloud icon <span style="font-family:FontAwesome">&#xf0ed;</span>.
 
 ## The Course Card
 
@@ -202,99 +207,113 @@ details of their submitted problems and points earned.
 ### Course Information
 
 Below the table of students, you'll see some course information,
-including the course title, points available, the start and end date
-for your course, the time zone, whether the course is open for
-enrollment, and an enrollment link you can give to students. You can
-update the course description, points available, start and end date,
-and whether the course is open for enrollment. 
+including the course title, points available, number of students
+registered, the start and end date for your course, the time zone, the
+textbook, whether the course is open for enrollment, an enrollment
+link you can give to students, and any co-instructors. You can update
+the course description, points available, start and end date,
+whether the course is open for enrollment, and the course textbook by
+clicking on "Edit Information".
 
-### Opening Enrolment for Your Students
+#### Opening Enrolment for Your Students
 
 Students who follow the enrollment link will be prompted to register
 (if they're not already registered) and automatically enrolled in your
-course.  A short video explaining the
-process for students is available here:
-[youtu.be/lmkWcxqxEZk](https://youtu.be/lmkWcxqxEZk). Feel free to
-send your students this link along with the enrollment link.
+course.  A short video explaining the process for students is
+available here: [youtu.be/lmkWcxqxEZk](https://youtu.be/lmkWcxqxEZk).
+Feel free to send your students this link along with the enrollment
+link.
 
-### Choosing a Custom Textbook
+#### Choosing a Custom Textbook
 
 You can also select a custom textbook for your course. A custom
-textbook is an assignment that students will be directed to when they
-click the "book" link at the top of most pages (this overrides the
-ordinary behavior of directing students to the built-in Carnap
-textbook). The linked assignment would ordinarily function as a table
-of contents, directing students to various "chapters" (other
+textbook is a Carnap document that students will be directed to
+when they click the "Book" link at the top of most pages (this
+overrides the ordinary behavior of directing students to the built-in
+Carnap textbook). The linked document would ordinarily function as a
+table of contents, directing students to various "chapters" (other
 assignments), containing problems that they can complete throughout
 the semester.
 
-When selecting a custom textbook, you'll need to choose an assignment
-that has already been created for the course—so, you'll want to
+When selecting a custom textbook, you'll need to choose a document
+that has already been assigned to the course—so, you'll want to
 assign the textbook *first* and then set it as the textbook for the
-course.
+course. The textbook will not be shown in the "Upcoming Problems"
+section of your students' user page.
 
 ### Actions on Students
 
 A number of actions can be performed on individual students by clicking the
 icons in the "Actions" column:
 
-1. Students can be dropped from a course by clicking the "delete" icon.
-   A dropped student is removed from the course, but their data is otherwise
-   intact. So if they are dropped by mistake, then can simply re-enroll.
-2. Students can be emailed individually by clicking the "mail" icon visible in the
-   action column to the right of their name.
-3. Accessibility accommodations can be added for individual students by
-   clicking the "clock" icon to the right of the student's name. A fixed number of
-   minutes can be added to all of the students' timed exams, their exam times
-   can be extended by a given factor (for example, 1.5 for time-and-a-half) and
-   a fixed number of hours can be added to all of their due-dates. Adjustments
-   to due-dates do not affect visibility dates for assignments, only the
-   treatment of late work. Changes to due-dates will be reflected on the posted
-   due-date seen on the student's user page.
-4. Alternate due dates can be issued to individual students, for specific
-   assignments, by clicking the "calendar plus" icon to the right of the
-   student's name. Alternate due dates will be reflected on the posted
-   due-date seen on the student's user page. Alternate due dates will affect
-   whether an assignment is graded as late, and will override the visibility
-   settings for that assignment, so that a student can continue to access the
-   assignment and submit problems until their alternate due date expires.
-   Assignments set as "hidden" however, will not be visible on the user page
-   even if an alternate due date is set.
-5. Access can be re-granted to timed assignments after the timer has expired,
-   by clicking the "full hourglass" icon to the right of the student's name.
-   Once access is re-granted, it will be as if the student never started the
-   timed exam (although any work that they submitted on the first try will
-   persist), so their next attempt at the exam will be timed in the same way as
-   their first attempt.
+1. Students can be dropped from a course by clicking the trashcan icon
+   <span style="font-family:FontAwesome">&#xf014;</span>. A dropped
+   student is removed from the course, but their data is otherwise
+   intact. So if they are dropped by mistake, then can simply
+   re-enroll.
+2. Students can be emailed individually by clicking the "mail" icon
+   <span style="font-family:FontAwesome">&#xf003;</span> visible in the action column to the right of their name.
+3. Accessibility accommodations can be added for individual students
+   by clicking the "clock" icon <span
+   style="font-family:FontAwesome">&#xf017;</span> to the right of the
+   student's name. A fixed number of minutes can be added to all of
+   the students' timed exams, their exam times can be extended by a
+   given factor (for example, 1.5 for time-and-a-half) and a fixed
+   number of hours can be added to all of their due-dates. Adjustments
+   to due-dates do not affect visibility dates for assignments, only
+   the treatment of late work. Changes to due-dates will be reflected
+   on the posted due-date seen on the student's user page.
+4. Alternate due dates can be issued to individual students, for
+   specific assignments, by clicking the "calendar plus" icon <span
+   style="font-family:FontAwesome">&#xf271;</span> to the
+   right of the student's name. Alternate due dates will be reflected
+   on the posted due-date seen on the student's user page. Alternate
+   due dates will affect whether an assignment is graded as late, and
+   will override the visibility settings for that assignment, so that
+   a student can continue to access the assignment and submit problems
+   until their alternate due date expires. Assignments set as "hidden"
+   however, will not be visible on the user page even if an alternate
+   due date is set.
+5. Access can be re-granted to timed assignments after the timer has
+   expired, by clicking the "full hourglass" icon <span
+   style="font-family:FontAwesome">&#xf251;</span> to the right of the
+   student's name. Once access is re-granted, it will be as if the
+   student never started the timed exam (although any work that they
+   submitted on the first try will persist), so their next attempt at
+   the exam will be timed in the same way as their first attempt.
 
 ### Adding A Co-Instructor
 
-At the very bottom of the course card, you have the options of adding a
-co-instructor, editing a course's information (including total points,
-description, and whether the course is open for enrollment), exporting grades,
-and also of deleting the course. 
+At the very bottom of the course card, you have the options of adding
+a co-instructor, editing a course's information (including total
+points, description, and whether the course is open for enrollment),
+exporting grades, and also of deleting the course. 
 
-Co-instructors are other instructors who have the same type of access to the
-course as the course creator. They may be useful if you have a TA or if you're
-teaching a course with someone else. Co-instructors can be removed from within
-the course card by clicking the trash icon next to their name. Removing a
-co-instructor will also remove all assignments created by that co-instructor
-and all student work submitted in response to those assignments, so *always
-exercise caution when removing a co-instructor*!
+Co-instructors are other instructors who have the same type of access
+to the course as the course creator. They may be useful if you have a
+TA or if you're teaching a course with someone else. Co-instructors
+can be removed from within the course card by clicking the trash icon
+<span style="font-family:FontAwesome">&#xf014;</span> next to their
+name. Removing a co-instructor will also remove all assignments
+created by that co-instructor and all student work submitted in
+response to those assignments, so *always exercise caution when
+removing a co-instructor*!
 
-## Exporting Grades
+### Exporting Grades
 
-Grades are exported in `.csv` format, which most spreadsheet programs should be
-able to import. Grades can either be tabulated per-assignment (for import into
-a CMS, for example), or per-problem (for detailed analysis of course
-performance, or for more complex grading schemes). Students are identified by
-first name, last name, University ID (an arbitrary string, like their student
-ID number or other useful identifying information, that you can ask them to
-enter when registering), and their email address. If a student has not entered
-some piece of information, its absence is indicated with a question mark.
+Grades are exported in `.csv` format, which most spreadsheet programs
+should be able to import. Grades can either be tabulated
+per-assignment (for import into a CMS, for example), or per-problem
+(for detailed analysis of course performance, or for more complex
+grading schemes). Students are identified by first name, last name,
+University ID (an arbitrary string, like their student ID number or
+other useful identifying information, that you can ask them to enter
+when registering), and their email address. If a student has not
+entered some piece of information, its absence is indicated with a
+question mark.
 
 ### Deleting a Course
 
-Deleting the course will delete all assignments associated with the course and
-all student work submitted in response to these assignments, so *always
-exercise caution when deleting a course*!
+Deleting the course will delete all assignments associated with the
+course and all student work submitted in response to these
+assignments, so *always exercise caution when deleting a course*!
