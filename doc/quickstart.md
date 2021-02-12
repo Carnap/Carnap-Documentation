@@ -8,7 +8,7 @@ account works, but you can also make a Google account with a different
 email).
 
 Email Graham Leach-Krouse at
-[gleachkr@gmail.com](mailto:gleachkr@ksu.edu) using your institutional
+[gleachkr@ksu.edu](mailto:gleachkr@ksu.edu) using your institutional
 email address to request instructor status.
 
 ## Make your first assignment

@@ -12,7 +12,7 @@ The course management dashboard will be available once you have
 
 2.  *Upgraded your account status to "instructor"*. 
 
-    To do this, email Graham Leach-Krouse at [gleachkr@gmail.com](mailto:gleachkr@ksu.edu) 
+    To do this, email Graham Leach-Krouse at [gleachkr@ksu.edu](mailto:gleachkr@ksu.edu) 
     using your institutional email address.
 
 Once you are logged in, you'll then be able to access the course management
