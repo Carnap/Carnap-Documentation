@@ -145,9 +145,10 @@ these are set using the `counterexample-to` attribute. The options are:
 Name                     Counterexample is
 ------------------------ ------------------------------------------------------------------
 `validity`               a situation in which all formulas are false
-`tautology`              Same as `validity`
+`tautology`              same as `validity`
 `equivalence`            a situation in which two formulas have different truth values
 `inconsistency`          a situation in which all formulas are true
+`contradiction`          same as `inconsistency`
 ------------------------ ------------------------------------------------------------------
 
 </div>
