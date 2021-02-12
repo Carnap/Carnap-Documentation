@@ -1,6 +1,6 @@
 # Carnap Documentation
 
-## Quick Start Guide
+## Quick start guide
 
 [Quick Start Guide for Instructors](quickstart.md)
 
@@ -83,7 +83,7 @@ described on the following pages:
         including multiple-choice, multi-select, short answer, and
         numerical questions on a problem set.
 
-## Installation Instructions
+## Installation instructions
 
 1. [Carnap deployment/administration](administration.md)
 2. [Learning Tools Interoperability v1.3 integration](lti.md)

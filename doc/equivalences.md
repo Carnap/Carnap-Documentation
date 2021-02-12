@@ -50,45 +50,35 @@ Ex1 A \/ ~(B \/ C) :|-: (A \/ ~C) /\ (A \/ ~B)
 ```
 
 The following exchange rules are allowed. They can be used within a
-propositional context Φ:
+propositional context Φ, and in both directions. In other words,
+any formula occurrence on the left of the table below can be replaced 
+by the corresponding formula on the right, and vice versa.
 
 <div class="table">
 
 Rule                   Abbreviation Premises          Conclusion
 ---------------------- ------------ ----------------- -----------
-Double Negation        `DN`         $Φ(φ)/Φ(¬¬φ)$     $Φ(¬¬φ)/Φ(φ)$
-Conditional            `Cond`       $Φ(φ→ψ)$          $Φ(¬φ∨ψ)$
-                                    $Φ(¬φ∨ψ)$         $Φ(φ→ψ)$      
-                                    $Φ(φ∨ψ)$          $Φ(¬φ→ψ)$
-                                    $Φ(¬φ→ψ)$         $Φ(φ∨ψ)$      
-Biconditional Exchange `Bicond`     $Φ(φ↔ψ)$          $Φ(φ→ψ∧ψ→φ)$
-                                    $Φ(φ→ψ∧ψ→φ)$      $Φ(φ↔ψ)$      
-DeMorgan's Laws        `DeM`        $Φ(¬(φ∧ψ))$       $Φ(¬φ∨¬ψ)$
-                                    $Φ(¬(φ∨ψ))$       $Φ(¬φ∧¬ψ)$
-                                    $Φ(¬φ∨¬ψ)$        $Φ(¬(φ∧ψ))$
-                                    $Φ(¬φ∧¬ψ)$        $Φ(¬(φ∨ψ))$
-Commutativity          `Comm`       $Φ(φ∧ψ)$          $Φ(ψ∧φ)$
-                                    $Φ(φ∨ψ)$          $Φ(ψ∨φ)$
-Associativity          `Assoc`      $Φ(φ∧(ψ∧χ))$      $Φ((φ∧ψ)∧χ)$
-                                    $Φ((φ∧ψ)∧χ)$      $Φ(φ∧(ψ∧χ))$
-                                    $Φ(φ∨(ψ∨χ))$      $((φ∨ψ)∨χ)$
-                                    $((φ∨ψ)∨χ)$       $Φ(φ∨(ψ∨χ))$      
-Distributivity         `Dist`       $Φ(φ∨(ψ∧χ))$      $Φ((φ∨ψ)∧(φ∨χ))$
-                                    $Φ((φ∨ψ)∧(φ∨χ))$  $Φ(φ∨(ψ∧χ))$
-                                    $Φ(φ∧(ψ∨χ))$      $((φ∧ψ)∨(φ∧χ))$
-                                    $((φ∧ψ)∨(φ∧χ))$   $Φ(φ∧(ψ∨χ))$
-Idempotence            `Id`         $Φ(φ∧φ)$          $Φ(φ)$
-                                    $Φ(φ)$            $Φ(φ∧φ)$
-                                    $Φ(φ∨φ)$          $Φ(φ)$
-                                    $Φ(φ)$            $Φ(φ∨φ)$
-Absorption             `Abs`        $Φ(φ∧(φ∨ψ))$      $Φ(φ)$
-                                    $Φ(φ)$            $Φ(φ∧(φ∨ψ))$
-                                    $Φ(φ∨(φ∧ψ))$      $Φ(φ)$
-                                    $Φ(φ)$            $Φ(φ∨(φ∧ψ))$
-Simplification         `Simp`       $Φ(φ∧(ψ∨¬ψ))$     $Φ(φ)$
-                                    $Φ(φ∨(ψ∧¬ψ))$     $Φ(φ)$
-                                    $Φ(φ∨(ψ∨¬ψ))$     $Φ(ψ∨¬ψ)$
-                                    $Φ(φ∧(ψ∧¬ψ))$     $Φ(ψ∧¬ψ)$
+Double Negation        `DN`         $¬¬φ$             $φ$
+Conditional            `Cond`       $(φ→ψ)$           $(¬φ∨ψ)$
+                                    $(¬φ→ψ)$          $(φ∨ψ)$
+Biconditional Exchange `Bicond`     $(φ↔ψ)$           $((φ→ψ)∧(ψ→φ))$
+DeMorgan's Laws        `DeM`        $¬(φ∧ψ)$          $(¬φ∨¬ψ)$
+                                    $¬(φ∨ψ)$          $(¬φ∧¬ψ)$
+Commutativity          `Comm`       $(φ∧ψ)$           $(ψ∧φ)$
+                                    $(φ∨ψ)$           $(ψ∨φ)$
+Associativity          `Assoc`      $(φ∧(ψ∧χ))$       $((φ∧ψ)∧χ)$
+                                    $(φ∨(ψ∨χ))$       $((φ∨ψ)∨χ)$
+Distributivity         `Dist`       $(φ∨(ψ∧χ))$       $((φ∨ψ)∧(φ∨χ))$
+                                    $(φ∧(ψ∨χ))$       $((φ∧ψ)∨(φ∧χ))$
+                                    $((φ∧ψ)∨(φ∧χ))$   $(φ∧(ψ∨χ))$
+Idempotence            `Id`         $(φ∧φ)$           $φ$
+                                    $(φ∨φ)$           $φ$
+Absorption             `Abs`        $(φ∧(φ∨ψ))$       $φ$
+                                    $(φ∨(φ∧ψ))$       $φ$
+Simplification         `Simp`       $(φ∧(ψ∨¬ψ))$      $φ$
+                                    $(φ∨(ψ∧¬ψ))$      $φ$
+                                    $(φ∨(ψ∨¬ψ))$      $(ψ∨¬ψ)$
+                                    $(φ∧(ψ∧¬ψ))$      $(ψ∧¬ψ)$
 ---------------------- ------------ ----------------- ------------
 
 </div>
@@ -121,8 +111,8 @@ A proof playground is also supported.
 ```
 
 The available tests are the same as for [translation
-exercises](translations.md), and can be combined. If combined, multiple
-tests have to be separated by spaces.
+exercises](translations.md#translation-tests), and can be combined. If
+combined, multiple tests have to be separated by spaces.
 
 <div class="table">
 
@@ -145,7 +135,8 @@ Name                     Effect
 ## The FOL Systems
 
 The system `.ZachFOLEq` extends the rules of `.ZachPropEq` by
-equivalence rules for quantifiers. Those are:
+equivalence rules for quantifiers, also applied in arbitrary contexts
+Φ, and in either direction. Those are:
 
 <div class="table">
 
@@ -154,27 +145,17 @@ Rule                        Abbreviation Premises            Conclusion
 Variable Renaming           `VR`         $∀ x\,φ(x)$         $∀ y\,φ(y)$
                                          $∃ x\,φ(x)$         $∃ y\,φ(y)$
 Quantifier Negation         `QN`         $¬∀xφ(x)$           $∃x¬φ(x)$
-                                         $∃x¬φ(x)$           $¬∀xφ(x)$
                                          $¬∃xφ(x)$           $∀x¬φ(x)$
-                                         $∀x¬φ(x)$           $¬∃xφ(x)$
 Quantifier Distribution     `QD`         $∀ x(φ(x) ∧ ψ(x))$  $∀ x\,φ(x) ∧ ∀ x\,ψ(x)$
-                                         $∃ x(φ(x) ∨ ψ(x))$  $∃ x\,φ(x) ∨ ∀ x\,ψ(x)$
+                                         $∃ x(φ(x) ∨ ψ(x))$  $∃ x\,φ(x) ∨ ∃ x\,ψ(x)$
 Quantifier Shift for $∀$    `QSA`        $∀ x(φ(x) ∧ ψ)$     $∀ x\,φ(x) ∧ ψ$
-                                         $∀ x\,φ(x) ∧ ψ$     $∀ x(φ(x) ∧ ψ)$
                                          $∀ x(φ(x) ∨ ψ)$     $∀ x\,φ(x) ∨ ψ$
-                                         $∀ x\,φ(x) ∨ ψ$     $∀ x(φ(x) ∨ ψ)$
                                          $∀ x(φ(x) → ψ)$     $∃ x\,φ(x) → ψ$
-                                         $∃ x\,φ(x) → ψ$     $∀ x(φ(x) → ψ)$
                                          $∀ x(ψ → φ(x))$     $ψ → ∀ x\,φ(x)$
-                                         $ψ → ∀ x\,φ(x)$     $∀ x(ψ → φ(x))$
-Quantifier Shifts for $∃$    `QSE`       $∃ x(φ(x) ∧ ψ)$     $∃ x\,φ(x) ∧ ψ$
-                                         $∃ x\,φ(x) ∧ ψ$     $∃ x(φ(x) ∧ ψ)$
+Quantifier Shifts for $∃$   `QSE`        $∃ x(φ(x) ∧ ψ)$     $∃ x\,φ(x) ∧ ψ$
                                          $∃ x(φ(x) ∨ ψ)$     $∃ x\,φ(x) ∨ ψ$
-                                         $∃ x\,φ(x) ∨ ψ$     $∃ x(φ(x) ∨ ψ)$
                                          $∃ x(φ(x) → ψ)$     $∀ x\,φ(x) → ψ$
-                                         $∀ x\,φ(x) → ψ$     $∃ x(φ(x) → ψ)$
                                          $∃ x(ψ → φ(x))$     $ψ → ∃ x\,φ(x)$
-                                         $ψ → ∃ x\,φ(x)$     $∃ x(ψ → φ(x))$
 --------------------------- ------------ ------------------- --------------
 
 </div>
@@ -184,6 +165,9 @@ of bound variables. Thus, the `VR` rules are provided just for
 completeness (and will allow any number of renamings of bound
 variables).  Any variable renaming necessary to apply a quantifier
 shift can be done implicitly without first invoking the `VR` rule.
+
+Testing of correctness can become quite slow, so it is recommended to
+not do this on every button press and use `feedback="manual"` instead.
 
 The FOL system has an additional test, `PNF`, that requires the final
 line to be in prenex normal form.
