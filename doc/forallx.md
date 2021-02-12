@@ -1,4 +1,4 @@
-# Natural deduction in the *forall x* systems
+# Natural deduction in the original *forall x* systems
 
 This document gives a short description of how Carnap presents the
 systems of natural deduction from P.D. Magnus' [*forall
@@ -13,7 +13,7 @@ Carnap are:
   page.
 - [*forall x: Calgary*](forallx-yyc.md)
 - [*forall x: Mississippi State*](forallx-msu.md)
-- *forall x: Pittsbugh*
+- [*forall x: Pittsbugh*](forallx-pitt.md)
 - *forall x: UBC*
 
 ## Notation

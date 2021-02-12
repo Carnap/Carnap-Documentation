@@ -1,4 +1,4 @@
-# Natural Deduction in the *forall x: Calgary* systems
+# Natural deduction in the *forall x: Calgary* systems
 
 This document gives a short description of how Carnap presents the
 systems of natural deduction from [*forall x:
@@ -13,6 +13,9 @@ after.  The versions for the pre-2019 editions are practically the
 same as the systems in Tim Button's [*forall x:
 Cambridge*](http://www.homepages.ucl.ac.uk/~uctytbu/OERs.html), except
 that the LEM rule is called TND in Button's text.
+
+The syntax of formulas accepted is described in the [Systems
+Reference](systems.md#thomas-bolduc-zach-forall-x-calgary).
 
 ## Truth-functional logic
 

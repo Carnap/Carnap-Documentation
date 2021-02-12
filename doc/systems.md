@@ -21,7 +21,7 @@ The systems supported are:
 - [Bergman, Moore & Nelson, *The Logic
   Book*](#bergman-moore-nelson-the-logic-book)
 - [Bonevac, *Deduction*](#bonevac-deduction)
-- [Magnus, *forall x*](#magnus-forall-x)
+- [Gallow, *forall x: Pittsburgh*](#gallow-forall-x-pittsburgh)
 - [Gamut, *Logic, Language, and Meaning*](#gamut-logic-language-and-meaning)
 - [Goldfarb, *Deductive Logic*](#goldfarb-deductive-logic)
 - [Hardegree, *Symbolic Logic* and *Modal Logic*](#hardegree-symbolic-logic)
@@ -34,6 +34,7 @@ The systems supported are:
   Mississippi State*](#johnson-forall-x-mississippi-state)
 - [Leach-Krouse, *The Carnap Book*](#leach-krouse-the-carnap-book)
 - [Kalish & Montague, *Logic*](#kalish-montague-logic)
+- [Magnus, *forall x*](#magnus-forall-x)
 - [Open Logic Project](#open-logic-project)
 - [Thomas-Bolduc & Zach, *forall x: Calgary*](#thomas-bolduc-zach-forall-x-calgary)
 - [Tomassi, *Logic*](#tomassi-logic)
@@ -76,6 +77,7 @@ produces `A /\ B /\ (C_1 -> (~R_2 \/ (S <-> T)))`{system="LogicBookSD"}.
   + Function symbols: no
   + Variables: `w`...`z`
   + Atomic formulas: $Fax$
+  + Identity: no
   + Quantifiers: $(\forall x)$, $(\exists x)$
 
 Quantifiers:
@@ -144,6 +146,7 @@ produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (s <-> t)))`{system="bonevacSL"}.
   + Function symbols: none
   + Variables: `x`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
@@ -161,39 +164,42 @@ Example:
 
 produces `Ax(Gabx -> Ey(Hxy & Pa & ~x=v))`{system="bonevacQL"}
 
-## Magnus, *forall x*
+## Gallow, *forall x: Pittsburgh*
 
-### Sentential logic
+For the corresponding proof systems, [see here](forallx-pitt.md).
 
-  + Selected with `system="..."`: `magnusSL` `magnusSLPlus`
+#### Sentential logic
+
+  + Selected with `system="..."`: `gallowSL`
   + Sentence letters: `A`...`Z`
   + Brackets allowed `(`, `)`, `[`, `]`
-  + Associative $\land$, $\lor$: yes
-  + Connectives: 
+  + Associative $\land$, $\lor$: left
 
 Connective Keyboard 
 ---------- ----------
-→          `->`, `=>`,`>`
-&          `/\`, `&`, `and`
+→          `->`, `=>`, `>`
+∧          `/\`, `&`, `and`
 ∨          `\/`, `|`, `or`
 ↔          `<->`, `<=>`
 ¬          `-`, `~`, `not`
+⊥          `!?`, `_|_`
 ---------- ----------
 
 Example:
 
-    `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="magnusSL"}
+    `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="gallowSL"}
 
-produces `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="magnusSL"}.
+produces `A /\ B /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="gallowSL"}.
 
-### Quantificational logic
+#### First-order logic
 
-  + Selected with `system="..."`: `magnusQL`
-  + Sentence letters: none
+  + Selected with `system="..."`: `gallowPL`
+  + Sentence letters: `A` .... `Z`
   + Predicate symbols: `A` ...`Z`
-  + Constant symbols: `a` ... `w`
+  + Constant symbols: `a` ... `v`
   + Function symbols: none
-  + Variables: `x`...`z`
+  + Variables: `w`...`z`
+  + Identity: no
   + Atomic formulas: $Fax$
   + Quantifiers: $\forall x$, $\exists x$
 
@@ -203,15 +209,13 @@ Connective Keyboard
 ---------- ----------
 ∀          `A`
 ∃          `E`
-=          `=`
 ---------- ----------
 
 Example:
 
-    `Ax(Gabx -> Ey(Hxy & Pa & ~x=v))`{system="magnusQL"}
+    `Ax(Gabx -> Ew((Hxw /\ P) /\ Qs))`{system="gallowPL"}
 
-produces `Ax(Gabx -> Ey(Hxy & Pa & ~x=v))`{system="magnusQL"}
-
+produces `Ax(Gabx -> Ew((Hxw /\ P) /\ Qs))`{system="gallowPL"}
 
 ## Gamut, *Logic, Language, and Meaning*
 
@@ -248,6 +252,7 @@ produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (_|_ <-> t)))`{system="gamutIPND"}.
   + Function symbols: none
   + Variables: `s`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
@@ -300,6 +305,7 @@ produces `(a /\ b) /\ (c_1 -> (~r_2 \/ (_|_ <-> t)))`{system="goldfarbPropND"}.
   + Function symbols: none
   + Variables: `a` ... `z`
   + Atomic formulas: $Fxy$
+  + Identity: no
   + Quantifiers: $(\forall x)$, $(\exists x)$
 
 Quantifiers:
@@ -351,6 +357,7 @@ produces `A & G & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
   + Function symbols: none
   + Variables: `t`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
@@ -364,9 +371,9 @@ Connective Keyboard
 
 Example:
 
-    `Ax(Gabx -> Ev(Hxe & Ov & _|_))`{system="hardegreePL"}
+    `Ax(Gabx -> Ev(Hxe & Ov & x=v & _|_))`{system="hardegreePL"}
 
-produces `Ax(Gabx -> Ev(Hxe & Ov & _|_))`{system="hardegreePL"}
+produces `Ax(Gabx -> Ev(Hxe & Ov & x=v & _|_))`{system="hardegreePL"}
 
 
 ## Hausman, Kahane & Tidman, *Logic and Philosophy*
@@ -403,6 +410,7 @@ produces `[A . B] . [C_1 > (~R_2 \/ {S <> T})]`{system="hausmanSL"}.
   + Function symbols: no
   + Variables: `u`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $(x)$, $(\exists x)$
 
 Quantifiers:
@@ -455,6 +463,7 @@ produces `(A . B) . [C_1 -> (~R_2 \/ {S <-> T})]`{system="howardSnyderSL"}.
   + Function symbols: no
   + Variables: `v`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $(x)$, $(\exists x)$
 
 Quantifiers:
@@ -507,6 +516,7 @@ produces `(A . B) . [C_1 > (~R_2 \/ {S <-> T})]`{system="hurleySL"}.
   + Function symbols: no
   + Variables: `x`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $(x)$, $(\exists x)$
 
 Quantifiers:
@@ -557,6 +567,7 @@ produces `A /\ B /\ (C_1 -> (~R_2 \/ [S <-> T]))`{system="ichikawaJenkinsSL"}.
   + Function symbols: none
   + Variables: `x`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
@@ -639,6 +650,7 @@ produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="prop"}.
   + Function symbols: `f` ... `h`
   + Variables: `v`...`z`
   + Atomic formulas: $F(a,x)$
+  + Identity: `=`
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
@@ -688,6 +700,58 @@ Example:
     `AX2(\x[Ay(F(y) -> X2(x,y))](a))`{system="polyadicSecondOrder"}
 
 produces `AX2(\x[Ay(F(y) -> X2(x,y))](a))`{system="polyadicSecondOrder"}
+
+## Magnus, *forall x*
+
+### Sentential logic
+
+  + Selected with `system="..."`: `magnusSL` `magnusSLPlus`
+  + Sentence letters: `A`...`Z`
+  + Brackets allowed `(`, `)`, `[`, `]`
+  + Associative $\land$, $\lor$: yes
+  + Connectives: 
+
+Connective Keyboard 
+---------- ----------
+→          `->`, `=>`,`>`
+&          `/\`, `&`, `and`
+∨          `\/`, `|`, `or`
+↔          `<->`, `<=>`
+¬          `-`, `~`, `not`
+---------- ----------
+
+Example:
+
+    `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="magnusSL"}
+
+produces `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="magnusSL"}.
+
+### Quantificational logic
+
+  + Selected with `system="..."`: `magnusQL`
+  + Sentence letters: none
+  + Predicate symbols: `A` ...`Z`
+  + Constant symbols: `a` ... `w`
+  + Function symbols: none
+  + Variables: `x`...`z`
+  + Atomic formulas: $Fax$
+  + Identity: `=`
+  + Quantifiers: $\forall x$, $\exists x$
+
+Quantifiers:
+
+Connective Keyboard 
+---------- ----------
+∀          `A`
+∃          `E`
+=          `=`
+---------- ----------
+
+Example:
+
+    `Ax(Gabx -> Ey(Hxy & Pa & ~x=v))`{system="magnusQL"}
+
+produces `Ax(Gabx -> Ey(Hxy & Pa & ~x=v))`{system="magnusQL"}
 
 ## Open Logic Project
 
@@ -844,6 +908,7 @@ produces `A /\ B /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="thomasBolducAndZachT
   + Function symbols: `a`...`t`
   + Variables: `s`...`z`
   + Atomic formulas: $F(a,x)$
+  + Identity: `=`, `≠`
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
@@ -912,6 +977,7 @@ produces `(A /\ B) /\ (C_1 -> (~R_2 \/ [_|_ <-> T]))`{system="ebelsDugganTFL"}.
   + Function symbols: none
   + Variables: `s`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
@@ -964,6 +1030,7 @@ produces `P /\ Q /\ (R_1 -> (~R_2 \/ (S <-> T)))`{system="tomassiPL"}.
   + Function symbols: none
   + Variables: `u`...`z`
   + Atomic formulas: $Fax$
+  + Identity: `=`
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:

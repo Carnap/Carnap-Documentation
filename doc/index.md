@@ -64,6 +64,10 @@ described on the following pages:
         also in Tim Button's *forall x: Cambridge*.
   - [forall x: Mississippi State](forallx-msu.md): Fitch system used in the
         *Mississippi State* edition of *forall x* by Johnson.
+  - [forall x: Pittsburgh](forallx-pitt.md): Fitch system used in the
+        *Pittsburgh* edition of *forall x* by Gallow.
+  - forall x: UBC: Fitch system used in the
+        *UBC* edition of *forall x* by Ichikawa-Jenkins.
   - [Chains of equivalences](equivalences.md): a simple proof system
     where every line results from the previous one by substituting 
     equivalents.

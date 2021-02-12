@@ -1,19 +1,21 @@
 # Gentzen-Prawitz Natural Deduction
 
 The `TreeDeduction` class indicates that a code block will contain
-Gentzen-Prawitz natural deduction exercises, which require the production of a
-Gentzen-Prawitz deduction tree.
+Gentzen-Prawitz natural deduction exercises, which require the
+production of a Gentzen-Prawitz deduction tree.
 
-These problems use [ProofJS](https://github.com/gleachkr/proofjs) for their
-user interface. An initial click may be required to select a node. Once a node
-is selected, `Enter` will create a sibling premise (on any node but the root),
-`Ctrl-Enter` will create a new premise above the focused node, and
-`Ctrl-Shift-Enter` will create a new conclusion node below the focused node (on any
-node but the root node). Nodes can be selected by either pressing `Tab` and
-`Shift-Tab` to cycle, or by using the mouse. Changes can be undone and redone
-with `Ctrl-Z` and `Shift-Ctrl-Z` respectively. The subtree above a selected
-node can be deleted with `Ctrl-Backspace`, and subtrees can be cut-copy-pasted
-with `Shift-Ctrl-X`, `Shift-Ctrl-C` and `Shift-Ctrl-V` respectively.
+These problems use [ProofJS](https://github.com/gleachkr/proofjs) for
+their user interface. An initial click may be required to select a
+node. Once a node is selected, `Enter` will create a sibling premise
+(on any node but the root), `Ctrl-Enter` will create a new premise
+above the focused node, and `Ctrl-Shift-Enter` will create a new
+conclusion node below the focused node (on any node but the root
+node). Nodes can be selected by either pressing `Tab` and `Shift-Tab`
+to cycle, or by using the mouse. Changes can be undone and redone with
+`Ctrl-Z` and `Shift-Ctrl-Z` respectively. The subtree above a selected
+node can be deleted with `Ctrl-Backspace`, and subtrees can be
+cut-copy-pasted with `Shift-Ctrl-X`, `Shift-Ctrl-C` and `Shift-Ctrl-V`
+respectively.
 
 ## Available Systems
 
@@ -50,8 +52,8 @@ which produces:
 
 Instead of `.propNK` etc, you can also use `system="propNK"`.
 
-(Remember to click on a node in order to interact, and to press `Ctrl-Enter` to
-create the first child node)
+(Remember to click on a node in order to interact, and to press
+`Ctrl-Enter` to create the first child node)
 
 A completed proof will look like this:
 

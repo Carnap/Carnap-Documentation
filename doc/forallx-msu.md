@@ -1,4 +1,4 @@
-# Natural Deduction in the *forall x: Mississippi State* systems
+# Natural deduction in the *forall x: Mississippi State* systems
 
 This document gives a short description of how Carnap presents the
 systems of natural deduction from Greg Johnson's [*forall x:
@@ -6,6 +6,9 @@ Mississippi
 State*](http://blog.loighic.net/forallx-the-mississippi-state-edition).
 At least some prior familiarity with Fitch-style proof systems is
 assumed.
+
+The syntax of formulas accepted is described in the [Systems
+Reference](systems.md#johnson-forall-x-mississippi).
 
 ## Notation
 
@@ -112,8 +115,8 @@ We also have four rules for indirect inferences:
 3. `¬E`, which justifies an assertion of the form φ by citing a subproof
    beginning with the assumption $¬φ$ and ending with a pair of lines $ψ$,$¬ψ$.
 
-Finally, `PR` can be used to justify a line asserting a premise, and `AS` can
-be used to justify a line making an assumption. A note about the reason for an
-assumption can be included in the rendered proof by writing `A/NOTETEXTHERE`
-rather than `AS` for an assumption. Assumptions are only allowed on the first
-line of a subproof.
+Finally, `PR` can be used to justify a line asserting a premise, and
+`AS` can be used to justify a line making an assumption. A note about
+the reason for an assumption can be included in the rendered proof by
+writing `A/NOTETEXTHERE` rather than `AS` for an assumption.
+Assumptions are only allowed on the first line of a subproof.
