@@ -12,7 +12,7 @@ Carnap are:
 - The original version of *forall x* by P.D. Magnus, described on this
   page.
 - [*forall x: Calgary*](forallx-yyc.md)
-- [*forall x: Mississippi State](forallx-msu.md)
+- [*forall x: Mississippi State*](forallx-msu.md)
 - *forall x: Pittsbugh*
 - *forall x: UBC*
 

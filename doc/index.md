@@ -54,7 +54,7 @@ described on the following pages:
       proofs in formal systems, which Carnap checks for correctness 
       on-the-fly. Carnap can handle the following systems:
   - [Montague](montague.md): Montague-style systems, two of which
-    are used in the Carnap book. 
+    are used in the *Carnap* book and in Kalish & Montague's *Logic*. 
   - [Logic Book](logicbook.md): The Fitch system used in Bergmann,
         Moore, and Nelson's *Logic Book*.
   - [forall x](forallx.md): Fitch system used in Magnus's original
@@ -62,6 +62,8 @@ described on the following pages:
   - [forall x: Calgary](forallx-yyc.md): Fitch system used in the
         *Calgary* version of *forall x* by Thomas-Bolduc and Zach (and
         also in Tim Button's *forall x: Cambridge*.
+  - [forall x: Mississippi State](forallx-msu.md): Fitch system used in the
+        *Mississippi State* edition of *forall x* by Johnson.
   - [Chains of equivalences](equivalences.md): a simple proof system
     where every line results from the previous one by substituting 
     equivalents.
@@ -69,13 +71,13 @@ described on the following pages:
   - Systems based on Howard-Snyder's *The Power of Logic*.
   - Systems based on Hausman's *Logic and Philosophy*.
   - Lemmon-style systems based on Goldfarb's *Deductive Logic*.
-  - Lemmon-style system based on Tomassi's *Logic*
-  - Hardegree-style systems based on Hardegree's *Modal Logic*
+  - Lemmon-style system based on Tomassi's *Logic*.
+  - Hardegree-style systems based on Hardegree's *Modal Logic*.
   - [Sequent Calculus](sequent-calculus.md): Gentzen's sequent
-        systems LK and LJ.
+        systems LK and LJ (supports the Open Logic Project textbooks).
   - [Gentzen-Prawitz Natural Deduction](gentzen-ND.md): Gentzen's
         original tree-style natural deduction proofs as also used by
-        Prawitz.
+        Prawitz (supports the Open Logic Project textbooks).
 5. [Model Checking](modelchecker.md) asks students to
         provide first-order interpretations that make given formulas
         true or false, or show that arguments are invalid. 
