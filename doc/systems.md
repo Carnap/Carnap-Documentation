@@ -1,4 +1,4 @@
-# Systems Supported by Carnap
+# Systems supported by Carnap
 
 Carnap supports multiple "systems", i.e., languages with different
 symbols and syntax conventions, in the various types of exercises. For
@@ -10,14 +10,14 @@ to parse them, and how to render formulas when they are displayed by
 Carnap.
 
 All sentence letters, predicate symbols, constants, and function
-symbols (if allowed) take subscripts (e.g., $P_1$). Predicate and
-function symbols also take superscripts (e.g., $P^2$) to indicate
-arity. The parser does not enforce the arity, i.e., the arity is
-always determined by the number of arguments actually given.
+symbols (if allowed) take subscripts (e.g., `P_1` for $P_1$).
+Predicate and function symbols also take superscripts (e.g., `P^1` for
+$P^2$) to indicate arity. The parser does not enforce the arity, i.e.,
+the arity is always determined by the number of arguments actually
+given.
 
 The systems supported are:
 
-- [Allen & Hand, *Logic Primer*](#allen-hand-logic-primer)
 - [Bergman, Moore & Nelson, *The Logic
   Book*](#bergman-moore-nelson-the-logic-book)
 - [Bonevac, *Deduction*](#bonevac-deduction)
@@ -30,6 +30,8 @@ The systems supported are:
 - [Howard-Snyder, Howard-Snyder & Wasserman, *The Power of Logic*](#howard-snyder-howard-snyder-wasserman-the-power-of-logic)
 - [Hurley, *Concise Introduction to Logic*](#hurley-concise-introduction-to-logic)
 - [Ichikawa-Jenkins, *forall x: UBC*](#ichikawa-jenkins-forall-x-ubc)
+- [Johnson, *forall x:
+  Mississippi State*](#johnson-forall-x-mississippi-state)
 - [Leach-Krouse, *The Carnap Book*](#leach-krouse-the-carnap-book)
 - [Kalish & Montague, *Logic*](#kalish-montague-logic)
 - [Open Logic Project](#open-logic-project)
@@ -37,38 +39,12 @@ The systems supported are:
 - [Tomassi, *Logic*](#tomassi-logic)
 
 
-## Allen & Hand, *Logic Primer*
-
-### Sentential logic
-
-  + Selected with `system="..."`: `allenSL`
-  + Sentence letters: `A`...`Z`
-  + Brackets allowed `(`, `)`, `[`, `]`
-  + Associative $\land$, $\lor$: yes
-  + Connectives: 
-
-Connective Keyboard 
----------- ----------
-→          `->`, `=>`,`>`
-&          `/\`, `&`, `and`
-∨          `\/`, `|`, `or`
-↔          `<->`, `<=>`
-~          `-`, `~`, `not`
----------- ----------
-
-Example:
-
-    `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="allenSL"}
-
-produces `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="allenSL"}.
-
-### Predicate logic
-
-Not yet supported.
 
 ## Bergman, Moore & Nelson, *The Logic Book* 
 
 ### Sentential logic
+
+For the corresponding proof systems, [see here](logic-book.md).
 
   + Selected with `system="..."`: `LogicBookSD` `LogicBookSDPlus`
   + Sentence letters:`A`...`Z`
@@ -599,8 +575,37 @@ Example:
 produces `Ax(Gabx -> Ey(Hxy /\ (Pa /\ ~x=y)))`{system="ichikawaJenkinsQL"}
 
 
+## Johnson, *forall x: Mississippi State*
+
+For the corresponding proof systems, [see here](forallx-msu.md).
+
+  + Selected with `system="..."`: `johnsonSL`
+  + Sentence letters: `A`...`Z`
+  + Brackets allowed `(`, `)`, `[`, `]`
+  + Associative $\land$, $\lor$: yes
+  + Connectives: 
+
+Connective Keyboard 
+---------- ----------
+→          `->`, `=>`,`>`
+&          `/\`, `&`, `and`
+∨          `v`, `\/`, `|`, `or`
+↔          `<->`, `<=>`
+¬          `-`, `~`, `not`
+---------- ----------
+
+Example:
+
+    `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="johnsonSL"}
+
+produces `A & B & (C_1 -> (~R_2 \/ [S <-> T]))`{system="johnsonSL"}.
+
+
+
 ## Leach-Krouse, *The Carnap Book*
 ## Kalish & Montague, *Logic*
+
+For the corresponding proof systems, [see here](montague.md).
 
 ### Propositional logic
 
@@ -686,9 +691,112 @@ produces `AX2(\x[Ay(F(y) -> X2(x,y))](a))`{system="polyadicSecondOrder"}
 
 ## Open Logic Project
 
-Uses *forall x: Calgary*, 2019+ version.
+Plain propositional and first-order logic uses the same syntax as the
+TFL and FOL systems of *forall x: Calgary*, 2019+ version ([see below](#thomas-bolduc-zach-forall-x-calgary).
+The parser for `openLogicNK` and `openLogicLK` is synonymous with
+`thomasBolducAndZachTFL2019`; and `openLogicFOLNK` and
+`openLogicFOLLK` with `thomasBolducAndZachFOL2019`.
+
+Two OLP proof systems are supported: [sequent
+calculus](sequent-calculus.md)and [natural deduction](gentzen-ND.md).
+
+In addition, there are special systems supporting the language of
+arithmetic and the language of set theory.
+
+#### Arithmetic
+
+  + Selected with `system="..."`: `openLogicArithNK`
+  + Predicate symbols: `<` (two-place, infix)
+  + Constant symbols: `a` ... `r`, `0`
+  + Function symbols: `'` (one-place, postfix), `+`, `*` (two-place, infix)
+  + Variables: `s`...`z`
+  + Identity: `=`, `≠`
+
+
+Symbol     Keyboard 
+---------- ----------
+×          *
+≠          `!=`
+---------- ----------
+
+Example:
+
+    `AxAy x * y' = (x * y) + y /\ Ax(0!=x -> 0<x)`{system="openLogicArithNK"}
+
+produces `AxAy x * y' = (x * y) + y /\ Ax(0!=x -> 0<x)`{system="openLogicArithNK"}
+
+#### Extended Arithmetic
+
+  + Selected with `system="..."`: `openLogicExtendedArithNK`
+  + Predicate symbols: strings beginning with uppercase letter, `<` (two-place, infix)
+  + Constant symbols: strings beginning with lowercase letter, `0`
+  + Function symbols: strings beginning with lowercase letter, `'` (one-place, postfix), `+`, `*` (two-place, infix)
+  + Variables: `s`...`z`
+  + Identity: `=`, `≠`
+
+Symbol     Keyboard 
+---------- ----------
+×          *
+≠          `!=`
+---------- ----------
+
+Example:
+
+    `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExtendedArithNK"}
+
+produces `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExtendedArithNK"}
+
+#### Set theory
+
+  + Selected with `system="..."`: `openLogicSTNK`
+  + Predicate symbols: `∈` (two-place, infix)
+  + Constant symbols: `a` ... `r`
+  + Variables: `s`...`z`
+  + Identity: `=`, `≠`
+
+
+Symbol     Keyboard 
+---------- ----------
+∈          `<<`, `<e`
+≠          `!=`
+---------- ----------
+
+Example:
+
+    `Ex(Ay ~y<<x /\ Az(z!=x -> Eu u<<z))`{system="openLogicSTNK"}
+
+produces `Ex(Ay ~y<<x /\ Az(z!=x -> Eu u<<z))`{system="openLogicSTNK"}
+
+#### Extended set theory
+
+  + Selected with `system="..."`: `openLogicESTNK`
+  + Predicate symbols: `∈`, `⊆` (two-place, infix)
+  + Constant symbols: `a` ... `r`
+  + Function symbols: `∪`, `∩`, `/`, `Pow` (two-place, infix)
+  + Variables: `s`...`z`
+  + Identity: `=`, `≠`
+
+
+Symbol     Keyboard 
+---------- ----------
+∈          `<<`, `<e`, `in`
+⊆          `<(`, `<s`, `within`, `sub`
+∪          `U`, `cup`
+∩          `I`, `cap`
+/          `\`
+Pow        `P`
+≠          `!=`
+---------- ----------
+
+Example:
+
+    `Ex(Ay ~y<<x /\ Az(z!=x -> Eu u<<z))`{system="openLogicSTNK"}
+
+produces `Ex(Ay ~y<<x /\ Az(z!=x -> Eu u<<z))`{system="openLogicSTNK"}
 
 ## Thomas-Bolduc & Zach, *forall x: Calgary*
+
+For the corresponding proof systems, [see here](forallx-yyc.md).
 
 ### Fall 2019 and after
 

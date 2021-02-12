@@ -6,33 +6,37 @@ Gentzen-Prawitz deduction tree.
 
 These problems use [ProofJS](https://github.com/gleachkr/proofjs) for their
 user interface. An initial click may be required to select a node. Once a node
-is selected, `Enter` will create a sibling node (on any node but the root),
-`Ctrl-Enter` will create a new child node above the focused note, and
-`Ctrl-Shift-Enter` will create a new parent node below the focused node (on any
+is selected, `Enter` will create a sibling premise (on any node but the root),
+`Ctrl-Enter` will create a new premise above the focused node, and
+`Ctrl-Shift-Enter` will create a new conclusion node below the focused node (on any
 node but the root node). Nodes can be selected by either pressing `Tab` and
 `Shift-Tab` to cycle, or by using the mouse. Changes can be undone and redone
 with `Ctrl-Z` and `Shift-Ctrl-Z` respectively. The subtree above a selected
 node can be deleted with `Ctrl-Backspace`, and subtrees can be cut-copy-pasted
 with `Shift-Ctrl-X`, `Shift-Ctrl-C` and `Shift-Ctrl-V` respectively.
 
-### Available Systems
+## Available Systems
 
 At the moment, four systems are available:
 
 <div class="table">
 
-System          Description
---------------- -------------------------------------------------------------------------
-propNK          A system based on the propositional fragment of Gentzen's NK
-propNJ          A system based on the propositional fragment of Gentzen's NJ
-openLogicNK     The propositional fragement of the Open Logic project's natural deduction 
-openLogicFOLNK  The full (first-order with equality) Open Logic project natural deduction 
---------------- -------------------------------------------------------------------------
+System                      Description
+--------------------------- -------------------------------------------------------------------------
+propNK                      A system based on the propositional fragment of Gentzen's NK
+propNJ                      A system based on the propositional fragment of Gentzen's NJ
+openLogicNK                 The propositional fragement of the Open Logic project's natural deduction
+openLogicFOLNK              The full (first-order with equality) Open Logic project natural deduction
+openLogicArithNK            openLogicFOLNK for the language of arithmetic
+openLogicExArithNK          openLogicFOLNK for the language of arithmetic with arbitrary predicates and functions
+openLogicSTNK               openLogicFOLNK for the basic language of set theory
+openLogicESTNK              openLogicFOLNK for an extended language of set theory
+--------------------------- -------------------------------------------------------------------------
 
 </div>
 
-Exercises are given by specifying the sequent to be proved. So an exercise can
-be constructed like so:
+Exercises are given by specifying the system, and the sequent to be
+proved. So an exercise can be constructed like so:
 
     ```{.TreeDeduction .propNK}
     1.1 P\/Q, ~P :|-: Q 
@@ -44,13 +48,15 @@ which produces:
 1.1 P\/Q, ~P :|-: Q 
 ```
 
+Instead of `.propNK` etc, you can also use `system="propNK"`.
+
 (Remember to click on a node in order to interact, and to press `Ctrl-Enter` to
 create the first child node)
 
 A completed proof will look like this:
 
 ```{.TreeDeduction .propNK init="now"}
-1.2 P, P->Q :|-: Q
+1.2 :|-: (P->Q)->((R->P)->(R->Q))
 | {
 |   "label": "(P->Q)->((R->P)->(R->Q))",
 |   "rule": "->I(1)",
@@ -127,10 +133,13 @@ A completed proof will look like this:
 | }
 ```
 
-With rule names to the right of inference lines, and assumptions labeled to the
-right of the rule citation.
+With rule names to the right of inference lines, and assumptions
+labeled to the right of the rule citation (with or without
+parentheses). Discharged assumptions are marked using an inference
+with empty premise, and the assumption label on its own to the right
+of the inference line.
 
-### Rules for NK and NJ
+## Rules for `.propNJ` and `.propNK`
 
 Here's a brief summary of NJ's propositional rules. The notation [ψ]/φ
 indicates that an assumption ψ can be discharged from the subproof establishing
@@ -140,8 +149,8 @@ indicates that an assumption ψ can be discharged from the subproof establishing
 
 Rule    Premises             Conclusion
 -----   ------------------   ---------------------------
-`&I`    φ, ψ                 φ∧ψ
-`&E`    φ & ψ                φ OR ψ
+`∧I`    φ, ψ                 φ∧ψ
+`∧E`    φ∧ψ                  φ OR ψ
 `∨I`    φ                    φ∨ψ OR ψ∨φ
 `∨E`    φ∨ψ, [φ]/χ, [ψ]/χ    χ
 `→I`    [φ]/ψ                φ→ψ
@@ -164,13 +173,56 @@ Rule    Premises             Conclusion
 
 </div>
 
-### Syntax for NK and NJ
+The syntax of formulas accepted for is that for the propositional
+systems for Kalish & Montague/The Carnap Book in the [Systems
+Reference](systems.md#leach-krouse-the-carnap-book).
 
-As usual, in writing formulas and inference rules, any of `&`,`∧` or `/\ ` can
-be used for conjunction, and any of `∨`, `v`, and `\/` can be used for
-disjunction. Any of `->` or `→` can be used for the conditional, and any of
-`¬`, `-`, or `~` for negation. Sentence letters are `P` through `W` or `P` with
-subscripts like so: `P_1`. 
+## Rules for Open Logic Systems
+
+For the systems `.openLogicNK`, etc., the rules are:
+
+<div class="table">
+
+Rule    Premises             Conclusion
+-----   ------------------   ---------------------------
+`∧I`    φ, ψ                 φ∧ψ
+`∧E`    φ ∧ ψ                φ OR ψ
+`∨I`    φ                    φ∨ψ OR ψ∨φ
+`∨E`    φ∨ψ, [φ]/χ, [ψ]/χ    χ
+`→I`    [φ]/ψ                φ→ψ
+`→E`    φ,φ→ψ                ψ
+`↔I`    [φ]/ψ, [ψ]/φ         φ↔ψ
+`↔E`    φ↔ψ, φ               ψ
+        φ↔ψ, ψ               φ
+`¬I`    [φ]/⊥                ¬φ
+`¬E`    φ, ¬φ                ⊥
+`X`     ⊥                    φ
+`IP`    [¬φ]/⊥               φ
+-----   -------------------  ----------------------------
+
+</div>
+
+For the first order systems, we also have the rules:
+
+<div class="table">
+
+Rule    Premises             Conclusion
+-----   ------------------   ---------------------------
+`∀I`    φ(a)                 ∀x φ(x)
+`VE`    ∀x φ(x)              φ(t)
+`∃I`    φ(t)                 ∃x φ(x)
+`∨E`    ∃x φ(x), [φ(a)]/ψ    ψ
+`=I`                         t=t
+`=E`    φ(t),t=s             φ(s)
+-----   -------------------  ----------------------------
+
+</div>
+
+The syntax of accepted for the Open Logic systems is described in the
+[Systems Reference](systems.md#open-logic-project). The natural
+deduction systems for arithmetic and set theory only differ in the
+syntax; there are no axioms.
+
 
 ## Advanced Usage
 
@@ -179,13 +231,13 @@ subscripts like so: `P_1`.
 In addition to the standard `points=VALUE` and `submission="none"` options,
 Gentzen-Prawitz natural deduction exercises allow for you to set `init="now"`
 to have proofchecking begin as soon as the proof is loaded (rather than waiting
-for input) as well as the following options:
+for input) as well as the following allowed arguments to `options="…"`:
 
 <div class="table">
 
-Name               Effect
+Option name        Effect
 ------------------ ------------------------------------------------------------------------------
-`prepopulate`      Prepoulates the endformula of an exercises with the conclusion to be shown
+`prepopulate`      Prepopulates the endformula of an exercises with the conclusion to be shown
 `displayJSON`      `Ctrl-?` will toggle display of an editable JSON representation of the proof
 ------------------ ------------------------------------------------------------------------------
 
