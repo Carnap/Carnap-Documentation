@@ -49,7 +49,7 @@ def rq(meth, p, *args, key=apikey, **kwargs):
     return requests.request(meth, base + p, *args, **kwargs, headers=h)
 ```
 
-Then `ipython -i apitest.py`.
+Then `ipython -i apitest.py`, or `python -i apitest.py`
 
 ## Methods
 
@@ -78,6 +78,24 @@ Out:
   'filename': 'api.md'}]
 ```
 
+#### POST `/instructor/:instructorIdent/documents`
+
+Creates a new document with empty contents. Should be followed by a `PUT` at
+`/instructor/:instructorIdent/documents/:documentId/data` in order to fill in
+the document contents
+
+Example:
+
+```python
+In: rq('POST','/instructor/gleachkr@gmail.com/documents', data='{"filename":"myfile.md","scope":"Private", "description":"My file"}').json()
+Out: The ID of your new document
+```
+
+The response will also include a `Location` header pointed at the new resource.
+`scope` indicates the sharing scope of the document, and can be one of
+`Private`, `Public`, `LinkOnly` or `InstructorsOnly`. Both the scope and
+description fields can be omitted, with scope defaulting to `Private`.
+
 #### GET `/instructor/:instructorIdent/documents/:documentId`
 
 Like GET `/instructor/:instructorIdent/documents` but for a single document.
@@ -93,6 +111,26 @@ Out:
  'description': None,
  'filename': 'api.md'}
 ```
+
+#### PATCH `/instructor/:instructorIdent/documents/:documentId`
+
+Updates the metadata for a single document
+
+Example:
+
+```python
+In: rq('PATCH','/instructor/yourname@gmail.com/documents/1', data='{"scope":"Private"}').json()
+Out:
+{'creator': 1,
+ 'date': '2021-02-16T09:41:39.445672522Z',
+ 'scope': 'Private',
+ 'description': None,
+ 'filename': 'api.md'}
+```
+
+Currently `scope` and `description` fields can be updated. Passing in a null
+value for `description` will cause the document description to be cleared
+entirely.
 
 #### GET `/instructor/:instructorIdent/documents/:documentId/data`
 
@@ -111,5 +149,3 @@ Overwrites the content of the given document by ID.
 In: rq('PUT', '/instructor/yourname@gmail.com/documents/1/data', data='aaaaaa')
 Out: <Response [200]>
 ```
-
-Others TODO (see tracking issue for all of them)
