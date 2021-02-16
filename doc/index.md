@@ -89,10 +89,11 @@ described on the following pages:
         including multiple-choice, multi-select, short answer, and
         numerical questions on a problem set.
 
-## Installation instructions
+## Administration/development/setup documentation
 
 1. [Carnap deployment/administration](administration.md)
 2. [Learning Tools Interoperability v1.3 integration](lti.md)
+3. [Carnap API](api.md)
 
 ---
 
