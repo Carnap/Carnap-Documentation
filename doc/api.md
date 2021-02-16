@@ -4,6 +4,10 @@ h4 {
     padding-bottom: .3em;
     border-bottom: 1.5px solid #aaa;
 }
+
+h2 {
+    margin-bottom: .5em;
+}
 </style>
 
 # Carnap API
