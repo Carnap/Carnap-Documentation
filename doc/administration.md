@@ -17,7 +17,16 @@ If you wish to work with Carnap's Nix infrastructure outside the Docker images,
 it is highly recommended to use Cachix to avoid having to build
 anything that our Continuous Integration has already built.
 
+## Requirements
+
+* PostgreSQL database with a user (TODO: which privileges do they need on their
+  database?)
+* Writable persistent directory to give as the `dataroot`
+* Google API key (see below for information on how to configure it)
+
 ## Server setup
+
+### Settings file
 
 Carnap uses a settings file, `settings.yml`, to store its configuration. You
 can find the example version at
@@ -31,6 +40,17 @@ You can provide a different settings file at runtime by passing it as the first
 argument to the `Carnap-Server` executable. Also, all settings are configurable
 by environment variables, which is useful for Docker deployments (see the
 example configuration for a list of these settings).
+
+### `dataroot`
+
+Carnap requires a writable `dataroot`, configured with the `DATAROOT`
+environment variable, to store documents and the cookie encryption key in.
+
+This directory can also contain a subdirectory `srv`, whose contents are
+directly available at `/srv/` on the Carnap instance. This is used for
+documentation on the production instance at `carnap.io`.
+
+### Database
 
 For production deployments, Carnap should have access to a PostgreSQL database.
 Set the environment variable SQLITE=false and supply `PGUSER`, `PGPASS`,
@@ -50,6 +70,10 @@ work-in-progress, but [the configuration
 files](https://github.com/ubc-carnap-team/carnap-nixops) are public.
 
 ### Docker
+
+***Docker builds are currently (2021-02-16) broken, and will be for the
+foreseeable future, due to issues with client side JavaScript builds on
+GitHub Actions. If you're affected by this, please contact us on Matrix***
 
 There is experimental Docker support for Carnap. Images are available via the
 GitHub container registry at
