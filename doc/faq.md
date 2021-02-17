@@ -7,7 +7,7 @@ Carnap has a few options for indicating subproof boundaries. The two main
 methods are to either render the proof separately from the input, or to overlay
 indentation indicators that correspond to subproof boundaries.
 
-The rendering option looks like this:
+The rendering option looks like this (details depending on the system):
 
 ~~~{.Playground .Prop options="fonts resize render" init="now"} 
 |1.Show Q->P
@@ -16,16 +16,16 @@ The rendering option looks like this:
 |4.:CD 3
 ~~~
 
-and the overlay option looks like this:
+and the overlay option looks like this (details depending on the system):
 
-~~~{.Playground .ForallxSL guides="fitch" init="now"} 
+~~~{.Playground system="magnusSL" guides="fitch" init="now"} 
  P       :AS
  P/\P    :&I 1 1
  P       :&E 2
 P->P     :->I 1-3
 ~~~
 
-You can find details about the overlay option
+You can find details about overlaying indentation guides
 [here](./derivations.md#indentation-guides), and details about the rendering
 option [here](./derivations.md#options).
 
