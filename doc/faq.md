@@ -3,6 +3,33 @@
 <details>
 <summary>How can I help my students recognize subproof boundaries better?</summary>
 
+Carnap has a few options for indicating subproof boundaries. The two main
+methods are to either render the proof separately from the input, or to overlay
+indentation indicators that correspond to subproof boundaries.
+
+The rendering option looks like this:
+
+~~~{.Playground .Prop options="fonts resize render"} 
+1.8 P :|-: Q->P
+|1.Show Q->P
+|2.   Q         :AS
+|3.   P         :PR
+|4.:CD 3
+~~~
+
+and the overlay option looks like this:
+
+~~~{.Playground .ForallxSL guides="fitch"} 
+ P       :AS
+ P/\P    :&I 1 1
+ P       :&E 2
+P->P     :->I 1-3
+~~~
+
+You can find details about the overlay option
+[here](./derivations.md#indentation-guides), and details about the rendering
+option [here](./derivations.md#options).
+
 </details>
 
 <details>
@@ -12,8 +39,8 @@ This is a good question. One option to discourage students from typing before
 they think is to slow down the rate at which they get feedback. You can require
 a button-press for feedback on a proof, or turn off feedback about correctness
 entirely by using the settings `feedback="manual"` or `feedback="syntaxonly"`
-respectively. Here's the link for more details on the [feedback settings](
-https://carnap.io/srv/doc/derivations.md#feedback).
+respectively. Here's the link for more details on the [feedback
+settings](./derivations.md#feedback).
 
 </details>
 
