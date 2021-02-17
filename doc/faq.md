@@ -9,8 +9,7 @@ indentation indicators that correspond to subproof boundaries.
 
 The rendering option looks like this:
 
-~~~{.Playground .Prop options="fonts resize render"} 
-1.8 P :|-: Q->P
+~~~{.Playground .Prop options="fonts resize render" init="now"} 
 |1.Show Q->P
 |2.   Q         :AS
 |3.   P         :PR
@@ -19,7 +18,7 @@ The rendering option looks like this:
 
 and the overlay option looks like this:
 
-~~~{.Playground .ForallxSL guides="fitch"} 
+~~~{.Playground .ForallxSL guides="fitch" init="now"} 
  P       :AS
  P/\P    :&I 1 1
  P       :&E 2
