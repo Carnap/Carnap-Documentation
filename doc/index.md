@@ -1,11 +1,15 @@
 # Carnap Documentation
 
-## Quick start guide
+## Quick start
 
 [Quick Start Guide for Instructors](quickstart.md)
 
 Describes how you make assignments for use in Carnap, and how they are
 made available to students.
+
+[FAQ](faq.md)
+
+Answers some frequently asked questions about how to do things with Carnap.
 
 ## Using the Carnap site
 
