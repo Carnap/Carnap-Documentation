@@ -30,9 +30,14 @@ Documents" page here:
 
 ## Usage
 
-### Test harness
+### Example Scripts
 
-I used the following setup to produce these examples:
+Here are some examples for how you can get into a position to start using the
+API with different programming languages. We assume that you're testing, so the
+URL begins with `http://localhost:3000`, but this should of course be
+`https://YOURSERVERRDOMAIN` when you're using this with a non-local server
+
+####Python
 
 Create the file `apitest.py`:
 
@@ -40,6 +45,7 @@ Create the file `apitest.py`:
 import requests
 
 apikey = 'REDACTED'
+
 base = 'http://localhost:3000/api/v1'
 
 def rq(meth, p, *args, key=apikey, **kwargs):
@@ -49,7 +55,12 @@ def rq(meth, p, *args, key=apikey, **kwargs):
     return requests.request(meth, base + p, *args, **kwargs, headers=h)
 ```
 
-Then `ipython -i apitest.py`, or `python -i apitest.py`
+To issue the commands displayed below interactively `ipython -i apitest.py`, or
+`python -i apitest.py`.
+
+####Bash
+
+Just use `curl` as indicated below.
 
 ## Methods
 
@@ -64,12 +75,25 @@ users' documents yet).
 #### GET `/instructor/:instructorIdent/documents`
 
 Retrieves a list of documents owned by the given instructor and their metadata.
+Here are some example commands:
 
-Example:
+*Python*
 
 ```python
-In: rq('GET', '/instructor/yourname@gmail.com/documents').json()
-Out:
+rq('GET', '/instructor/yourname@gmail.com/documents').json()
+```
+
+*Bash*
+
+```bash
+curl -H "X-API-KEY:YOURAPIKEYHERE" localhost:3000/api/v1/instructor/yourname@youremail.com/documents
+```
+
+**Result**
+
+And here's what your result will look like:
+
+```json
 [{'creator': 1,
   'date': '2021-02-16T09:41:39.445672522Z',
   'scope': 'Public',
@@ -82,13 +106,24 @@ Out:
 
 Creates a new document with empty contents. Should be followed by a `PUT` at
 `/instructor/:instructorIdent/documents/:documentId/data` in order to fill in
-the document contents
+the document contents.
 
-Example:
+*Python*
 
 ```python
-In: rq('POST','/instructor/gleachkr@gmail.com/documents', data='{"filename":"myfile.md","scope":"Private", "description":"My file"}').json()
-Out: The ID of your new document
+rq('POST','/instructor/gleachkr@gmail.com/documents', data='{"filename":"myfile.md","scope":"Private", "description":"My file"}').json()
+```
+
+*Bash*
+
+```bash
+curl -H "X-API-KEY:YOURAPIKEY" -H "Content-Type: application/json" -d '{"filename":"myfile.md","scope":"Private", "description":"My file"}' localhost:3000/api/v1/instructor/gleachkr@gmail.com/documents
+```
+
+**Result**
+
+```json
+The ID of your new document
 ```
 
 The response will also include a `Location` header pointed at the new resource.
@@ -100,10 +135,22 @@ description fields can be omitted, with scope defaulting to `Private`.
 
 Like GET `/instructor/:instructorIdent/documents` but for a single document.
 
-Example:
+
+*Python*
 
 ```python
-In: rq('GET', '/instructor/yourname@gmail.com/documents/1').json()
+rq('GET', '/instructor/yourname@gmail.com/documents/1').json()
+```
+
+*Bash*
+
+```bash 
+curl -H "X-API-KEY:YOURAPIKEYHERE" localhost:3000/api/v1/instructor/yourname@youremail.com/documents/1
+```
+
+**Result**
+
+```json
 Out:
 {'creator': 1,
  'date': '2021-02-16T09:41:39.445672522Z',
@@ -116,10 +163,20 @@ Out:
 
 Updates the metadata for a single document
 
-Example:
+*Python*
 
 ```python
-In: rq('PATCH','/instructor/yourname@gmail.com/documents/1', data='{"scope":"Private"}').json()
+rq('PATCH','/instructor/yourname@gmail.com/documents/1', data='{"scope":"Private"}').json()
+```
+
+*Bash*
+
+```bash 
+curl -H "X-API-KEY:YOURAPIKEY" -X "PATCH" -d '{"scope":"Public"}' localhost:3000/api/v1/instructor/yourname@youremail.com/documents/1
+```
+
+**Result**
+```json
 Out:
 {'creator': 1,
  'date': '2021-02-16T09:41:39.445672522Z',
@@ -136,16 +193,41 @@ entirely.
 
 Gets the content of the given document by ID and returns it.
 
+*Python*
+
 ```python
-In: rq('GET', '/instructor/jade@lfcode.ca/documents/1/data').text
-Out: 'aaaaaa'
+rq('GET', 'instructor/yourname@youremail.com/documents/1/data').text
 ```
+
+*Bash*
+
+```bash 
+curl -H "X-API-KEY:YOURAPIKEYHERE" localhost:3000/api/v1/instructor/yourname@youremail.com/documents/1/data
+```
+
+**Result**
+
+The contents of your document, as text
 
 #### PUT `/instructor/:instructorIdent/documents/:documentId/data`
 
-Overwrites the content of the given document by ID.
+Overwrites the content of the given document by ID. These examples us "aaaaaa"
+as a thing you might insert as the document contents.
+
+*Python*
 
 ```python
-In: rq('PUT', '/instructor/yourname@gmail.com/documents/1/data', data='aaaaaa')
-Out: <Response [200]>
+rq('PUT', '/instructor/yourname@gmail.com/documents/1/data', data='aaaaaa')
+```
+
+*Bash*
+
+```python
+echo aaaaaa | curl -H "X-API-KEY:YOURAPIKEYHERE"  -T "-" localhost:3000/api/v1/instructor/gleachkr@gmail.com/documents/1940/data
+```
+
+**Result**
+
+```
+<Response [200]>
 ```
