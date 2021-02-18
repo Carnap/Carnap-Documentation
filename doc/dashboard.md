@@ -157,18 +157,10 @@ the documentation for [pandoc markup](pandoc.md).
 
 ### Manage Uploaded Documents
 
-Within this tab, you can upload documents from which to create
-assignments in your courses, and optionally share them, either with
-other instructors, publicly, or privately using a link. Documents can
-be assigned tags, which make them discoverable once they are shared. 
+Within this tab, you can upload and manage your documents. 
 
 [![Uploading a
 document](images/upload-doc-thumb.png)](images/upload-doc.png)
-
-A list of shared documents can be found at
-[carnap.io/shared](/shared). You can also click on the name of a tag
-in most places where the tag is displayed to see a list of the
-associated shared documents.
 
 Documents can be of three kinds:
 
@@ -176,14 +168,27 @@ Documents can be of three kinds:
 - CSS stylesheets for custom styling of your course materials.
 - JS scripts for more sophisticated customization of your course materials.
 
-Uploaded files will be interpreted as problem sets unless they have the
-filename extension `.css` or `.js`, so unless they are called something like
-`custom-stylesheet.css` or `my-script.js`. For more information on how to
-apply custom styling and behavior, see the "other features" section in the
-documentation of [Carnap's pandoc markup](pandoc.md).
+Uploaded files will be interpreted as problem sets unless they have a filename
+extension that indicates they are something else, so unless they are called
+something like `custom-stylesheet.css` or `my-script.js` (because of the
+extensions `.css` and `.js`). For more information on how to apply custom
+styling and behavior, see the "other features" section in the documentation of
+[Carnap's pandoc markup](pandoc.md).
 
 Once documents are uploaded, they can also be assigned to students as problem
-sets, using the [Assign Uploaded Documents](#assign-uploaded-documents)
+sets, using the [Assign Uploaded Documents](#assign-uploaded-documents) tab.
+
+When you create a document, you'll be able to select a "Sharing Scope". There
+are four options: Public, Private, Instructors-Only, and Link-Only. The sharing
+scope affects whether your document can be accessed via the list of shared
+document that be found at [carnap.io/shared](/shared). Public documents are
+listed, Instructor-Only documents are listed, but only for instructors, and
+Private and Link-Only documents are unlisted. You can still share a link-only
+document by sharing (via email or some other medium) the link to the document
+that appears in your document listing. The tags you assign to a document are
+also used to help organize the document in the shared documents list. The
+sharing scope doesn't affect whether you can assign the document to students,
+or whether students can view assignments associated with the document.
 
 Again, to edit the attributes of an uploaded document, click the gear
 icon <span style="font-family:FontAwesome">&#xf013;</span>.  You can
