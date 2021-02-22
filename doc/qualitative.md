@@ -37,6 +37,12 @@ provide a question along with a set of answers (one per line), like so:
     | Meh.
     ```
 
+The answers should be typed as you want them to be displayed. Carnap doesn't
+currently render formulas or LaTeX within multiple choice answers, and HTML
+escape codes like `&or;` will cause some trouble for the answer-parser. If you
+want to include a formula with symbols, just use the symbols directly in the
+answer. You can copy-paste from here: ¬,→,∧,∨,∀,∃.
+
 Answers marked with a `+` or a `*` will be accepted as correct. Answers marked
 with a `-` or a `+` will be pre-selected. So the result of the above is:
 
@@ -63,6 +69,8 @@ provide a question along with a set of answers (one per line), like so:
     | * I contain multitudes.
     ```
 
+As above, answers should be typed as you want them displayed.
+
 Answers marked with a `+` or a `*` must be selected for a correct answer, and
 other answers must not be selected. Answers marked with a `-` or a `+` will be
 pre-selected. So the result of the above is:
@@ -78,8 +86,8 @@ pre-selected. So the result of the above is:
 ## Numerical
 
 To create a numerical problem, use the class `.Numerical` and provide a
-question, optionally pre-filling with an answer or hint, written below the
-question like so:
+question and answer, in the format `ANSWER : QUESTION`, optionally pre-filling
+with hint written below the question, like so:
 
     ```{.QualitativeProblem .Numerical}
     1.3 8 : How many bits in a byte?
