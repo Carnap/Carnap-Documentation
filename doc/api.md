@@ -8,6 +8,14 @@ h4 {
 h2 {
     margin-bottom: .5em;
 }
+
+pre.sourceCode {
+    background-color: #f8f8f8;
+}
+
+article img {
+    max-width: 100%;
+}
 </style>
 
 # Carnap API
@@ -93,7 +101,7 @@ curl -H "X-API-KEY:YOURAPIKEYHERE" localhost:3000/api/v1/instructors/yourname@yo
 
 And here's what your result will look like:
 
-```json
+```python
 [{'creator': 1,
   'date': '2021-02-16T09:41:39.445672522Z',
   'scope': 'Public',
@@ -111,20 +119,31 @@ the document contents.
 *Python*
 
 ```python
-rq('POST','/instructors/gleachkr@gmail.com/documents', data='{"filename":"myfile.md","scope":"Private", "description":"My file"}').json()
+rq('POST', '/instructors/yourname@gmail.com/documents',
+    json={
+        "filename": "myfile.md",
+        "scope": "Private",
+        "description": "My file",
+    }
+).json()
 ```
 
 *Bash*
 
 ```bash
-curl -H "X-API-KEY:YOURAPIKEY" -H "Content-Type: application/json" -d '{"filename":"myfile.md","scope":"Private", "description":"My file"}' localhost:3000/api/v1/instructors/gleachkr@gmail.com/documents
+curl -H "X-API-KEY:YOURAPIKEY" \
+     -H "Content-Type: application/json" \
+     -d '{"filename":"myfile.md","scope":"Private", "description":"My file"}' \
+     localhost:3000/api/v1/instructors/yourname@gmail.com/documents
 ```
 
 **Result**
 
 ```json
-The ID of your new document
+3
 ```
+
+or an error is returned as an encoded JSON string.
 
 The response will also include a `Location` header pointed at the new resource.
 `scope` indicates the sharing scope of the document, and can be one of
@@ -150,8 +169,7 @@ curl -H "X-API-KEY:YOURAPIKEYHERE" localhost:3000/api/v1/instructors/yourname@yo
 
 **Result**
 
-```json
-Out:
+```python
 {'creator': 1,
  'date': '2021-02-16T09:41:39.445672522Z',
  'scope': 'Public',
@@ -166,18 +184,19 @@ Updates the metadata for a single document
 *Python*
 
 ```python
-rq('PATCH','/instructors/yourname@gmail.com/documents/1', data='{"scope":"Private"}').json()
+rq('PATCH', '/instructors/yourname@gmail.com/documents/1',
+    json={"scope": "Private"}).json()
 ```
 
 *Bash*
 
 ```bash 
-curl -H "X-API-KEY:YOURAPIKEY" -X "PATCH" -d '{"scope":"Public"}' localhost:3000/api/v1/instructors/yourname@youremail.com/documents/1
+curl -H "X-API-KEY:YOURAPIKEY" -X "PATCH" -d '{"scope":"Public"}' \
+     localhost:3000/api/v1/instructors/yourname@youremail.com/documents/1
 ```
 
 **Result**
-```json
-Out:
+```python
 {'creator': 1,
  'date': '2021-02-16T09:41:39.445672522Z',
  'scope': 'Private',
@@ -202,7 +221,8 @@ rq('GET', 'instructors/yourname@youremail.com/documents/1/data').text
 *Bash*
 
 ```bash 
-curl -H "X-API-KEY:YOURAPIKEYHERE" localhost:3000/api/v1/instructors/yourname@youremail.com/documents/1/data
+curl -H "X-API-KEY:YOURAPIKEYHERE" \
+     localhost:3000/api/v1/instructors/yourname@youremail.com/documents/1/data
 ```
 
 **Result**
@@ -223,11 +243,12 @@ rq('PUT', '/instructors/yourname@gmail.com/documents/1/data', data='aaaaaa')
 *Bash*
 
 ```python
-echo aaaaaa | curl -H "X-API-KEY:YOURAPIKEYHERE"  -T "-" localhost:3000/api/v1/instructors/gleachkr@gmail.com/documents/1940/data
+echo aaaaaa | curl -H "X-API-KEY:YOURAPIKEYHERE"  -T "-" \
+    localhost:3000/api/v1/instructors/gleachkr@gmail.com/documents/1940/data
 ```
 
 **Result**
 
-```
+```python
 <Response [200]>
 ```
