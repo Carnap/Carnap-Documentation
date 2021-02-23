@@ -20,8 +20,8 @@ article img {
 
 # Carnap API
 
-Carnap has an experimental API, which is not released yet (see the tracking
-issues below).
+Carnap has an experimental API, which is currently under development (see the
+tracking issues below).
 
 ## Tracking issues
 
