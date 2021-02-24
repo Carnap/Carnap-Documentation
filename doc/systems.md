@@ -791,7 +791,7 @@ produces `AxAy x * y' = (x * y) + y /\ Ax(0!=x -> 0<x)`{system="openLogicArithNK
 
 #### Extended Arithmetic
 
-  + Selected with `system="..."`: `openLogicExtendedArithNK`
+  + Selected with `system="..."`: `openLogicExArithNK`
   + Predicate symbols: strings beginning with uppercase letter, `<` (two-place, infix)
   + Constant symbols: strings beginning with lowercase letter, `0`
   + Function symbols: strings beginning with lowercase letter, `'` (one-place, postfix), `+`, `*` (two-place, infix)
@@ -806,9 +806,9 @@ Symbol     Keyboard
 
 Example:
 
-    `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExtendedArithNK"}
+    `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExArithNK"}
 
-produces `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExtendedArithNK"}
+produces `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExArithNK"}
 
 #### Set theory
 
