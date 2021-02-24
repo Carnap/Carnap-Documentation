@@ -156,6 +156,7 @@ followed by a colon and what you want it filled in with, like this:
     ```{.CounterModeler .Simple}
     1.1 AxF(x), ExG(x)
     | Domain : 0,1,2
+    | a : 1
     ```
 
 Which will produce:
