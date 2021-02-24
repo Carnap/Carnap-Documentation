@@ -93,6 +93,7 @@ Name                     Effect
 ------------------------ ------------------------------------------------------------------
 `nocheck`                Disables the "check" button
 `exam`                   Allows for submission of work which is incomplete or incorrect
+`strictGivens`           Makes givens immutable (see below)
 ------------------------ ------------------------------------------------------------------
 
 
@@ -142,3 +143,32 @@ The available systems are `firstOrder` `montagueQC` `magnusQL`
 `thomasBolducAndZachFOLPlus` `LogicBookPD` `LogicBookPDPlus` `hausmanPL`
 `howardSnyderPL` `ichikawaJenkinsQL` `hardegreePL` `goldfarbAltND`
 `goldfarbNDPlus` and `goldfarbAltNDPlus`.
+
+#### Givens
+
+It is also possible to give a "partial solution" to a countermodeling problem,
+in which the model is partly filled in, and the student needs either to
+complete it or correct it. To pre-populate models with "givens" in this way,
+write each field you want filled in, preceded by the bar character `|` and
+followed by a colon and what you want it filled in with, like this:
+
+
+    ```{.CounterModeler .Simple}
+    1.1 AxF(x), ExG(x)
+    | Domain : 0,1,2
+    ```
+
+Which will produce:
+
+```{.CounterModeler .Simple}
+1.1 AxF(x), ExG(x), H(a)
+| Domain : 0,1,2
+| a : 1
+```
+
+The field-names for the givens should match how the field-names would be
+displayed in the exercise.
+
+Ordinarily, givens function as hints. However, you can make it impossible for
+students to change them (thereby turning them into requirements) by adding the
+`strictGivens` option to your problem.
