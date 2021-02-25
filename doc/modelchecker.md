@@ -156,6 +156,7 @@ followed by a colon and what you want it filled in with, like this:
     ```{.CounterModeler .Simple}
     1.1 AxF(x), ExG(x)
     | Domain : 0,1,2
+    | F(_) : 1,2
     | a : 1
     ```
 
@@ -164,12 +165,15 @@ Which will produce:
 ```{.CounterModeler .Simple}
 1.1 AxF(x), ExG(x), H(a)
 | Domain : 0,1,2
+| F(_) : 1,2
 | a : 1
 ```
 
 The field-names for the givens should match how the field-names would be
 displayed in the exercise.
 
-Ordinarily, givens function as hints. However, you can make it impossible for
-students to change them (thereby turning them into requirements) by adding the
-`strictGivens` option to your problem.
+Ordinarily, givens function as hints. However, you can make it
+impossible for students to change them (thereby turning them into
+requirements) by adding the `strictGivens` option to your problem. Use
+this, for instance, to require students to use a specific domain, or
+to prevent them from making universal sentences vacuously true.
