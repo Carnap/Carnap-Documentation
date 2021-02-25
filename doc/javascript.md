@@ -24,12 +24,14 @@ The scripts can be hosted anywhere, including on the Carnap server. As with
 stylesheets, scripts can be uploaded as normal documents so long as they're
 given the proper filetype extension (in this case, ".js" rather than ".css")
 
-## Advanced Usage: Interacting with the Server
+## Advanced Usage
+
+### Interacting with the Server
 
 JavaScript running as part of an assignment will have access to an object
 called `CarnapServerAPI`, which lets your JavaScript interact with the server,
-to retrieve information about the student and the current assignment, and to
-save information on the server for later retrieval.
+to retrieve information about the current student and assignment, and to save
+information on the server for later retrieval.
 
 Currently, the useful properties of `CarnapServerAPI` are as follows:
 
@@ -66,3 +68,19 @@ from the server, and subsequent calls return a locally cached state that's
 updated by `CarnapServerAPI.putAssignmentState`. So, while the first call to
 `CarnapServerAPI.getAssignmentState` might take a moment, subsequent calls
 should be quite fast.
+
+## Events
+
+In order to make it possible for interactive JS behavior to be triggered by
+successful or unsuccessful completion of exercises, Carnap provides a few
+events that you can listen for.
+
+Whenever an exercise is successfully checked or submitted, an
+`exercise-success` event will fire on the main exercise element (the one
+carries the `data-carnap-*` attributes). An `exercise-failure` event fires
+when an exercise is checked at detected as incorrect, or a submission is
+rejected. Both `exercise-success` and `exercise-failure` are disabled if an
+exercise has the `exam` option set. 
+
+Finally, a `problem-submision` event fires on the submission button when a
+problem is submitted.
