@@ -220,7 +220,7 @@ the course description, points available, start and end date,
 whether the course is open for enrollment, and the course textbook by
 clicking on "Edit Information".
 
-#### Opening Enrolment for Your Students
+#### Opening Enrollment for Your Students
 
 Students who follow the enrollment link will be prompted to register
 (if they're not already registered) and automatically enrolled in your
