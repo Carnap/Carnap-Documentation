@@ -43,6 +43,46 @@ settings](./derivations.md#feedback).
 
 </details>
 
+<details> 
+<summary>How can I use Carnap to give students an exam?</summary>
+
+If you're using Carnap, an exam is an assignment just like any other
+assignment. But depending on the type of format you want your exam to have, you
+may want to set some options on that assignment.
+
+If you'd like your students to be able to submit incorrect answers, rather than
+having Carnap warn them when something is wrong, then you can add `exam` to the
+options attribute of your exercises, writing them something like this:
+
+    ~~~{.ProofChecker options="fonts exam" } 
+    1.1 :|-: P->P
+    ~~~
+
+All the exercise types except for the syntax-checker support the `exam` option;
+you can also set other options to disable checking or allow only certain types
+of feedback on the unsubmitted work. Check the documentation for individual
+exercise types to get the details on how to do that.
+
+If your students are allowed to submit incorrect answers, you might want to
+review them and assign partial credit. You can do that using the review area
+that's associated with each assignment. There are also a few assignment
+settings that might also be helpful for an exam. In particular, 
+
+1. you can set a timer, so that exam needs to be completed in a certain number
+   of minutes after its opened, and
+
+2. you can set a "release date" for grades, so that students can only view
+   grades after everyone has completed the exam.
+
+Details on the review area, and assignment settings, can be found here:
+[here](./dashboard.md#assign-uploaded-documents).
+
+You may also want to know how reset the exam timer for certain students, or how
+to offer accessibility accommodations for certain students. Information on how
+to do that can be found [here](,/dashboard.md#actions-on-students)
+
+</details>
+
 <details>
 <summary>How can I adjust deadlines for assignments?</summary>
 
