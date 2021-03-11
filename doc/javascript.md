@@ -6,13 +6,13 @@ Carnap allows you to incorporate external JavaScript to an assignment, in order
 to add extra interactive behavior to your problem sets. This can be done using
 the `raw_html` pandoc extension to include a `<script>` tag, or by including
 the JS in a metadata block. Like a CSS entry, a JS entry entry can include
-either a url for a single CSS stylesheet, like so:
+either a url for a single script, like so:
 
     ---
     js: https://carnap.io/shared/myemail@university.edu/myjs.js
     --- 
 
-or for several stylesheets, like so:
+or for several scripts, like so:
 
     ---
     js:
