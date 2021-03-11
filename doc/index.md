@@ -11,6 +11,8 @@ made available to students.
 
 Answers some frequently asked questions about how to do things with Carnap.
 
+[Community resources and tools for Carnap](awesome-carnap.md)
+
 ## Using the Carnap site
 
 [Carnap's Course Management Dashboard](dashboard.md)
