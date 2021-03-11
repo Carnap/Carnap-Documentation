@@ -11,10 +11,12 @@
 
 * [forall x: UBC edition](https://github.com/ubc-carnap-team/forallx-pandocs/)
 * [forall x: Calgary](https://carnap.io/shared/rzach@ucalgary.ca/forall%20x:%20Calgary.md)
+* [Introductory Logic, by Sean Walsh](https://carnap.io/shared/walsh@g.ucla.edu/book-mainpage.pandoc)
 
-// TODO: others?
+<!-- TODO: others? -->
 
 ## Tools
 
-* [Carnap command line interface and GitHub Action](https://github.com/Carnap/Actions)
-  - automatically perform actions with the Carnap API such as uploading assignments
+* [Carnap command line interface and GitHub Action](https://github.com/Carnap/Actions):
+
+  Automatically perform actions with the Carnap API such as uploading assignments
