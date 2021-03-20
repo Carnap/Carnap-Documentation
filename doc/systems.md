@@ -806,9 +806,9 @@ Symbol     Keyboard
 
 Example:
 
-    `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExArithNK"}
+    `Q_1(0,0') /\ Ax(0<x -> Sq_a(0,x))`{system="openLogicExArithNK"}
 
-produces `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExArithNK"}
+produces `Q_1(0,0') /\ Ax(0<x -> Sq_a(0,x))`{system="openLogicExArithNK"}
 
 #### Set theory
 
@@ -818,6 +818,13 @@ produces `Q_1(0,0') /\ Ax(0<x -> Sblank(0,x))`{system="openLogicExArithNK"}
   + Variables: `s`...`z`
   + Identity: `=`, `≠`
 
+The system `openLogicExSTNK` is like the above but adds arbitrary
+string predicates and function symbols:
+
+  + Selected with `system="..."`: `openLogicExESTNK`
+  + Predicate symbols: strings beginning with uppercase letter
+  + Constant symbols: strings beginning with lowercase letter
+  + Function symbols: strings beginning with lowercase letter
 
 Symbol     Keyboard 
 ---------- ----------
@@ -833,16 +840,25 @@ produces `Ex(Ay ~y<<x /\ Az(z!=x -> Eu u<<z))`{system="openLogicSTNK"}
 
 #### Extended set theory
 
-  + Selected with `system="..."`: `openLogicESTNK`
+  + Selected with `system="..."`: `openLogicESTNK`, `openLogicExESTNK`
   + Predicate symbols: `∈`, `⊆` (two-place, infix)
-  + Constant symbols: `a` ... `r`
+  + Constant symbols: `∅ `, `a` ... `r`
   + Function symbols: `∪`, `∩`, `/`, `Pow` (two-place, infix)
   + Variables: `s`...`z`
   + Identity: `=`, `≠`
 
+The system `openLogicExESTNK` is like the above but adds arbitrary
+string predicates and function symbols:
+
+  + Selected with `system="..."`: `openLogicExESTNK`
+  + Predicate symbols: strings beginning with uppercase letter
+  + Constant symbols: strings beginning with lowercase letter
+  + Function symbols: strings beginning with lowercase letter
+
 
 Symbol     Keyboard 
 ---------- ----------
+∅          `{}`, `empty`
 ∈          `<<`, `<e`, `in`
 ⊆          `<(`, `<s`, `within`, `sub`
 ∪          `U`, `cup`
@@ -854,9 +870,9 @@ Pow        `P`
 
 Example:
 
-    `Ex(Ay ~y<<x /\ Az(z!=x -> Eu u<<z))`{system="openLogicSTNK"}
+    `Ex(Ay ~y<<x /\ Az(z!={} -> Eu u<( P(z)))`{system="openLogicESTNK"}
 
-produces `Ex(Ay ~y<<x /\ Az(z!=x -> Eu u<<z))`{system="openLogicSTNK"}
+produces `Ex(Ay ~y<<x /\ Az(z!={} -> Eu u<( P(z))))`{system="openLogicESTNK"}
 
 ## Thomas-Bolduc & Zach, *forall x: Calgary*
 

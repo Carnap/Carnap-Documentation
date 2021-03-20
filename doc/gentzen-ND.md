@@ -23,17 +23,21 @@ At the moment, four systems are available:
 
 <div class="table">
 
-System                      Description
---------------------------- -------------------------------------------------------------------------
-propNK                      A system based on the propositional fragment of Gentzen's NK
-propNJ                      A system based on the propositional fragment of Gentzen's NJ
-openLogicNK                 The propositional fragement of the Open Logic project's natural deduction
-openLogicFOLNK              The full (first-order with equality) Open Logic project natural deduction
-openLogicArithNK            openLogicFOLNK for the language of arithmetic
-openLogicExArithNK          openLogicFOLNK for the language of arithmetic with arbitrary predicates and functions
-openLogicSTNK               openLogicFOLNK for the basic language of set theory
-openLogicESTNK              openLogicFOLNK for an extended language of set theory
---------------------------- -------------------------------------------------------------------------
+System                Description
+--------------------- -------------------------------------------------------------------------
+propNK                A system based on the propositional fragment of Gentzen's NK
+propNJ                A system based on the propositional fragment of Gentzen's NJ
+openLogicNK           The propositional fragement of the Open Logic project's natural deduction
+openLogicFOLNK        The full (first-order with equality) Open Logic project natural deduction
+openLogicArithNK      openLogicFOLNK for the language of arithmetic
+openLogicExArithNK    openLogicFOLNK for the language of arithmetic with arbitrary predicates and functions
+openLogicSTNK         openLogicFOLNK for the basic language of set theory with arbitrary predicates and functions
+openLogicExSTNK       openLogicFOLNK for the basic language of set theory
+openLogicESTNK        openLogicFOLNK for an extended language of set theory
+openLogicExESTNK      openLogicFOLNK for an extended language of set theory with arbitrary predicates and functions
+openLogicSSTNK        openLogicFOLNK for an extended language of set theory with separation abstracts
+openLogicExSSTNK      openLogicFOLNK for an extended language of set theory with separation abstracts and arbitrary predicates and functions
+--------------------- -------------------------------------------------------------------------
 
 </div>
 
@@ -225,6 +229,11 @@ The syntax of accepted for the Open Logic systems is described in the
 deduction systems for arithmetic and set theory only differ in the
 syntax; there are no axioms.
 
+Here is an example of a derivation in the language of arithmetic:
+
+```{.TreePlayground .apenLogicArithNK init="now" options="displayJSON"}
+|{"ident":7,"label":"Ax ~ x < 0","rule":"AI","forest":[{"ident":11,"label":"~ a < 0","rule":"~I 1","forest":[{"ident":11,"label":"_|_","rule":"~E","forest":[{"ident":12,"label":"Ez z' + a = 0","rule":"->E","forest":[{"ident":14,"label":"a < 0","rule":"1","forest":[{"ident":51,"label":"","rule":"","forest":[]}]},{"ident":15,"label":"a < 0 -> Ez z'+a = 0","rule":"->I 2","forest":[{"ident":52,"label":"Ez z'+a = 0","rule":"<->E","forest":[{"ident":52,"label":"a < 0 <-> Ez z'+a = 0","rule":"AE","forest":[{"ident":53,"label":"Ay(a < y <-> Ez z'+a = y)","rule":"AE","forest":[{"ident":54,"label":"AxAy(x < y <-> Ez z'+x = y)","rule":"","forest":[]}]}]},{"ident":62,"label":"a < 0","rule":"2","forest":[{"ident":63,"label":"","rule":"","forest":[]}]}]}]}]},{"ident":13,"label":"~Ez z' + a = 0","rule":"AE","forest":[{"ident":64,"label":"Ax~Ez z' + x = 0","rule":"","forest":[]}]}]}]}]}
+```
 
 ## Advanced Usage
 
