@@ -31,11 +31,11 @@ of the types listed on [the main page](index.html). They are:
 Each assignment document is a plain text file formatted in Markdown, a
 simple markup language.  (Typically, the extension of Markdown text
 files is `.md`.) You can find a comprehensive introduction in the
-[Markdown Guide](https://www.markdownguide.org/) including a list of
-editors that support Markdown.  Any plain text editor is fine, but
-Markdown (and Carnap) are sticklers about spaces and newlines in
-Markdown documents.  So make sure your editor does not automatically
-wrap text.  
+[Markdown Guide](https://www.markdownguide.org/) including a list of editors
+that support Markdown. For a quick reference, try [Learn Markdown in 60
+seconds](https://commonmark.org/help/) Any plain text editor is fine, but
+Markdown (and Carnap) are sticklers about spaces and newlines in Markdown
+documents.  So make sure your editor does not automatically wrap text.  
 
 ### Downloading shared documents
 
