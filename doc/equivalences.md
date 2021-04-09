@@ -112,7 +112,8 @@ A proof playground is also supported.
 
 The available tests are the same as for [translation
 exercises](translations.md#translation-tests), and can be combined. If
-combined, multiple tests have to be separated by spaces.
+combined, multiple tests have to be separated by spaces. Tests also
+work on playgrounds.
 
 <div class="table">
 
@@ -144,6 +145,8 @@ Rule                        Abbreviation Premises            Conclusion
 --------------------------- ------------ ------------------- --------------
 Variable Renaming           `VR`         $∀ x\,φ(x)$         $∀ y\,φ(y)$
                                          $∃ x\,φ(x)$         $∃ y\,φ(y)$
+Quantifier Exchange         `QX`         $∀ x∀ y\,φ(x,y)$         $∀ y∀ x\,φ(y)$
+                                         $∃ x∃ y\,φ(x,y)$         $∃ y∃ x\,φ(x,y)$
 Quantifier Negation         `QN`         $¬∀xφ(x)$           $∃x¬φ(x)$
                                          $¬∃xφ(x)$           $∀x¬φ(x)$
 Quantifier Distribution     `QD`         $∀ x(φ(x) ∧ ψ(x))$  $∀ x\,φ(x) ∧ ∀ x\,ψ(x)$
