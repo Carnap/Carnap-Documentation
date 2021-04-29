@@ -77,10 +77,10 @@ events that you can listen for.
 
 Whenever an exercise is successfully checked or submitted, an
 `exercise-success` event will fire on the main exercise element (the one
-carries the `data-carnap-*` attributes). An `exercise-failure` event fires
-when an exercise is checked at detected as incorrect, or a submission is
-rejected. Both `exercise-success` and `exercise-failure` are disabled if an
-exercise has the `exam` option set. 
+carries the `data-carnap-*` attributes). An `exercise-failure` event fires when
+an exercise is checked and detected as incorrect, or a submission is rejected.
+Both `exercise-success` and `exercise-failure` are disabled if an exercise has
+the `exam` option set. 
 
 Finally, a `problem-submision` event fires on the submission button when a
 problem is submitted.
