@@ -140,3 +140,34 @@ Name                     Effect
 
 so, adding `give-credit="onSubmisson"` to a short answer question will award
 credit automatically for any submission.
+
+For more complicated formatting of multiple choice and multiple selection
+options, you can also use the `content-format` option, which has the following
+available settings
+
+<div class="table">
+
+Name                     Effect
+------------------------ ------------------------------------------------------------------
+`html`                   Applies html tags that appear in the answer options
+------------------------ ------------------------------------------------------------------
+
+</div>
+
+So, for example, one can write:
+
+    ```{.QualitativeProblem .MultipleChoice options="check" content-format="html"}
+    1. "Truth" is:
+    | a <b>propery</b> of propositions
+    | a logical <b>object</b>
+    | *A five-letter word
+    ```
+
+to generate
+
+```{.QualitativeProblem .MultipleChoice options="check" content-format="html"}
+1. "Truth" is:
+| a <b>propery</b> of propositions
+| a logical <b>object</b>
+| *A five-letter word
+```
