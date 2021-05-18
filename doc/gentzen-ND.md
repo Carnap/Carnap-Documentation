@@ -269,7 +269,7 @@ should indicate which sentence letters, constants, and function symbols are to
 be read as schematic by preceding each such symbol with a prime, like so: `'P`.
 So, for example:
 
-    ~~~{.TreePlayground .openLogicExArithNK axiom-flip="'P('a*'b) :|-: 'P('b*'a); P('a+'b) :|-: 'P('b+'a)"}
+    ~~~{.TreePlayground .openLogicExArithNK init="now" axiom-flip="'P('a*'b) :|-: 'P('b*'a); P('a+'b) :|-: 'P('b+'a)"}
     { "ident": 13, "label": "a+b=c", "rule": "Ax-flip", "forest": [
         { "ident": 15, "label": "b+a=c", "rule": "", "forest": [] }
     ]}
@@ -277,7 +277,7 @@ So, for example:
 
 will produce:
 
-~~~{.TreePlayground .openLogicExArithNK axiom-flip="'P('a*'b) :|-: 'P('b*'a); 'P('a+'b) :|-: 'P('b+'a)"}
+~~~{.TreePlayground .openLogicExArithNK init="now" axiom-flip="'P('a*'b) :|-: 'P('b*'a); 'P('a+'b) :|-: 'P('b+'a)"}
 { "ident": 13, "label": "a+b=c", "rule": "Ax-flip", "forest": [
     { "ident": 15, "label": "b+a=c", "rule": "", "forest": [] }
 ]}
