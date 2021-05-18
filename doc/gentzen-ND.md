@@ -254,6 +254,35 @@ Option name        Effect
 
 </div>
 
+### Runtime Axioms and Rules
+
+The "extended" mathematical systems, `openLogicExArithNK` `openLogicExSTNK`
+`openLogicExESTNK` and `openLogicExSSTNK` can be equipped with extra axioms and
+rules. To set an axiom or a rule for a system, include an option of the form
+`axiom-NAME="RULEVARIANTS"` where `NAME` is the name that you want your axiom
+or rule to have, and `RULEVARIANTS` is a semicolon-separated list of sequents
+representing the variant schematic forms of the rule. The rule should be cited
+as `Ax-NAME`.
+
+When entering the schematic sequents representing the forms of a rule, you
+should indicate which sentence letters, constants, and function symbols are to
+be read as schematic by preceding each such symbol with a prime, like so: `'P`.
+So, for example:
+
+    ~~~{.TreePlayground .openLogicExArithNK axiom-flip="'P('a*'b) :|-: 'P('b*'a); P('a+'b) :|-: 'P('b+'a)"}
+    { "ident": 13, "label": "a+b=c", "rule": "Ax-flip", "forest": [
+        { "ident": 15, "label": "b+a=c", "rule": "", "forest": [] }
+    ]}
+    ~~~
+
+will produce:
+
+~~~{.TreePlayground .openLogicExArithNK axiom-flip="'P('a*'b) :|-: 'P('b*'a); 'P('a+'b) :|-: 'P('b+'a)"}
+{ "ident": 13, "label": "a+b=c", "rule": "Ax-flip", "forest": [
+    { "ident": 15, "label": "b+a=c", "rule": "", "forest": [] }
+]}
+~~~
+
 ### JSON Serialization
 
 Here's an incomplete proof, showing how to use the `displayJSON` option:
