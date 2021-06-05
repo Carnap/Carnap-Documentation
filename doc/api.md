@@ -31,8 +31,11 @@ tracking issues below).
 
 ## Instructor setup
 
-You can add an API key on the instructor page on the "Manage Uploaded
-Documents" page here:
+To use the API, you need an API key. Your API key should be kept a secret,
+since it allows anyone who has it to access and modify your courses.
+
+You can create an API key for yourself on the instructor page, beneath the
+"Manage Uploaded Documents" tab, here:
 
 ![image showing the API key field at the bottom of the screen](images/apikey.png)
 
@@ -42,10 +45,10 @@ Documents" page here:
 
 Here are some examples for how you can get into a position to start using the
 API with different programming languages. We assume that you're testing, so the
-URL begins with `http://localhost:3000`, but this should of course be
+URL begins with `http://localhost:3000`. This should instead be
 `https://YOURSERVERRDOMAIN` when you're using this with a non-local server
 
-####Python
+#### Python
 
 Create the file `apitest.py`:
 
@@ -66,11 +69,11 @@ def rq(meth, p, *args, key=apikey, **kwargs):
 To issue the commands displayed below interactively `ipython -i apitest.py`, or
 `python -i apitest.py`.
 
-####Bash
+#### Bash
 
 Just use `curl` as indicated below.
 
-## Methods
+## Available API Methods
 
 ### Document API
 
@@ -82,7 +85,9 @@ users' documents yet).
 
 #### GET `/instructors/:instructorIdent/documents`
 
-Retrieves a list of documents owned by the given instructor and their metadata.
+<details> <summary> Retrieves a list of documents owned by the given instructor
+and their metadata. </summary>
+
 Here are some example commands:
 
 *Python*
@@ -108,11 +113,15 @@ And here's what your result will look like:
   'id': 1,
   'description': None,
   'filename': 'api.md'}]
-```
+``` 
+
+</details>
 
 #### POST `/instructors/:instructorIdent/documents`
 
-Creates a new document with empty contents. Should be followed by a `PUT` at
+<details> <summary> Creates a new document with empty contents. </summary>
+
+Should be followed by a `PUT` at
 `/instructors/:instructorIdent/documents/:documentId/data` in order to fill in
 the document contents.
 
@@ -150,10 +159,12 @@ The response will also include a `Location` header pointed at the new resource.
 `Private`, `Public`, `LinkOnly` or `InstructorsOnly`. Both the scope and
 description fields can be omitted, with scope defaulting to `Private`.
 
+</details>
+
 #### GET `/instructors/:instructorIdent/documents/:documentId`
 
-Like GET `/instructors/:instructorIdent/documents` but for a single document.
-
+<details><summary> Like GET `/instructors/:instructorIdent/documents` but for a
+single document. </summary>
 
 *Python*
 
@@ -177,9 +188,11 @@ curl -H "X-API-KEY:YOURAPIKEYHERE" localhost:3000/api/v1/instructors/yourname@yo
  'filename': 'api.md'}
 ```
 
+</details>
+
 #### PATCH `/instructors/:instructorIdent/documents/:documentId`
 
-Updates the metadata for a single document
+<details><summary>Updates the metadata for a single document.</summary>
 
 *Python*
 
@@ -208,9 +221,12 @@ Currently `scope` and `description` fields can be updated. Passing in a null
 value for `description` will cause the document description to be cleared
 entirely.
 
+</details>
+
 #### GET `/instructors/:instructorIdent/documents/:documentId/data`
 
-Gets the content of the given document by ID and returns it.
+<details><summary>Gets the content of the given document by ID and returns
+it.</summary>
 
 *Python*
 
@@ -229,10 +245,14 @@ curl -H "X-API-KEY:YOURAPIKEYHERE" \
 
 The contents of your document, as text
 
+</details>
+
 #### PUT `/instructors/:instructorIdent/documents/:documentId/data`
 
-Overwrites the content of the given document by ID. These examples us "aaaaaa"
-as a thing you might insert as the document contents.
+<details><summary> Overwrites the content of the given document by ID.</summary> 
+
+These examples use "aaaaaa" as a thing you might insert as the document
+contents.
 
 *Python*
 
@@ -252,3 +272,5 @@ echo aaaaaa | curl -H "X-API-KEY:YOURAPIKEYHERE"  -T "-" \
 ```python
 <Response [200]>
 ```
+
+</details>
