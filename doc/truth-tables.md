@@ -164,9 +164,16 @@ assumption" that the formulas to the left of the turnstile are true.
 Here's an example of a truth table looking for a counterexample to the
 equivalence of two formulas
 
-```{.TruthTable .Simple counterexample-to:"equivalence"}
+    ```{.TruthTable .Simple counterexample-to="equivalence"}
+    2.7 P<->Q,  P->Q
+    ```
+
+which produces:
+
+```{.TruthTable .Simple counterexample-to="equivalence"}
 2.7 P<->Q,  P->Q
 ```
+
 
 #### Systems
 
