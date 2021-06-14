@@ -161,6 +161,13 @@ the counterexample is `equivalence` is basically using a truth table to test
 whether the formulas to the right of the turnstile are equivalent "under the
 assumption" that the formulas to the left of the turnstile are true.
 
+Here's an example of a truth table looking for a counterexample to the
+equivalence of two formulas
+
+```{.TruthTable .Simple counterexample-to:"equivalence"}
+2.7 P<->Q,  P->Q
+```
+
 #### Systems
 
 The way that formulas are parsed and displayed can also be customized. This is
@@ -168,13 +175,13 @@ done by setting the `system` attribute to indicate which formal system you are
 drawing your syntax from. So for example, 
 
     ~~~{.TruthTable .Simple system="LogicBookSD"}
-    2.7 A > B & C
+    2.8 A > B & C
     ~~~
 
 will generate:
 
 ~~~{.TruthTable .Simple system="LogicBookSD"}
-2.7 A > B & C
+2.8 A > B & C
 ~~~
 
 The available systems are: `prop` `montagueSC` `LogicBookSD` `LogicBookSDPlus`
@@ -191,7 +198,7 @@ complete it or correct it. To pre-populate simple and validity tables with
 character `|`, after the problem. So, 
 
     ~~~{.TruthTable .Simple}
-    2.8 P \/~P
+    2.9 P \/~P
     |   T - FT
     |   F - TF
     ~~~
@@ -277,20 +284,20 @@ usual `T` and `F` by setting the `falseMark` and `trueMark` attributes. So for
 example 
 
     ```{.TruthTable .Validity trueMark="1" falseMark="0"}
-    2.8 P,Q:|-:P/\Q
+    2.13 P,Q:|-:P/\Q
     ```
 
 will produce
 
 ```{.TruthTable .Validity trueMark="1" falseMark="0"}
-2.8 P,Q:|-:P/\Q
+2.13 P,Q:|-:P/\Q
 ```
 
 The handling of givens remains the same in the presence of a configured
 `falseMark` or `trueMark` attribute. So,for example
 
     ```{.TruthTable .Validity trueMark="1" falseMark="0"}
-    1.1 P,Q:|-:P/\Q
+    2.14 P,Q:|-:P/\Q
     | TT----
     | FT----
     | TF----
@@ -300,7 +307,7 @@ The handling of givens remains the same in the presence of a configured
 will produce
 
 ```{.TruthTable .Validity trueMark="1" falseMark="0"}
-1.1 P,Q:|-:P/\Q
+2.14 P,Q:|-:P/\Q
 | TT----
 | FT----
 | TF----
