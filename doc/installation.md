@@ -40,15 +40,13 @@ $ sh <(curl -L https://nixos.org/nix/install)
 ```
 from the terminal command line as a user who has `sudo` access.
 
-> Since Nix requires `sudo` access and will create a top-level `/nix`
-> directory, I imagine this will not always be a pathway available if
-> we're expecting University IT people to do this.  Perhaps this will
-> be moot if precompiled binaries (docker?) binaries are available
-> again, but probably we should document what's required & what you
-> have to do to build without Nix.
-
 (The `$` indicates the command line prompt, you only enter the
 commands to the right of it.)
+
+If you want to compile using nix on a machine where you don't have `sudo`
+access, some alternative nix installation approaches are described in the
+[nixos wiki](https://nixos.wiki/wiki/Nix_Installation_Guide). In particular a
+`nix-user-chroot` installation has been confirmed to work for compiling Carnap.
 
 You can significantly speed up builds by using binaries for Carnap
 dependencies from Carnap's [Cachix](https://cachix.org/) instance,
