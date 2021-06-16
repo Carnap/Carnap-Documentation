@@ -205,21 +205,24 @@ as [caddy](https://caddyserver.com/docs/quick-starts/reverse-proxy).
 
 ### Database
 
-If the setting variable `SQLITE` is set to true (default), Carnap will be built
-including a lightweight database ([SQLite](https://www.sqlite.org/)).
+If the setting variable `SQLITE` in settings.yml is set to true (default), or
+if the environment variable SQLITE is set to true, Carnap will generate
+a lightweight database for storing its data, using ([SQLite](https://www.sqlite.org/)).
 
-> This maybe needs some more detail? Esp when is it
-> necessary/advisable to *not* use SQLite (eg how many users)?
-
-> If you run the server with `SQLITE=false` it will expect the `PG`
-> variables to be set and will not work if they aren't, I assume.
-> Does the server have to be re-built for using Postgres or is that
-> just a runtime setting?
-
-For production deployments, Carnap should have access to a PostgreSQL database.
-Set the environment variable `SQLITE=false` and supply `PGUSER`, `PGPASS`,
+If SQLITE is set to false, Carnap will instead use a PostgreSQL database. Set
+the environment variable `SQLITE=false` and supply `PGUSER`, `PGPASS`,
 `PGHOST`, and if required, `PGPORT` and `PGDATABASE` for your postgresql
 database instance.
+
+Which database should you use? Sqlite is simpler to manage, and should be
+adequate for most installations with fewer than 500 users. For larger
+installations, PostgreSQL may be appropriate.[^1]
+
+[^1]: Why? PostgreSQL is preferred in industry, and may have some security
+advantages depending on your server configuration. Sqlite also doesn't have the
+same level of support for concurrent writes to the database as PostgreSQL, but
+Carnap retries database transations that fail becuase the database is busy, so
+this shouldn't generally cause any trouble in low-traffic scenarios.
 
 If you wish to use peer authentication via Unix socket on a locally hosted
 PostgreSQL database, set all of `PGUSER`, `PGPASS`, `PGHOST` and `PGPORT` to
