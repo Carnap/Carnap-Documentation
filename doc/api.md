@@ -285,18 +285,67 @@ which means in particular that each space needs to be replaced with `%20`. The
 python requests module does URL-encoding automatically, so spaces can be used
 verbatim. The examples below are for a course with the title "test course".
 
+##### GET `https://carnap.io/api/v1/instructors/:instructorIdent/courses`
+
+<details><summary>Retrieves a list of courses.</summary>
+
+```python
+rq('GET', '/instructors/gleachkr@gmail.com/courses/test course/students').json()
+```
+
+```sh
+curl -H "X-API-KEY:YOURAPIKEYHERE" \
+    'localhost:3000/api/v1/instructors/gleachkr@gmail.com/courses'
+```
+
+**Result**
+
+```
+[
+  {
+    "textBook": 12,
+    "instructor": 1123,
+    "enrollmentOpen": false,
+    "endDate": "2021-05-19T04:59:59Z",
+    "startDate": "2021-01-26T05:59:59Z",
+    "textbookProblems": {
+      "readAssignmentTable": [
+        [
+          1,
+          "2021-05-15T04:59:59Z"
+        ],
+        ...
+      ]
+    },
+    "totalPoints": 0,
+    "title": "PHILO680 - Independent Study",
+    "timeZone": "America/Chicago",
+    "description": null
+  }
+]
+```
+
+The `instructor` field gives the main instructor's instructorId, which is
+distinct from their userId. The `textBook` field gives the `assignmentId` for
+an associated textbook, which is the same data as the `id` field for an
+assignment, retrieved via GET
+`https://carnap.io/api/v1/instructors/:instructorIdent/courses/:courseTitle/assignments`
+
+</details>
+
+
 ##### GET `https://carnap.io/api/v1/instructors/:instructorIdent/courses/:courseTitle/students`
 
 <details><summary>Retrieves a list of student data for a given course,
 including unique `:studentId` identifiers for each student.</summary>
 
 ```python
-rq('GET', '/instructors/gleachkr@gmail.com/course/test course/students').json()
+rq('GET', '/instructors/gleachkr@gmail.com/courses/test course/students').json()
 ```
 
 ```sh
 curl -H "X-API-KEY:YOURAPIKEYHERE" \
-    'localhost:3000/api/v1/instructors/gleachkr@gmail.com/course/test%20course/students'
+    'localhost:3000/api/v1/instructors/gleachkr@gmail.com/courses/test%20course/students'
 ```
 
 **Result**
@@ -341,12 +390,12 @@ number in the `userId` field.
 `:studentId`</summary>
 
 ```python
-rq('GET', '/instructors/gleachkr@gmail.com/course/test course/students/1231').json()
+rq('GET', '/instructors/gleachkr@gmail.com/courses/test course/students/1231').json()
 ```
 
 ```sh
 curl -H "X-API-KEY:YOURAPIKEYHERE" \
-    'localhost:3000/api/v1/instructors/gleachkr@gmail.com/course/test%20course/students/1231'
+    'localhost:3000/api/v1/instructors/gleachkr@gmail.com/courses/test%20course/students/1231'
 ```
 
 **Result**
@@ -377,12 +426,12 @@ the `studentId` field.
 id `:studentId` </summary>
 
 ```python
-rq('GET', '/instructors/gleachkr@gmail.com/course/test course/students/1231/submissions').json()
+rq('GET', '/instructors/gleachkr@gmail.com/courses/test course/students/1231/submissions').json()
 ```
 
 ```sh
 curl -H "X-API-KEY:YOURAPIKEYHERE" \
-    'localhost:3000/api/v1/instructors/gleachkr@gmail.com/course/test%20course/students/1231/submissions'
+    'localhost:3000/api/v1/instructors/gleachkr@gmail.com/courses/test%20course/students/1231/submissions'
 ```
 
 **Result**
