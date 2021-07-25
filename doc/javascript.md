@@ -75,6 +75,10 @@ In order to make it possible for interactive JS behavior to be triggered by
 successful or unsuccessful completion of exercises, Carnap provides a few
 events that you can listen for.
 
+When Carnap finishes its initial loading, and exercise elements are properly
+formatted and loaded, it will fire a global `carnap-loaded` event, which can be
+observed with `document.addEventListener("carnap-loaded", ...)`.
+
 Whenever an exercise is successfully checked or submitted, an
 `exercise-success` event will fire on the main exercise element (the one
 carries the `data-carnap-*` attributes). An `exercise-failure` event fires when
