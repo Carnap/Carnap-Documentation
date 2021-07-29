@@ -19,7 +19,9 @@ Carnap.io's configuration parameters are:
 If you are running your own instance of the Carnap server, you will use the
 same paths but with your custom domain name replacing "carnap.io".
 
-### Common LMS: Canvas
+## Information for specific LMS software
+
+### Instructure Canvas
 
 Instructions for configuring an LTI key for Canvas can be found here:
 [Configuring an LTI
@@ -93,6 +95,33 @@ page without opening a new tab), but there are caveats, especially around
 support for Safari and other WebKit browsers, since they are very aggressive
 about third-party cookie blocking. If you want to try this, remove the
 `"windowTarget": "_blank"` in the JSON.
+
+### Brightspace/D2L
+
+Under [LTI Security Settings], make sure that the following are checked to
+allow for automatic registration in your Carnap courses:
+
+* Name
+* Org Unit Information
+
+Carnap will also use the Email property to fill in user information if it is
+present, but it is not required.
+
+It appears that Brightspace doesn't support sending student ID numbers in the
+`lis` claim as `person_sourcedid` like Canvas does. If this is something that
+you need for gradebook purposes, it is possible we can make Carnap accept the
+Brightspace specific "Org Defined ID" or "User ID" properties for the
+Carnap "University ID" field.
+
+![screenshot from brightspace documentation of the "security settings" subsection with "name" and "org unit information" checked](images/lti-brightspace-security.png)
+
+For more details on LTI configuration in Brightspace/D2L, see these pages:
+
+* [LTI Integration Guide (links to other pages)](https://community.brightspace.com/generic/s/article/LTI-Integration-Guide)
+* [LTI Security Settings and Platform information](https://community.brightspace.com/generic/s/article/LTI-Security-Settings-Consumer-Information)
+* [LTI Advantage (LTI 1.3) Administrator Guide](https://community.brightspace.com/s/article/LTI-Advantage-Administrator-Guide)
+
+[LTI Security Settings]: https://community.brightspace.com/generic/s/article/LTI-Security-Settings-Consumer-Information
 
 ## LTI Setup (Carnap side)
 
@@ -180,6 +209,12 @@ Configure it in Carnap at `/master_admin` with the following:
 To perform launches, use the "Resource Links" page.
 
 ## Debugging
+
+Carnap logs LTI tokens (with student data removed) to its server logs for the
+purposes of debugging automatic LTI registration, allowing to find out why
+automatic registration is failing. If that is not sufficient, some debugging
+can be done client side by looking at browser request logs in the network tab
+of the developer tools:
 
 Most of the process can be traced with dev tools. Note that Chrome now has a
 feature called "Auto-open DevTools for popups" that is ideal for debugging LTI
