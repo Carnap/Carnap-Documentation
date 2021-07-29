@@ -24,7 +24,7 @@ of the types listed on [the main page](index.html). They are:
 1. [Syntax Checking](syntax-check.md)
 2. [Translations](translation.md)
 3. [Truth Tables](truth-tables.md)
-4. [Derivations](derivations.md).
+4. [Derivations](derivations.md)
 5. [Model Checking](modelchecker.md)
 6. [Qualitative Problems](qualitative.md), e.g., multiple-choice
 

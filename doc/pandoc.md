@@ -49,8 +49,8 @@ Carnap's pandoc parser incorporates the following pandoc extensions:
 * [simple\_tables](https://pandoc.org/MANUAL.html#tables)
 * [multiline\_tables](https://pandoc.org/MANUAL.html#tables)
 * [footnotes](https://pandoc.org/MANUAL.html#footnotes)
-* [fenced\_code\_attributes](https://pandoc.org/MANUAL.html#fenced_code_blocks)
-* [inline_code\_attributes](https://pandoc.org/MANUAL.html#fenced_code_blocks)
+* [fenced\_code\_attributes](https://pandoc.org/MANUAL.html#fenced-code-blocks)
+* [inline_code\_attributes](https://pandoc.org/MANUAL.html#extension-inline_code_attributes)
 * [shortcut\_reference\_links](https://pandoc.org/MANUAL.html#reference-links)
 * [link\_attributes](https://pandoc.org/MANUAL.html#extension-link_attributes)
 * [yaml\_metadata\_block](https://pandoc.org/MANUAL.html#metadata-blocks)
@@ -258,3 +258,22 @@ or for several stylesheets, like so:
 The scripts can be hosted anywhere, including on the Carnap server. As with
 stylesheets, scripts can be uploaded as normal documents so long as they're
 given the proper filetype extension (in this case, ".js" rather than ".css")
+
+### Templates
+
+Carnap can make use of pandoc's advanced templating capabilities, documented
+[here](https://pandoc.org/MANUAL.html#templates). To create a template, upload
+a file with the extension `.template`. Your template file should contain HTML,
+enriched with template variables of the kind described in pandoc's
+documentation. To apply the template to a given document, include a `template`
+field in your document's YAML metadata, followed by the name of the template
+file. So for example, you might have metadata of the form:
+    
+    ---
+    js: https://carnap.io/shared/myemail@university.edu/myjs.js
+    template: test.template
+    ---
+
+Applied to an uploaded document `test.md`. Then, when `test.md` is accessed as
+a document or an assignment, its contents will be interpolated into
+`test.template` as the value of the `$body$` variable.
