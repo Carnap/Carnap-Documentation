@@ -357,7 +357,7 @@ produces `A & G & (R_1 -> (~R_2 \/ (_|_ <-> T)))`{system="hardegreeSL"}.
   + Function symbols: none
   + Variables: `t`...`z`
   + Atomic formulas: $Fax$
-  + Identity: `=`
+  + Identity: no
   + Quantifiers: $\forall x$, $\exists x$
 
 Quantifiers:
@@ -366,14 +366,13 @@ Connective Keyboard
 ---------- ----------
 ∀          `A`
 ∃          `E`
-=          `=`
 ---------- ----------
 
 Example:
 
-    `Ax(Gabx -> Ev(Hxe & Ov & x=v & _|_))`{system="hardegreePL"}
+    `Ax(Gabx -> Ev(Hxe & Ov & _|_))`{system="hardegreePL"}
 
-produces `Ax(Gabx -> Ev(Hxe & Ov & x=v & _|_))`{system="hardegreePL"}
+produces `Ax(Gabx -> Ev(Hxe & Ov & _|_))`{system="hardegreePL"}
 
 
 ## Hausman, Kahane & Tidman, *Logic and Philosophy*
@@ -870,9 +869,9 @@ Pow        `P`
 
 Example:
 
-    `Ex(Ay ~y<<x /\ Az(z!={} -> Eu u<( P(z)))`{system="openLogicESTNK"}
+    `Ex(Ay ~y<<x /\ Az(z!={} -> Eu u <( P(z)))`{system="openLogicESTNK"}
 
-produces `Ex(Ay ~y<<x /\ Az(z!={} -> Eu u<( P(z))))`{system="openLogicESTNK"}
+produces `Ex(Ay ~y<<x /\ Az(z!={} -> Eu u <( P(z)))`{system="openLogicESTNK"}
 
 ## Thomas-Bolduc & Zach, *forall x: Calgary*
 
