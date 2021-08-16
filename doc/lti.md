@@ -121,9 +121,9 @@ support for Safari and other WebKit browsers, since they are very aggressive
 about third-party cookie blocking. If you want to try this, remove the
 `"windowTarget": "_blank"` in the JSON.
 
-</summary>
+</details>
 
-<summary><details> Configuring Brightspace/D2L to use Carnap </details>
+<details><summary> Configuring Brightspace/D2L to use Carnap </summary>
 
 Under [LTI Security Settings], make sure that the following are checked to
 allow for automatic registration in your Carnap courses:
@@ -150,7 +150,7 @@ For more details on LTI configuration in Brightspace/D2L, see these pages:
 
 [LTI Security Settings]: https://community.brightspace.com/generic/s/article/LTI-Security-Settings-Consumer-Information
 
-</summary>
+</details>
 
 ## Step 2 - Configuring Carnap to recognize your LMS
 
