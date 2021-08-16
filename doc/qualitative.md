@@ -110,7 +110,9 @@ expressions.
 #### Options and Attributes
 
 In addition to allowing for turning off submission with `submission="none"`,
-qualitative problems also have the following options. 
+qualitative problems also have the following options, which can be configured
+using the `options` field, for example setting `options="exam"` or
+`options="exam check"`. See the general [pandoc](pandoc.md) documentation for more details.
 
 <div class="table">
 
