@@ -761,7 +761,7 @@ The parser for `openLogicNK` and `openLogicLK` is synonymous with
 `openLogicFOLLK` with `thomasBolducAndZachFOL2019`.
 
 Two OLP proof systems are supported: [sequent
-calculus](sequent-calculus.md)and [natural deduction](gentzen-ND.md).
+calculus](sequent-calculus.md) and [natural deduction](gentzen-ND.md).
 
 In addition, there are special systems supporting the language of
 arithmetic and the language of set theory.
