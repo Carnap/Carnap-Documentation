@@ -18,7 +18,7 @@ given.
 
 The systems supported are:
 
-- [Bergman, Moore & Nelson, *The Logic
+- [Bergmann, Moore & Nelson, *The Logic
   Book*](#bergman-moore-nelson-the-logic-book)
 - [Bonevac, *Deduction*](#bonevac-deduction)
 - [Gallow, *forall x: Pittsburgh*](#gallow-forall-x-pittsburgh)
@@ -41,7 +41,7 @@ The systems supported are:
 
 
 
-## Bergman, Moore & Nelson, *The Logic Book* 
+## Bergmann, Moore & Nelson, *The Logic Book* 
 
 ### Sentential logic
 
