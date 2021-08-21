@@ -1,4 +1,4 @@
-# Carnap deployment/administration
+# Carnap deployment and administration
 
 ## General information
 

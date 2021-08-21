@@ -99,9 +99,9 @@ described on the following pages:
         including multiple-choice, multi-select, short answer, and
         numerical questions on a problem set.
 
-## Administration/development/setup documentation
+## Administration, development, and setup documentation
 
-1. [Carnap deployment/administration](administration.md)
+1. [Carnap deployment and administration](administration.md)
 2. [Learning Tools Interoperability v1.3 integration](lti.md)
 3. [Carnap API](api.md)
 4. [LTI Information for developers](lti-develop.md)
