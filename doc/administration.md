@@ -71,18 +71,9 @@ files](https://github.com/ubc-carnap-team/carnap-nixops) are public.
 
 ### Docker
 
-***Docker builds are currently (2021-02-16) broken, and will be for the
-foreseeable future, due to issues with client side JavaScript builds on
-GitHub Actions. If you're affected by this, please contact us on Matrix***
-
 There is experimental Docker support for Carnap. Images are available via the
 GitHub container registry at
 `docker.pkg.github.com/carnap/carnap/carnap:latest`.
-
-Note that Carnap docker images are about 3GB uncompressed and about 500MB to
-download. This essentially precludes the use of services such as Azure App
-Service that reload the image on container restart (some tests of Azure App
-Service have yielded 10+ minute start times).
 
 To run Carnap under docker:
 
