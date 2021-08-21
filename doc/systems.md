@@ -18,7 +18,7 @@ given.
 
 The systems supported are:
 
-- [Bergman, Moore & Nelson, *The Logic
+- [Bergmann, Moore & Nelson, *The Logic
   Book*](#bergman-moore-nelson-the-logic-book)
 - [Bonevac, *Deduction*](#bonevac-deduction)
 - [Gallow, *forall x: Pittsburgh*](#gallow-forall-x-pittsburgh)
@@ -41,7 +41,7 @@ The systems supported are:
 
 
 
-## Bergman, Moore & Nelson, *The Logic Book* 
+## Bergmann, Moore & Nelson, *The Logic Book* 
 
 ### Sentential logic
 
@@ -761,7 +761,7 @@ The parser for `openLogicNK` and `openLogicLK` is synonymous with
 `openLogicFOLLK` with `thomasBolducAndZachFOL2019`.
 
 Two OLP proof systems are supported: [sequent
-calculus](sequent-calculus.md)and [natural deduction](gentzen-ND.md).
+calculus](sequent-calculus.md) and [natural deduction](gentzen-ND.md).
 
 In addition, there are special systems supporting the language of
 arithmetic and the language of set theory.
