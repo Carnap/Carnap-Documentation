@@ -240,11 +240,14 @@ table of contents, directing students to various "chapters" (other
 assignments), containing problems that they can complete throughout
 the semester.
 
-When selecting a custom textbook, you'll need to choose a document
-that has already been assigned to the course—so, you'll want to
-assign the textbook *first* and then set it as the textbook for the
-course. The textbook will not be shown in the "Upcoming Problems"
-section of your students' user page.
+When selecting a custom textbook, you'll need to choose a document that has
+already been assigned to the course—so, you'll want to assign the textbook
+*first* and then set it as the textbook for the course. 
+
+Once assigned, the textbook will not be shown in the "Upcoming Problems"
+section of your students' user page. So you do not need to adjust the
+visibility of the assignment or mark it as hidden, in order to keep it from
+cluttering your assignment listings.
 
 ### Actions on Students
 
