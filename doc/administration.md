@@ -29,8 +29,8 @@ anything that our Continuous Integration has already built.
 ### Settings file
 
 Carnap uses a settings file, `settings.yml`, to store its configuration. You
-can find the example version at
-[`Carnap-Server/config/settings-example.yml`](https://github.com/Carnap/Carnap/blob/master/Carnap-Server/config/settings-example.yml).
+can find the example version at [`Carnap-Server/config/settings-example.yml`][settings-example]
+
 The version in `Carnap-Server/config/settings.yml` is bundled within the
 executable. To utilize binary caching, Nix builds directly use the example
 configuration file, and users are expected to use environment variables or
@@ -40,6 +40,8 @@ You can provide a different settings file at runtime by passing it as the first
 argument to the `Carnap-Server` executable. Also, all settings are configurable
 by environment variables, which is useful for Docker deployments (see the
 example configuration for a list of these settings).
+
+[settings-example]: https://github.com/Carnap/Carnap/blob/master/Carnap-Server/config/settings-example.yml
 
 ### `dataroot`
 
@@ -52,14 +54,17 @@ documentation on the production instance at `carnap.io`.
 
 ### Database
 
-For production deployments, Carnap should have access to a PostgreSQL database.
-Set the environment variable SQLITE=false and supply `PGUSER`, `PGPASS`,
-`PGHOST`, and if required, `PGPORT` and `PGDATABASE` for your postgresql
-database instance.
+Due to a [bug that breaks migrations on SQLite][bug] in our database library,
+production deployments of Carnap should use PostgreSQL databases. Set the
+environment variable `SQLITE=false` and supply `PGUSER`, `PGPASS`, `PGHOST`,
+and if required, `PGPORT` and `PGDATABASE` for your PostgreSQL database
+instance.
 
 If you wish to use peer authentication via Unix socket on a locally hosted
 PostgreSQL database, set all of `PGUSER`, `PGPASS`, `PGHOST` and `PGPORT` to
 empty strings.
+
+[bug]: https://github.com/yesodweb/persistent/issues/1125
 
 ### NixOps
 
@@ -72,14 +77,29 @@ files](https://github.com/ubc-carnap-team/carnap-nixops) are public.
 ### Docker
 
 There is experimental Docker support for Carnap. Images are available via the
-GitHub container registry at
-`docker.pkg.github.com/carnap/carnap/carnap:latest`.
+GitHub container registry at `ghcr.io/carnap/carnap/carnap:latest`.
 
-To run Carnap under docker:
+There is a sample docker-compose environment with automatically-managed
+[Caddy][caddy] based HTTPS termination, the recommended PostgreSQL database,
+and full setup instructions [available in the Carnap documentation repository
+here][env].
 
-```
-docker run --rm -v carnap_data:/data -e APPROOT=http://your-app-root.com
-```
+<details>
+<summary>Docker configuration details</summary>
+
+Carnap in Docker can most effectively be configured with environment variables.
+See the [example settings file][settings-example] for a list. A volume should
+be provided at `/data` for persistent data such as documents.
+
+At minimum, the following environment variables must be configured:
+
+- `APPROOT`
+- `GOOGLEKEY`
+- `GOOGLESECRET`
+</details>
+
+[caddy]: https://caddyserver.com
+[env]: https://github.com/Carnap/Carnap-Documentation/tree/master/docker-compose-sample
 
 ## Authentication
 
@@ -89,7 +109,7 @@ authentication to be configured for administration purposes, even if it is not
 intended to be used by students.
 
 See the [LTI 1.3 documentation](lti.md) for details on how to configure that
-system (after [completing setup](#setup)).
+system after [completing setup](#post-installation-first-time-setup).
 
 ### Google authentication
 
@@ -116,14 +136,39 @@ Carnap configuration file or environment variables:
 * `google-api-key`/`GOOGLEKEY`: your Google Client ID
 * `google-secret`/`GOOGLESECRET`: your Google Client secret
 
-## Setup
+## Post installation first-time setup
 
-Go to your newly minted Carnap instance and log in with Google. Then, go to
-`https://YOURDOMAINHERE/admin_promote` and click the button. You will now be
-the administrator of this instance. Multiple administrators are supported, but
-there is not yet user interface to enable this.
+### Becoming administrator
+
+Go to your newly minted Carnap instance and log in with Google. Enter your name
+and register. Then, go to `https://YOURDOMAINHERE/admin_promote` and click the
+button. You will now be the administrator of this instance. Multiple
+administrators are supported (with manual database editing), but there is not
+yet user interface to enable this.
 
 You can manage the site including promoting instructors, managing students, and
 configuring LTI platforms at `https://YOURDOMAINHERE/master_admin`.
 
-Enjoy!
+### Once you're an administrator
+
+After you have become administrator, check the following items on the
+`master_admin` page:
+
+1. Ask anyone who needs to be instructor to log in and register, then promote
+   them to instructor.
+
+2. If you don't want to allow further Google registrations (if you intend to
+   use LTI with your learning management system for student login, setting this
+   option is recommended), enter `true` for "Disable Google Registration" under
+   the "Site Configuration" heading:
+
+   ![Screenshot of the site configuration heading](./images/administration-disable-google.png)
+
+   Anyone who has logged in already with Google can still log in, but new
+   registrations will be prevented.
+
+   This can be disabled temporarily at any time if more instructors need to be
+   added.
+
+3. Configure login with LTI 1.3 compatible learning management systems [using
+   the LTI guide](./lti.md).

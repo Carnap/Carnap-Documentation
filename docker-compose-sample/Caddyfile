@@ -1,0 +1,19 @@
+{
+  # Email for Let's Encrypt
+  email YOUREMAIL@example.com
+}
+
+# Replace with the same value as APPROOT
+https://carnap.example.com {
+  encode zstd gzip
+  # log
+
+  # DO NOT UNCOMMENT THE FOLLOWING LINE IN PRODUCTION.
+  # Enabling this makes Caddy generate self signed certificates for you. Useful
+  # if you are using a domain name in /etc/hosts while testing, but is
+  # insecure. Leaving it commented out will have Caddy handle Let's Encrypt and
+  # TLS for you, assuming your external DNS is configured.
+  #
+  # tls internal
+  reverse_proxy carnap:3000
+}
