@@ -26,6 +26,64 @@ anything that our Continuous Integration has already built.
 
 ## Server setup
 
+### Docker
+
+There is experimental Docker support for Carnap. Images are available via the
+GitHub container registry at `ghcr.io/carnap/carnap/carnap:latest`.
+
+There is a sample docker-compose environment with automatically-managed
+[Caddy][caddy] based HTTPS termination, the recommended PostgreSQL database,
+and full setup instructions [available in the Carnap documentation repository
+here][env].
+
+<details>
+<summary>Docker configuration details</summary>
+
+Carnap in Docker can most effectively be configured with environment variables.
+See the [example settings file][settings-example] for a list. A volume should
+be provided at `/data` for persistent data such as documents.
+
+At minimum, the following environment variables must be configured:
+
+- `APPROOT`
+- `GOOGLEKEY`
+- `GOOGLESECRET`
+</details>
+
+[caddy]: https://caddyserver.com
+[env]: https://github.com/Carnap/Carnap-Documentation/tree/master/docker-compose-sample
+
+
+### Manual setup summary
+
+If you want to set up Carnap manually (Docker is recommended instead):
+
+**Files**:
+
+- `/var/lib/carnap` (or whatever you're using as `DATAROOT`), writable by your
+  `carnap` user you're running the server as, with subdirectories:
+    - `static` from `Carnap-Server/static` (*copying* symlinks if you're deploying it)
+    - `config` from `Carnap-Server/config`
+    - `book` from `Carnap-Book`
+    - `book/cache` directory created
+    - `data` directory created
+
+**Environment Variables**:
+
+- `APPROOT=https://carnap.example.com`
+- `DATAROOT=/var/lib/carnap`
+- `BOOKROOT=/var/lib/carnap/book`
+
+Assuming you're using PostgreSQL (`...` values are replaced with their
+respective real values):
+
+- `SQLITE=false`
+- `PGHOST=...`
+- `PGPORT=...`
+- `PGUSER=...`
+- `PGPASS=...`
+- `PGDATABASE=...`
+
 ### Settings file
 
 Carnap uses a settings file, `settings.yml`, to store its configuration. You
@@ -73,33 +131,6 @@ automatically deploy Carnap on [DigitalOcean](https://www.digitalocean.com/)
 servers running NixOS. It's currently experimental and documentation is a
 work-in-progress, but [the configuration
 files](https://github.com/ubc-carnap-team/carnap-nixops) are public.
-
-### Docker
-
-There is experimental Docker support for Carnap. Images are available via the
-GitHub container registry at `ghcr.io/carnap/carnap/carnap:latest`.
-
-There is a sample docker-compose environment with automatically-managed
-[Caddy][caddy] based HTTPS termination, the recommended PostgreSQL database,
-and full setup instructions [available in the Carnap documentation repository
-here][env].
-
-<details>
-<summary>Docker configuration details</summary>
-
-Carnap in Docker can most effectively be configured with environment variables.
-See the [example settings file][settings-example] for a list. A volume should
-be provided at `/data` for persistent data such as documents.
-
-At minimum, the following environment variables must be configured:
-
-- `APPROOT`
-- `GOOGLEKEY`
-- `GOOGLESECRET`
-</details>
-
-[caddy]: https://caddyserver.com
-[env]: https://github.com/Carnap/Carnap-Documentation/tree/master/docker-compose-sample
 
 ## Authentication
 
