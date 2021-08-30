@@ -115,9 +115,9 @@ system after [completing setup](#post-installation-first-time-setup).
 
 Setting up Google authentication requires setting up a Google APIs project.
 
-First, create the project: https://console.developers.google.com/cloud-resource-manager
+First, create the project: <https://console.developers.google.com/cloud-resource-manager>
 
-Then, create an OAuth2 client ID: https://console.developers.google.com/apis/credentials
+Then, create an OAuth2 client ID: <https://console.developers.google.com/apis/credentials>
 
 It will show up like this:
 
