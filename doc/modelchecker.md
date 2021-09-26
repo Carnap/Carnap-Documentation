@@ -129,13 +129,13 @@ done by setting the `system` attribute to indicate which formal system you are
 drawing your syntax from. So for example, 
 
     ~~~{.CounterModeler .Simple  system="LogicBookPD"}
-    1.5 Ax->Bx
+    1.5 (Ax)(Ax->Bx)
     ~~~
 
 will generate:
 
 ~~~{.CounterModeler .Simple options="exam" system="LogicBookPD"}
-1.5 Ax->Bx
+1.5 (Ax)(Ax->Bx)
 ~~~
 
 The available systems are `firstOrder` `montagueQC` `magnusQL`
