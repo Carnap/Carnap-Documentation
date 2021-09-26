@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  carnap:
+    image: ghcr.io/carnap/carnap/carnap:latest
+    env_file: .env
+    volumes:
+      - "carnap_data:/data"
+  reverse_proxy:
+    image: "caddy:2"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "caddy_data:/data"
+      - "./Caddyfile:/etc/caddy/Caddyfile"
+
+  postgres:
+    image: postgres:13
+    env_file: .env-postgres
+    volumes:
+      - "postgres_data:/var/lib/postgresql/data"
+
+volumes:
+  carnap_data:
+  caddy_data:
+  postgres_data:
