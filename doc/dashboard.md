@@ -178,17 +178,31 @@ styling and behavior, see the "other features" section in the documentation of
 Once documents are uploaded, they can also be assigned to students as problem
 sets, using the [Assign Uploaded Documents](#assign-uploaded-documents) tab.
 
-When you create a document, you'll be able to select a "Sharing Scope". There
-are four options: Public, Private, Instructors-Only, and Link-Only. The sharing
-scope affects whether your document can be accessed via the list of shared
-document that be found at [carnap.io/shared](/shared). Public documents are
-listed, Instructor-Only documents are listed, but only for instructors, and
-Private and Link-Only documents are unlisted. You can still share a link-only
-document by sharing (via email or some other medium) the link to the document
-that appears in your document listing. The tags you assign to a document are
-also used to help organize the document in the shared documents list. The
-sharing scope doesn't affect whether you can assign the document to students,
-or whether students can view assignments associated with the document.
+When you create a document, you'll be able to select a "Sharing
+Scope". There are four options: Public, Private, Instructors-Only, and
+Link-Only. The sharing scope affects whether your document can be
+accessed via the list of shared document that be found at
+[carnap.io/shared](/shared). Public documents are listed and available
+to anyone, Instructor-Only documents are only listed and available to
+instructors, and Private documents are unlisted and only available to
+you, Link-Only documents are unlisted but available (via link) to
+anyone. The tags you assign to a document are also used to
+help organize the document in the shared documents list.
+
+You can share the the link to the document that appears in your
+document listing, e.g., via email or your LMS. However, only Public
+and Link-Only documents will be accessible via this link to your
+students.  Also, you should not use this link to share assignments or
+tests with your students. Instead, share the link to the [assignment in
+the course card](#the-course-card).
+
+The sharing scope doesn't affect whether you can assign the document
+to students. When a document is assigned to your class, students can
+access the assignment associated with the document, regardless of the
+sharing scope you set when you uploaded it. Note that documents you
+plan to assign with access controls (e.g., passwords or a time limit)
+should have their sharing scope set to Instructor-Only or Private,
+since otherwise they can be viewed without restrictions.
 
 Again, to edit the attributes of an uploaded document, click the gear
 icon <span style="font-family:FontAwesome">&#xf013;</span>.  You can
@@ -204,10 +218,17 @@ Once you've created a course, the course card will look a bit like this:
 
 Different courses are available under different tabs.
 
-In the upper half, statistics for different assignments are available.
-In the lower half, a table of students and total scores earned by
-those students is visible. You can click on each students name to see
-details of their submitted problems and points earned.
+At the top ("Assignments") you will see a list of documents you have
+assigned to your course, sorted by name or by due date.  You can share
+the link to the assignments given here with your students (e.g., in
+the LMS). Students have to be logged in to Carnap to be able to access
+assignments via this link, however.
+
+Next you see a list of students registered in your course and total
+scores earned by those students. You can click on each student's email
+address to see details of their submitted problems and points earned.
+See below for the [possible actions you can take for
+students](#actions-on-students) using the bottons on the far right.
 
 ### Course Information
 
