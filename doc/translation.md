@@ -66,13 +66,13 @@ ask a student what the missing premise in some inference is. So, for example
 you might write
 
     ~~~{.Translate .Exact}
-    3.3 P : To make a modus ponens inference with P→Q, you need:
+    3.3 P : To make a modus ponens inference with P→Q, you need...
     ~~~
 
 to generate:
 
 ~~~{.Translate .Exact}
-3.3 P : To make a modus ponens inference with P→Q, you need:
+3.3 P : To make a modus ponens inference with P→Q, you need...
 ~~~
 
 Exact translations use the same syntax as `Prop` by default, but can be
