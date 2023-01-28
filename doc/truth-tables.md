@@ -115,7 +115,7 @@ Name                           Effect
 `exam`                         Allows for submission of work which is incomplete or incorrect
 `autoAtoms`                    Prepopulates atomic sentence columns with truth values
 `turnstilemark`                Uses `✓` and `✗` rather than `T` and `F` under the turnstile
-`double-turnstile`     Di      splays a double turnstile (like so ⊨) rather than the single turnstile
+`double-turnstile`             Displays a double turnstile (like so ⊨) rather than the single turnstile
 `negated-double-turnstile`     Displays a negated double turnstile (like so ⊭) rather than the single turnstile
 `immutable`                    Makes the truth table immutable (useful for displaying truth tables)
 `nodash`                       Uses ` ` rather than `-` in empty cells (useful for printing worksheets)

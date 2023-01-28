@@ -89,12 +89,14 @@ countermodels:
 
 <div class="table">
 
-Name                     Effect
------------------------- ------------------------------------------------------------------
-`nocheck`                Disables the "check" button
-`exam`                   Allows for submission of work which is incomplete or incorrect
-`strictGivens`           Makes givens immutable (see below)
------------------------- ------------------------------------------------------------------
+Name                        Effect
+--------------------------- ------------------------------------------------------------------
+`nocheck`                   Disables the "check" button
+`exam`                      Allows for submission of work which is incomplete or incorrect
+`strictGivens`              Makes givens immutable (see below)
+`double-turnstile`          Displays a double turnstile (like so ⊨) rather than the single turnstile
+`negated-double-turnstile`  Displays a negated double turnstile (like so ⊭) rather than the single turnstile
+--------------------------- ------------------------------------------------------------------
 
 
 #### Counterexamples
