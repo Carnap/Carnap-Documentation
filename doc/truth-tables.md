@@ -242,7 +242,7 @@ will produce:
 
 However: if a partial truth table is constructed with givens, then a solution
 will only be accepted if it is "consistent" with the givens. So in the above
-case, the only acceptable solution will be one that assigns `T` to `P`. The
+case, the only acceptable solution will be one that assigns `F` to `P`. The
 givens can be hidden, using `hiddenGivens` if you want to, for example, ask
 students to make a sentence truth and you want them to figure out the relation
 between the truth of a sentence and the truth value of the main connective.
